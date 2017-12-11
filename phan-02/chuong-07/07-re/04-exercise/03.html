@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";           
+
+            function changeHyberlink(){
+                var s = document.getElementById("text").innerHTML;
+                var patt = /jQuery/igm;
+                s = s.replace(patt, '<a href="#">jQuery</a>');
+                document.getElementById("text").innerHTML = s;
+
+            }
+
+        </script>
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;                
+            }
+
+            .content{
+                width: 500px;
+                height: auto;
+                margin: 20px auto;
+                border: 2px solid red;
+                text-align: center;
+                padding: 10px;            
+            }
+
+            .content #text{
+                text-align: justify;
+            }
+
+            .content #text li{
+                list-style: inside;
+                line-height: 24px;
+            }
+
+            input[type=button]{
+                padding: 4px 10px;
+                margin: 10px auto;
+                display: block;                
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="content">
+            <ul id="text">
+                <li>JQuery được xây dựng dựa trên ngôn ngữ lập trình javascript</li>
+                <li>JQuery giúp các lập trình viên đơn giản được các viết mã javascript</li>
+                <li>Làm đoạn mã javascript viết sử dụng JQuery có thể chạy tốt trên mọi trình duyệt khác nhau</li>
+                <li>Hỗ trợ nhiều phương thức hữu ích và ngắn gọn</li>
+                <li>JQuery là một phần không thể thiếu cho bất kỳ website nào vào thời điểm này và tương lai</li>
+            </ul>            
+        </div>
+        <input type="button" value="Insert Hyberlink" onclick="changeHyberlink()">
+    </body>
+</html>

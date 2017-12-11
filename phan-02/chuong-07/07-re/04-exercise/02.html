@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";
+
+            /*
+                Họ: 0 -> spaceFirst (indexOf) -> slice(start, end)
+                Tên: spaceEnd (lastindexOf) -> cuối chuỗi
+                Lót: spaceFirst -> spaceEnd
+            */           
+
+            String.prototype.split_name = function(){
+                var spaceFirst = this.indexOf(" ");
+                var spaceEnd = this.lastIndexOf(" ");
+                var result = [];
+
+                if(spaceFirst > 0 && spaceEnd > 0){
+                    result[0] =this.slice(0, spaceFirst);
+                    result[1] =this.slice(spaceFirst + 1, spaceEnd);
+                    result[2] =this.slice(spaceEnd + 1);
+                } 
+                return result;
+            }
+
+            function trim(s){
+                var pattLeft = /^\s+/igm;
+                var pattRight = /\s+$/igm;
+                var patt = /\s+/igm;
+                s = s.replace(pattLeft, "");
+                s = s.replace(pattRight, "");
+                s = s.replace(patt, " ");
+                
+                return s;
+            }
+
+            function splitName(){
+                var fullName = new String();           
+                fullName = document.getElementById("fullname").value;
+                fullName = trim(fullName);
+
+                var result = fullName.split_name();
+                var xhtml = "";               
+
+                if(result.length > 0){
+                    xhtml = "<p>Họ:" + result[0] + " </p>";
+                    if(result[1] != "") xhtml += "<p>Lót:" + result[1] + " </p>";
+                    xhtml += "<p>Tên:" + result[2] + " </p>";
+                } else{
+                    xhtml = "Dữ liệu không hợp lệ";
+                }
+                
+                document.getElementById("result").innerHTML = xhtml;
+            }
+        </script>
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;                
+            }
+
+            .content{
+                width: 400px;
+                height: 100px;
+                margin: 20px auto;
+                border: 2px solid red;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .content input[type=button]{
+                padding: 2px 5px;
+            }
+
+            .content #result{
+                text-align: justify;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="content">
+            <input type="text" name="fullname" id="fullname" placeholder="fullname" />
+            <input type="button" value="Tách" onclick="splitName()" />
+            <div class="showInfo" id="result"></div>
+        </div>
+    </body>
+</html>

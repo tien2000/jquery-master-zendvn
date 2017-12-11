@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            // Loại bỏ khoảng trắng trong chuỗi
+            // Dư thừa bên trái:          Javascript
+            // Dư thừa bên phải: Javascript
+            // Dư thừa giữa các từ: Javascript  is     easy.
+
+            var enter = "<br>";
+            var s = "         Javascript     is        easy        ";
+
+            document.write("Input: " + s + ": " + s.length + enter);
+
+            function trim(){
+                var pattLeft = /^\s+/igm;
+                var pattRight = /\s+$/igm;
+                var patt = /\s+/igm;
+                s = s.replace(pattLeft, "");
+                s = s.replace(pattRight, "");
+                s = s.replace(patt, " ");
+                
+                return s;
+            }
+            
+            trim(s);
+            document.write("trim: " + s + ": " + s.length + enter);
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

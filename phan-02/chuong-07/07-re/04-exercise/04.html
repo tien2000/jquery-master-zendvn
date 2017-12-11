@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 04</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";      
+            var email = "Neotien200065@gmail.com.vn";
+
+            var patt = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+            var result;
+
+            if(patt.test(email) == true){
+                result = "Hợp lệ";
+            }else{
+                result = "Ko hợp lệ";
+            }
+
+            document.write("Email " + email + ": " + result);
+        </script>        
+
+    </head>
+    <body>
+        
+    </body>
+</html>
