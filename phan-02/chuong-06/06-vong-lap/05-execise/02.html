@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Execise 02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <script type="text/javascript">
+            /*
+                          0
+                        1 0 1
+                      2 1 0 1 2
+                    3 2 1 0 1 2 3
+                  4 3 2 1 0 1 2 3 4
+                5 4 3 2 1 0 1 2 3 4 5
+            */      
+
+            function printX(n){
+                var i = 0;
+                var s = "";
+                var result = "";
+                for(i; i <= n; i++){
+                    var j = 0;
+                    var space = "";
+                    while(j < n - i){
+                        space += "&nbsp;&nbsp;";
+                        j++;
+                    }      
+                    if(i == 0) s = i.toString();
+                    else s = i + s + i;
+                    result += space + s + "<br>";
+                }
+                return result;
+            }
+
+            var text = printX(9);
+            document.write(text);
+            
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

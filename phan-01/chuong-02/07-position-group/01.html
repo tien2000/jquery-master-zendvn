@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .block{
+                width: 400px;
+                height: 250px;
+                margin: 50px auto;
+                border: 2px solid red;
+                position: relative;
+            }
+
+            .box{
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                line-height: 100px;
+            }
+
+            .boxA{
+                background: #65e61a;
+                left: 0;
+                bottom: 0;
+                position: absolute;
+            }
+
+            .boxB{
+                background: #1ae6b3;
+                right: 0;
+                top: 0;
+                position: absolute;
+            }
+
+            .boxC{
+                background: #1a4ae6;
+                left: 0;
+                top: 0;
+                position: absolute;
+            }
+
+            .boxD{
+                background: #e61aa9;
+                right: 0;
+                bottom: 0;
+                position: absolute;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="block">
+            <div class="box boxA">Box A</div>
+            <div class="box boxB">Box B</div>
+            <div class="box boxC">Box C</div>
+            <div class="box boxD">Box D</div>
+        </div>
+    </body>
+</html>

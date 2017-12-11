@@ -1,0 +1,564 @@
+@import url("line.css");
+@import url("form.css");
+@import url("reset.css");
+@import url("category.css");
+@import url("detail.css");
+@import url("about.css");
+@import url("faq.css");
+@import url("contact.css");
+
+body{
+    background: url("../images/background-body.jpg") left top repeat;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+
+#wrapper{
+    background: url("../images/background.jpg") left top repeat;
+    width: 940px;
+    height: auto;
+    margin: 30px auto;
+    padding: 0 60px;
+}
+
+/* ================================ HEADER ================================= */
+#wrapper #header .top{
+    height: 130px;
+}
+
+    #wrapper #header .top .logo{
+        margin-left: 17px;
+        float: left;
+        height: 130px;
+        line-height: 130px;
+    }
+
+        #wrapper #header .top .logo img{
+            vertical-align: middle;
+        }
+
+    #wrapper #header .top .currency{
+        float: right;
+        margin: 83px 0 0 27px;
+    }
+
+    #wrapper #header .top .currency > span{
+        font-weight: bold;
+    }
+
+    #wrapper #header .top .currency > select{
+        
+    }
+
+
+/* ================================= MENU ======================================== */
+#wrapper #header .menu{
+    background: url("../images/menu-left.jpg") left top no-repeat;
+}
+
+    #wrapper #header .menu .right{
+        background: url("../images/menu-right.jpg") right top no-repeat;
+    }
+
+    #wrapper #header .menu .content{
+        background: url("../images/menu-content.jpg") left top repeat-x;
+        height: 45px;
+        margin: 0 12px;
+    }
+
+    #wrapper #header .menu ul{
+        position: relative;
+    }
+    
+    #wrapper #header .menu ul li{
+        float: left;
+    }
+
+    #wrapper #header .menu ul li a{
+        color: #000000;
+        display: block;
+        padding: 0 22px;
+        font: bold 14px/45px Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+    }
+
+    #wrapper #header .menu ul li a:hover, #wrapper #header .menu ul li a.current{
+        color: #807e7e;
+        text-decoration: underline;
+    }
+
+    #wrapper #header .menu ul li.cart{
+        position: absolute;
+        top: 0;
+        right: 25px;
+    }
+
+    #wrapper #header .menu ul li.cart span{
+        font-weight: bold;
+    }
+
+    #wrapper #header .menu ul li.cart a{
+        color: #2fe225;
+        display: inline;
+        padding: 0;
+        font: 12px/45px Arial, Helvetica, sans-serif;
+    }
+
+    #wrapper #header .menu ul li.cart a:hover{        
+        color: #000000;
+        font-weight: bold;
+    }
+
+
+/* ================= CONTENT - MAIN ====================== */
+#wrapper .main{
+    margin-top: 18px;
+}
+
+    #wrapper .main .left{
+        width: 220px;
+        float: left;
+    }
+
+    #wrapper .main .right{
+        width: 700px;
+        margin-left: 240px;
+    }
+
+
+/* ================= CONTENT - LEFT ====================== */
+    /* ========== BOX LOGIN ========== */
+#wrapper .main .left #box-login{
+    margin-bottom: 18px;
+}
+
+    #wrapper .main .left #box-login .content{
+        height: 240px;
+        min-height: 240px;
+    }
+
+        #wrapper .main .left .box .content .row{
+            margin-bottom: 16px;
+            *margin-bottom: 11px;
+        }
+
+        #wrapper .main .left .box .content .row a{
+            color: #7c7c7c;
+        }
+
+        #wrapper .main .left .box .content .row a:hover{
+            text-decoration: underline;
+        }
+
+        /* ========== BOX SEARCH ========== */
+#wrapper .main .left #box-search{
+    margin-bottom: 20px;
+}
+    #wrapper .main .left #box-search .content{
+        height: 80px;
+        min-height: 80px;
+    }
+
+    #wrapper .main .left #box-search #search-form .row span.button span {
+        position: relative;
+    }
+
+    #wrapper .main .left #box-search #search-form .row span.button span img{
+        position: absolute;
+        top: 6px;
+        right: 6px; 
+    }
+
+    #wrapper .main .left #box-search #search-form .row span.button span img:hover{
+        cursor: pointer;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+    }
+
+    /* ========== BOX SPECIAL ========== */
+    #wrapper .main .left #box-special .content{
+        height: auto;
+        min-height: 720px;
+    }
+
+        #wrapper .main .left #box-special .content .special-products{
+            height: 121px;
+            border-bottom: 1px solid #d2d2d2;
+        }
+
+            #wrapper .main .left #box-special .content .special-products .img{
+                height: 121px;
+                line-height: 121px;
+                float: left;
+                width: 80px;
+            }
+
+            #wrapper .main .left #box-special .content .special-products .img img{                
+                vertical-align: middle;
+            }
+
+            #wrapper .main .left #box-special .content .special-products .info{
+                margin-left: 80px;
+                padding: 27px 0;
+            }
+
+                #wrapper .main .left #box-special .content .special-products .info p{
+                    margin-bottom: 27px;
+                }
+
+                #wrapper .main .left #box-special .content .special-products .info p a{
+                    color: #ff0101;
+                }
+
+                #wrapper .main .left #box-special .content .special-products .info p a:hover{
+                    color: blue;
+                }
+
+                #wrapper .main .left #box-special .content .special-products .info span{
+                    font-weight: bold;
+                }
+
+/* ================= CONTENT - RIGHT ====================== */
+#wrapper .main .right .slide{
+    width: 700px;
+    height: 386px;    
+}
+
+#wrapper .main .right .col-1{
+    float: left;
+    width: 460px;
+    height: 500px;
+}
+
+    #wrapper .main .right .col-1 .product-big{
+        float: left;
+        width: 229px;
+        height: 377px;
+    }
+
+        #wrapper .main .right .col-1 .product-big .image{
+            height: 227px;
+            line-height: 227px;
+            text-align: center;
+        }
+
+            #wrapper .main .right .col-1 .product-big .image img{
+                vertical-align: middle;
+            }
+
+        #wrapper .main .right .col-1 .product-big .info{
+            height: 150px;
+            padding: 15px 20px;
+        }
+
+            #wrapper .main .right .col-1 .product-big .info > p{
+                margin-bottom: 35px;
+            }
+
+            #wrapper .main .right .col-1 .product-big .info > span{
+                margin-bottom: 20px;
+                display: block;
+                color: #7ba720;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            #wrapper .main .right .col-1 .product-big .info > a{
+                font-weight: bold;
+                text-decoration: none;
+                color: #3e3e79;
+            }
+
+            #wrapper .main .right .col-1 .product-big .info > a:hover{
+                text-decoration: underline;
+                color: #3e3e79;
+            }
+
+#wrapper .main .right .col-2{
+    width: 220px;
+    margin-left: 480px;
+    height: 500px;
+}
+
+    .box-circle-category{
+        margin-bottom: 18px;
+    }        
+
+        .box-circle-category .content{}
+
+            .box-circle-category .content ul{}
+
+                .box-circle-category .content ul li{
+                    border-bottom: 1px solid #d2d2d2;
+                    padding: 3px;
+                }
+
+                    .box-circle-category .content ul li.active{
+                        background: url("../images/arrow.png") right 8px no-repeat;
+                    }
+
+                    .box-circle-category .content ul li a{
+                        color: #2a0055;
+                    }                    
+
+                    .box-circle-category .content ul li a:hover{
+                        color: blueviolet;
+                    }
+
+        #wrapper .main .right .col-2 .banner{
+            margin-top: 20px;
+        }
+
+/* ==================== FOOTER ====================== */
+        /* ======= FOOTER - SLIDE ========= */
+#wrapper #footer .slide #box-slide{
+    margin-top: 25px;
+    position: relative;
+}
+
+    #wrapper #footer .slide #box-slide .arrow-left{
+        position: absolute;
+        top: 19px;
+        left: -23px;
+    }
+
+    #wrapper #footer .slide #box-slide .arrow-left:hover{
+        cursor: pointer;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+    }
+
+    #wrapper #footer .slide #box-slide .arrow-right{
+        position: absolute;
+        top: 19px;
+        right: -23px;
+    } 
+
+    #wrapper #footer .slide #box-slide .arrow-right:hover{
+        cursor: pointer;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+    }
+
+    #wrapper #footer .slide #box-slide .content{
+        
+    }          
+
+    #wrapper #footer .slide #box-slide .content ul{}
+
+        #wrapper #footer .slide #box-slide .content ul li{
+            float: left;
+            width: 150px;
+            border-right: 1px solid #d2d2d2;
+            text-align: center;
+            position: relative;
+        }
+
+            #wrapper #footer .slide #box-slide .content ul li img{
+                
+            }
+            
+            #wrapper #footer .slide #box-slide .content ul li .info{
+                display: none;
+            }
+
+            #wrapper #footer .slide #box-slide .content ul li:hover .info{
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+
+                #wrapper #footer .slide #box-slide .content ul li:hover .info .overflow{
+                    background: #000000;
+                    width: 100%;
+                    height: 100%;
+                    color: #ffffff;
+                    opacity: 0.4;
+                    filter: alpha(opacity=40);
+                }
+
+                #wrapper #footer .slide #box-slide .content ul li:hover .info a{
+                    top: 39%;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    text-decoration: none;
+                    position: absolute;
+                    color: #ffffff;
+                }
+
+                #wrapper #footer .slide #box-slide .content ul li:hover .info a:hover{
+                    text-decoration: underline;
+                }
+
+        /* ======= FOOTER - COPYRIGHT ========= */
+#wrapper #footer .copyright{
+    padding-bottom: 10px;
+    position: relative;
+}
+
+    #wrapper #footer .copyright .left{
+        float: left;
+        color: #c19d8b;
+    }
+
+    #wrapper #footer .copyright .right{
+        float: right;
+    }
+
+        #wrapper #footer .copyright .right img:hover{
+            opacity: 0.6;
+            filter: alpha(opacity=60);
+        }
+
+    #wrapper #footer .copyright .back-to-top{
+        width: 64px;
+        height: 40px;
+        background: #000000;       
+        text-align: center; 
+        line-height: 40px;
+        position: absolute;
+        top: -29px;
+        right: -125px;
+    }
+
+        #wrapper #footer .copyright .back-to-top a{
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+
+
+/* ==================== BOX ====================== */
+.box{
+    font: 12px Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+    .box .title{
+        height: 43px;
+        line-height: 43px;
+        font-size: 18px;
+    }
+
+    .box .header{
+        background: url("../images/box-tl.png") left top no-repeat;
+        
+    }
+
+        .box .header .tr{
+            background: url("../images/box-tr.png") right top no-repeat;
+        }
+        .box .header .tc{
+            background-color: #ffffff;
+            height: 12px;
+            margin: 0 12px;
+            border-top: 1px solid #e1e1e1;
+        }
+
+    .box .content{
+        background-color: #ffffff;
+        padding: 0 12px;
+        margin: -1px 0;
+        border: 1px solid #e1e1e1;
+        border-width: 0 1px;
+    }
+
+    .box .footer{	
+        background: url("../images/box-bl.png") left bottom no-repeat;
+    }
+
+        .box .footer .br{
+            background: url("../images/box-br.png") right bottom no-repeat;
+        }
+
+        .box .footer .bc{
+            background-color: #ffffff;
+            height: 12px;
+            margin: 0 12px;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+
+/* ==================== BOX ====================== */
+        /* ==================== BEADCUMB ====================== */
+#box-beadcumb{
+    margin-bottom: 18px;
+}
+
+#box-beadcumb .content a{
+    color: #447f60;
+}
+
+#box-beadcumb .content a:hover{
+    text-decoration: underline;
+}
+
+#box-beadcumb .content a.active{
+    text-decoration: underline;
+    color: #2a002a;
+}
+
+    /* ==================== CATEGORIES ====================== */
+
+
+
+    /* ==================== CATEGORY ====================== */
+#box-category .content{
+    padding-bottom: 1px;
+}
+
+#box-category .box-one-category{
+    width: 160px;
+    min-width: 160px;
+    display: inline-block;
+    margin-right: 5px;
+    *margin-right: 8px;
+
+    zoom: 1;
+    *display: inline;
+}
+
+#box-category .box-one-category .content{
+    height: 180px;
+    min-height: 180px;
+    position: relative;
+}
+
+#box-category .box-one-category .content p.image{
+    position: absolute;
+    width: 100%;
+    height: 152px;
+    line-height: 152px;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+#box-category .box-one-category .content p.image img{
+    vertical-align: middle;
+}
+
+#box-category .box-one-category .content p.title{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;    
+    text-align: center;
+    font-size: 13px;
+    border-top: 1px solid #d2d2d2;
+}
+
+#box-category .box-one-category .content p.title a{
+    color: #3f3f5f;
+}
+
+#box-category .box-one-category .content p.title a:hover{
+    color: blue;
+    text-decoration: underline;
+}

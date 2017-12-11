@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <script type="text/javascript">
+            /*
+                12356 => Output = 8
+            */
+
+            var n = new Number(152);
+            var enter = "<br>";
+
+            var max = 0;
+            while(n > 0){
+                var donvi = n % 10;
+                // if(donvi > max) max = donvi;
+                max = (donvi > max)?donvi:max;
+                n = (n - donvi) / 10;
+            }
+
+            document.write("Max: " + max + enter);
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

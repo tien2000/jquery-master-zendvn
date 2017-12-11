@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tab 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .clr{
+                clear: both;
+            }
+
+            #tab-C{
+                width: 600px;
+                border: 2px solid red;
+                margin: 30px auto;
+                padding: 10px;
+            }
+
+            #tab-C .tabs{
+                list-style: none;
+                display: inline-block;
+            }
+
+            #tab-C .tabs li{                
+                float: left;
+                margin-right: 2px;
+            }
+
+            #tab-C .tabs li a{
+                text-decoration: none;
+                background: url("images/tabC/tabB-rbg.png") right top no-repeat;
+                display: block;
+                padding-right: 6px;
+                color: white;
+            }
+
+            #tab-C .tabs li a span{
+                background:url("images/tabC/tabB-lbg.png") left top no-repeat;                
+                display: block;
+                padding: 2px 0px 0px 6px;
+                height: 19px;
+            }
+
+            #tab-C .tabs li a:hover, #tab-C .tabs li a.current{ 
+                background: url("images/tabC/tabB-rbg-active.png") right top no-repeat;
+                color: #5c5b5b;
+            }
+
+            #tab-C .tabs li a:hover span, #tab-C .tabs li a.current span{ 
+                background: url("images/tabC/tabB-lbg-active.png") left top no-repeat;
+                color: #5c5b5b;
+            }
+
+            #tab-C .box-wrapper{
+                border: 1px solid #a07575;
+                height: 140px;
+                text-align: justify;
+                
+                /* *margin-top: -10px; IE 7 Only*/
+            }           
+
+            #tab-C .box-wrapper .tab-box{
+                display: none;
+                padding: 10px;
+            }
+
+            #tab-C .box-wrapper .current{
+                display: block;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div id="tab-C">
+            <ul class="tabs">
+                <li><a href="#"><span>ReactJS</span></a></li>
+                <li><a href="#"><span>Khóa học GIT</span></a></li>
+                <li><a href="#" class="current"><span>Angular 4x</span></a></li>
+            </ul>
+            <div class="box-wrapper">
+                <div class="tab-box">
+                    Khóa học lập trình ReactJS cung cấp các kiến thức trọng tâm về ReactJS cũng như cách áp dụng ReactJS trong việc xây dựng các project chúng ta thường gặp trong thực tế.
+                </div>
+                <div class="tab-box ">
+                    Khoá học quản lý mã nguồn với GIT có tổng cộng 9 chương với khoảng 12 giờ video học trực tuyến, khoá học được biên soạn bám sát với các yêu cầu thực tế nên sẽ giúp bạn dễ dàng ứng dụng ngay vào công việc của mình
+                </div>
+                <div class="tab-box current">
+                    Khóa học lập trình Angular 4x là khóa học lập trình trực tuyến với 100% thời gian học qua video. Do đó bạn có thể truy cập vào khóa học từ bất kỳ nơi đâu và vào bất kỳ thời điểm nào mà bạn muốn.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

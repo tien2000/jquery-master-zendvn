@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script type="text/javascript">
+            function showImages(){
+                var listImg = new Array();
+                listImg[0] = "images/01.jpg";
+                listImg[1] = "images/02.jpg";
+                listImg[2] = "images/03.jpg";
+                listImg[3] = "images/04.jpg";
+                listImg[4] = "images/05.jpg";
+
+                // document.write(Math.floor(Math.random() * listImg.length));
+
+                var index = Math.floor(Math.random() * listImg.length);
+                var result = '<img src="'+ listImg[index] +'">';
+                document.getElementById("area-images").innerHTML = result;
+            }            
+        </script>
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .content{
+                margin: 10px auto;
+                text-align: center;
+                width: 600px;
+                height: 200px;
+            }
+
+                .content input[type=button]{
+                    padding: 3px 8px;
+                    margin-bottom: 10px;
+                }
+
+                    .content #area-images{
+                        border: 2px solid #ff0000;
+                        padding: 10px;
+                        display: inline-block;
+                    }
+        </style>
+
+    </head>
+    <body>
+        <div class="content">
+            <input type="button" value="Thính bả. Đớp đi!!!" onclick="showImages()" />
+            <div id="area-images">
+                <img src="images/01.jpg" alt="">
+            </div>
+        </div>
+        
+    </body>
+</html>

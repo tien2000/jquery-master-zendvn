@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 06</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script type="text/javascript">
+            var mynumber = 5;
+            var mystring = "Hello";
+            var myboolean = true;
+            var myObject = {};
+            var myarray = [];
+            var myundefine = undefined;
+            var myNull = null;
+
+            function myTypeOf(obj){
+                var type = typeof obj;
+                
+                if(type != "object"){
+                    return type;
+                }else if(obj instanceof Array){
+                    return "array";
+                }else if(obj == null){
+                    return null;
+                }else{
+                    return "object";
+                }
+            }
+
+            document.write(mynumber + " : " + myTypeOf(mynumber) + "<br>");
+            document.write(mystring + " : " + myTypeOf(mystring) + "<br>");
+            document.write(myboolean + " : " + myTypeOf(myboolean) + "<br>");
+            document.write(myObject + " : " + myTypeOf(myObject) + "<br>");
+            document.write(myarray + " : " + myTypeOf(myarray) + "<br>");
+            document.write(myundefine + " : " + myTypeOf(myundefine) + "<br>");
+            document.write(myNull + " : " + myTypeOf(myNull));
+
+            
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

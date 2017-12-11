@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 05</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">        
+            /*
+                Chuyển miliseconds thành year
+                1 năm   = 365 ngày
+                1 ngày  = 24h
+                1h      = 60m
+                1m      = 60s
+                1s      = 1000ms
+                => 1 năm= 365 * 24 * 60 * 60 * 1000
+            */    
+            var d = new Date();
+            var enter = "<br>";
+            var distance = Date.parse("12/12/12");
+            var yearMili = 365 * 24 * 60 * 60 * 1000;
+
+            document.write("Input: " + d + enter);
+
+            document.write("Parse: " + Math.round(distance/yearMili) + enter);
+
+            
+
+        </script>
+
+    </head>
+    <body>
+        
+    </body>
+</html>

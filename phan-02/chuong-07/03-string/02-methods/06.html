@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 06</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script type="text/javascript">
+            var str = new String("JavaScript is very very easy");
+            var enter = "<br>";
+            
+            /*
+                JavaScript is very easy
+                01234567890123456789012
+            */
+
+            document.write("input: " + str + enter);
+            document.write("<hr>");
+            
+            // substring(start, end): Trích xuất chuỗi từ vị trí start -> end (ko lấy giá trị end)
+            // start = 0, end = 0
+            document.write("substring(): " + str.substring(0) + enter);
+
+            // start = 10, end = 0
+            document.write("substring(): " + str.substring(12) + enter);
+
+            // start = 10, end = 13
+            document.write("substring(): " + str.substring(10, 15) + enter);
+
+            // start = 0, end = 1
+            document.write("substring(): " + str.substring(0, 1) + enter);
+
+            // start = -1, end = 0
+            document.write("substring(): " + str.substring(-1) + enter);
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

@@ -1,0 +1,62 @@
+#box-faq .content{
+    padding-bottom: 20px;
+}
+
+#box-faq .content .title{
+    height: 50px;
+    line-height: 50px;
+    font: bold 16px/50px Arial, Helvetica, sans-serif;
+}
+
+#box-faq .content p{
+    line-height: 20px;
+    margin-bottom: 25px;
+}
+
+    #box-faq .content p.main{
+        text-transform: uppercase;
+        line-height: 30px;
+        color: #637f11;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+#tab-D{
+    margin-top: 20px;
+}
+
+#tab-D .tab-box{
+    border: 1px solid #e5e5e5;
+    margin-top: -1px;
+}
+
+#tab-D .tab-box > a{
+    display: block;                
+    background: url("../images/faq-page/arrow-right.png") 11px center no-repeat;
+    padding: 5px 5px 5px 40px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;           
+    height: 50px;
+    line-height: 50px;         
+}
+
+#tab-D .tab-box > a:hover, #tab-D .current > a{
+    background: url("../images/faq-page/arrow-down.png") 11px center no-repeat;
+    color: green; 
+}
+
+#tab-D .tab-box > div{
+    display: none;
+}
+
+#tab-D .current > div{
+    background: #f7f7f7;
+    display: block;
+    text-align: justify;
+    padding: 10px;
+    border-top: 1px solid #e5e5e5;
+    padding: 20px 40px;
+    line-height: 24px;
+}

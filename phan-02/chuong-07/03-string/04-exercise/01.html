@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";
+
+            /*
+                Họ: 0 -> spaceFirst (indexOf) -> slice(start, end)
+                Tên: spaceEnd (lastindexOf) -> cuối chuỗi
+                Lót: spaceFirst -> spaceEnd
+            */           
+
+            String.prototype.splitName = function(){
+                var spaceFirst = this.indexOf(" ");
+                var spaceEnd = this.lastIndexOf(" ");
+                var result = "";
+
+                // document.write("Họ: " + this.slice(0, spaceFirst) + enter);
+                // document.write("Lót: " + this.slice(spaceFirst, spaceEnd) + enter);
+                // document.write("Tên: " + this.slice(spaceEnd) + enter);
+
+                if(spaceFirst > 0 && spaceEnd > 0){
+                    result = "Họ: " + this.slice(0, spaceFirst) + enter;
+                    result += "Lót: " + this.slice(spaceFirst, spaceEnd) + enter;
+                    result += "Tên: " + this.slice(spaceEnd) + enter;
+                } else{
+                    result = "Dữ liệu ko hợp lệ";
+                }
+
+                return result;
+            }
+
+            var fullName = new String();
+            fullName = "";
+            document.write(fullName.splitName() + enter);
+
+            function splitName(){
+                var fullName = new String();
+                fullName = document.getElementById("fullname").value;
+                fullName.splitName();
+                document.getElementById("result").innerHTML = fullName.splitName();
+            }
+        </script>
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;                
+            }
+
+            .content{
+                width: 400px;
+                height: 100px;
+                margin: 20px auto;
+                border: 2px solid red;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .content input[type=button]{
+                padding: 2px 5px;
+            }
+
+            .content #result{
+                text-align: justify;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="content">
+            <input type="text" name="fullname" id="fullname" placeholder="fullname" />
+            <input type="button" value="Hốt" onclick="splitName()" />
+            <div class="showInfo" id="result">
+
+            </div>
+        </div>
+    </body>
+</html>

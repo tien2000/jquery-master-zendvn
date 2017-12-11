@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 04</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script type="text/javascript">
+            var str = new String("JavaScript is very very easy");
+            var enter = "<br>";
+            
+        /*
+            JavaScript is very easy
+            01234567890123456789012
+        */
+
+            document.write("input: " + str + enter);
+            document.write("<hr>");
+
+        // search: Tìm kiếm và trả về giá trị xuất hiện đầu tiên của một giá trị nào đó được tìm kiếm trong chuỗi
+            document.write("search(very): " + str.search("very") + enter);
+
+        // match: Tìm kiếm và trả về giá trị được tìm kiếm trong chuỗi nếu tồn tại, ko tồn tại trả về null.
+            document.write("match(very): " + str.match("easy") + enter);
+
+        // replace: Tìm kiếm và thay thế giá trị old bằng giá trị new => replace(old, new)
+            document.write("replace(easy, hard): " + str.replace("easy", "hard") + enter);
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

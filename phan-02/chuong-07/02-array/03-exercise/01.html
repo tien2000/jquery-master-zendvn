@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <script type="text/javascript">
+            // Loại các phần tử trùng
+            var arr = [1,5,3,6,2,3,5,7];
+            var enter = "<br>";
+
+            /*
+                var newArr;
+                Duyệt ar => Kiểm tra phần tử ko tồn tại trong newArr (indexOf) -> push
+            */
+
+            var newArr = [];
+            for (const x in arr) {
+                if(newArr.indexOf(arr[x]) < 0){
+                    newArr.push(arr[x]);
+                }
+            }
+
+            document.write("arr: " + arr + enter);           
+            document.write("newArr: " + newArr + enter);           
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

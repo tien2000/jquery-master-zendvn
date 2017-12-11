@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Example 01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        /*
+                        12356 => Output = 8
+                    */
+
+        var n = new Number();
+        var enter = "<br>";
+
+        Number.prototype.getMaxDigit = function() {
+            var num = new Number(152);
+            var max = 0;
+
+            while (num > 0) {
+                var donvi = num % 10;
+                // if(donvi > max) max = donvi;
+                max = (donvi > max) ? donvi : max;
+                num = (num - donvi) / 10;
+            }
+            return max;
+        }
+
+        document.write("Max: " + n.getMaxDigit());
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

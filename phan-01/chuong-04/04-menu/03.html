@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Menu 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <style type="text/css">
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            .right {
+                margin: 30px auto;
+                width: 1000px;
+                border: 2px solid #F00;
+                padding: 20px;
+                height: auto;
+                min-height: 300px;
+            }
+            
+            #menu ul {
+                list-style: none;
+            }
+            
+            #menu ul li {
+                border: 1px solid #6e6e6e;
+                background: #bebdbe;
+                text-align: center;
+                width: 150px;
+                float: left;
+                margin-right: 2px;
+                position: relative;
+            }
+            
+            #menu ul li a{
+                text-decoration: none;
+                display: block;
+                line-height: 24px;
+                color: #000000;
+            }
+            
+            #menu ul li a:hover{
+                background: #e6e6e6;
+            }
+            
+            #menu ul ul {
+                display: none;
+            }
+
+            #menu ul ul li{
+                margin-bottom: 2px;
+            }
+
+            #menu ul li ul{
+                width: 800px;
+            }
+
+            #menu ul li ul li{
+                float: left;
+                width: 100px;
+            }
+
+            #menu ul li:hover > ul {
+                
+            }
+
+            #menu .current{
+                background: #e6e6e6;
+            }
+
+            #menu .show{
+                display: block;
+                position: absolute;
+                top: 27px;
+                left: -1px;
+                z-index: 999;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="right">
+            <div id="menu">
+                <ul>
+                    <li><a href="#"> Home </a></li>
+                    <li><a href="#"> About </a></li>
+                    <li><a href="#"> News </a>
+                        <ul class="show">
+                            <li><a href="#"> Tin trong nước </a></li>
+                            <li><a href="#"> Tin thế giới </a></li>
+                            <li class="current"><a href="#"> Tin thể thao </a></li>
+                            <li><a href="#"> Tin nội bộ </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"> Contact </a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

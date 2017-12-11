@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <script type="text/javascript">
+            function showMessages(user){
+                document.write("Ê ku : " + " <b>" + user + "</b><br>");
+            }
+
+            /*
+                Cách 1: Gọi trực tiếp
+                Cách 2: Thông qua sự kiện
+                Cách 3: Gọi hàm từ hàm khác
+            */
+
+            function callShowMessage(){
+                showMessages("TienLe");
+            }
+        </script>
+
+    </head>
+    <body>
+        <a href="#" onclick="callShowMessage();">Xin chào</a>
+    </body>
+</html>

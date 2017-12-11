@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var s = "Javascript is easy";
+            var enter = "<br>";
+            // var patt = new RegExp("javascript");
+
+            var patt = /[a-z0-9\.]{1,2}/im;
+
+            document.write("global: " + patt.global + enter);           // false
+            document.write("ignoreCase: " + patt.ignoreCase + enter);   // true
+            document.write("multiline: " + patt.multiline + enter);     // true
+            document.write("source: " + patt.source + enter);           // true
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

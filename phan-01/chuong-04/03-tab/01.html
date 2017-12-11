@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tab 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .clr{
+                clear: both;
+            }
+
+            #tab-A{
+                width: 1000px;
+                border: 2px solid red;
+                margin: 30px auto;
+                padding: 10px;
+            }
+
+            #tab-A .tabs{
+                list-style: none;
+            }
+
+            #tab-A .tabs li{                
+                float: left;
+                margin-right: 2px;
+                border: 1px solid #a07575;
+            }
+
+            #tab-A .tabs li a{
+                text-decoration: none;
+                padding: 2px 10px;
+                display: block;
+                
+            }
+
+            #tab-A .tabs li a:hover, #tab-A .tabs li a.current{                
+                background: #2eec58;
+                color: red;
+            }
+
+            #tab-A .box-wrapper{
+                border: 1px solid #a07575;
+                height: 140px;
+                text-align: justify;
+                margin-top: -1px;
+            }           
+
+            #tab-A .box-wrapper .tab-box{
+                display: none;
+                padding: 10px;
+            }
+
+            #tab-A .box-wrapper .current{
+                display: block;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div id="tab-A">
+            <ul class="tabs">
+                <li><a href="#">Khóa học lập trình ReactJS</a></li>
+                <li><a href="#">Khoá học quản lý mã nguồn với GIT</a></li>
+                <li><a href="#" class="current">Khóa học lập trình Angular 4x</a></li>
+            </ul>
+            <div class="clr"></div>
+            <div class="box-wrapper">
+                <div class="tab-box">
+                    Khóa học lập trình ReactJS cung cấp các kiến thức trọng tâm về ReactJS cũng như cách áp dụng ReactJS trong việc xây dựng các project chúng ta thường gặp trong thực tế.
+                </div>
+                <div class="tab-box ">
+                    Khoá học quản lý mã nguồn với GIT có tổng cộng 9 chương với khoảng 12 giờ video học trực tuyến, khoá học được biên soạn bám sát với các yêu cầu thực tế nên sẽ giúp bạn dễ dàng ứng dụng ngay vào công việc của mình
+                </div>
+                <div class="tab-box current">
+                    Khóa học lập trình Angular 4x là khóa học lập trình trực tuyến với 100% thời gian học qua video. Do đó bạn có thể truy cập vào khóa học từ bất kỳ nơi đâu và vào bất kỳ thời điểm nào mà bạn muốn.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

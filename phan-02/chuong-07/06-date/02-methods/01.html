@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            function showResult(){
+                var d = new Date();
+                var enter = "<br>";
+                var result = "<ul>";
+
+                result += "<li>Năm: " + d.getFullYear() + "</li>" + enter;
+                result += "<li>Tháng: " + parseInt(d.getMonth() + 1) + "</li>" + enter;
+                result += "<li>Ngày: " + d.getDate() + "</li>" + enter;
+                result += "<li>Giờ: " + d.getHours() + "</li>" + enter;
+                result += "<li>Phút: " + d.getMinutes() + "</li>" + enter;
+                result += "<li>Giây: " + d.getSeconds() + "</li>" + enter;
+                result += "<li>MiliGiây: " + d.getMilliseconds() + "</li>" + enter;                
+                result += "<li>Time: " + d.getTime() + "</li>" + enter;               
+                result += "<li>getTimezoneOffset: " + d.getTimezoneOffset() + "</li>" + enter;
+                document.getElementById("result").innerHTML = result;
+
+                result += "</ul>";
+            }
+
+        </script>
+
+        <style type="text/css">
+            #result{
+                margin: 20px auto;
+                height: 500px;
+                width: 600px;
+                border: 2px solid red;
+                padding: 10px;
+            }
+        </style>
+
+    </head>
+    <body>
+            <input type="button" value="Show Result" onclick="showResult()">
+        <div id="result"></div>
+        
+    </body>
+</html>

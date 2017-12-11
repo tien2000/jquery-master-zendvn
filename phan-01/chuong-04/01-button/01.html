@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Button 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .block{
+                width: 300px;
+                border: 2px solid red;
+                margin: 30px auto;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .btn-link{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                color: #ffffff;
+                text-decoration: none;
+                display: inline-block;
+                border: 2px solid #000000;
+                padding: 1px;
+                background: yellow;
+            }
+
+            .btn-link span{
+                display: block;
+                background: #669999;
+                padding: 4px 15px;
+            }
+
+            .btn-link:hover{
+                border: 1px solid red;
+                color: #009966;
+            }
+
+            .btn-link:hover span{
+                background: green;
+                color: red;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="block">
+            <a href="#" class="btn-link">
+                <span>Hello World</span>
+            </a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,175 @@
+/* ===================== BUTTON - CHANGE ===================== */
+
+#wrapper #header .top .currency .btn-link{
+    color: #444;
+    font: 12px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background: url("../images/change-rbg.png") right top no-repeat;
+    padding-right: 7px;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+}
+
+    #wrapper #header .top .currency .btn-link span{
+        background:url("../images/change-lbg.png") left top no-repeat;
+        padding-left: 7px;
+        display: block;
+    }
+
+    #wrapper #header .top .currency .btn-link:hover{
+        color: rgb(255, 255, 255);
+        background: url("../images/change-rbg.png") right bottom no-repeat;
+    }
+
+
+/* ==================== INPUT - BOX LOGIN, INPUT - BOX SEARCH ====================== */
+#box-login #login-form .row span.button, #box-search #search-form .row span.button{
+    background: url("../images/bg-text-l.gif") left top no-repeat;
+    height: 27px;
+    line-height: 27px;
+    display: block;
+}
+
+#box-login #login-form .row span.button span, #box-search #search-form .row span.button span{
+    background: url("../images/bg-text-r.gif") right top no-repeat;
+    height: 27px;
+    line-height: 27px;
+    display: inline-block;    
+}
+
+#box-login #login-form .row span.button span input, #box-search #search-form .row span.button span input{
+    color: #868686;
+    background: url("../images/bg-text-c.gif") left top repeat-x;
+    width: 166px;
+    height: 27px;
+    line-height: 27px;
+    border: none;
+    margin: 0 6px;
+    outline: none;
+    *margin-top: -1px;
+}
+
+
+/* ===================== INPUT - LOGIN, INPUT - SEARCH ===================== */
+    #box-login #login-form .row .btn-link, #box-search #search-form .row .btn-link{
+    color: rgb(255, 255, 255);
+    font: 12px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background: url("../images/change-rbg.png") right top no-repeat;
+    padding-right: 6px;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    width: 50px;
+    text-align: center;
+}
+
+    #box-login #login-form .row .btn-link span, #box-search #search-form .row .btn-link span{
+        background:url("../images/change-lbg.png") left top no-repeat;
+        padding-left: 6px;
+        display: block;
+    }
+
+    #box-login #login-form .row .btn-link:hover, #box-search #search-form .row .btn-link:hover{
+        color: rgb(145, 195, 228);
+        background: url("../images/change-rbg.png") right bottom no-repeat;
+    }
+
+/* =================== FORM CONTACT ================== */
+.area-contact #contact-form{
+    margin-top: 20px;
+}
+
+.area-contact #contact-form .row{
+    margin-bottom: 15px;
+}
+
+.area-contact #contact-form .row p{
+    margin-bottom: 5px;
+}
+
+.area-contact #contact-form .row p span{
+    font-weight: bold;
+    color: red;
+}
+
+.area-contact #contact-form .row span.button{
+    background: url("../images/contact-page/bg-text-l.gif") left top no-repeat;
+    height: 27px;
+    line-height: 27px;
+    display: block;
+}
+
+.area-contact #contact-form .row span.button span{
+    background: url("../images/contact-page/bg-text-r.gif") right top no-repeat;
+    height: 27px;
+    line-height: 27px;
+    display: inline-block;    
+}
+
+.area-contact #contact-form .row span.button span input{
+    color: #000000;
+    background: url("../images/contact-page/bg-text-c.gif") left top repeat-x;
+    width: 366px;
+    height: 27px;
+    line-height: 27px;
+    border: none;
+    margin: 0 6px;
+    outline: none;
+    *margin-top: -1px;
+    font-size: 12px;
+}
+
+/* =================== TEXTAREA CONTACT FORM ================== */
+.area-contact #contact-form .row span.textarea{
+    background: url("../images/contact-page/bg-text-l.png") left top no-repeat;
+    height: 173px;
+    display: block;
+}
+
+.area-contact #contact-form .row span.textarea span{
+    background: url("../images/contact-page/bg-text-r.png") right top no-repeat;
+    display: inline-block;    
+    height: 173px;
+}
+
+.area-contact #contact-form .row span.textarea span textarea{
+    color: #000000;
+    background: url("../images/contact-page/bg-text-c.png") left top repeat-x;
+    width: 354px;
+    border: none;
+    margin: 0 6px;
+    outline: none;
+    *margin-top: -1px;
+    font-size: 12px;
+    height: 173px;
+    resize: none;
+    overflow: hidden;
+    padding: 5px;
+}
+
+/* ===================== SEND EMAIL BUTTON ===================== */
+.area-contact #contact-form .row .btn-link{
+    color: rgb(255, 255, 255);
+    font: 12px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    background: url("../images/change-rbg.png") right top no-repeat;
+    padding-right: 6px;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    width: auto;
+    text-align: center;
+}
+
+    .area-contact #contact-form .btn-link span{
+        background:url("../images/change-lbg.png") left top no-repeat;
+        padding-left: 6px;
+        display: block;
+    }
+
+    .area-contact #contact-form .row .btn-link:hover{
+        color: rgb(145, 195, 228);
+        background: url("../images/change-rbg.png") right bottom no-repeat;
+    }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Menu 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <style type="text/css">
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            .right {
+                margin: 30px auto;
+                width: 700px;
+                border: 2px solid #F00;
+                padding: 20px;
+                height: auto;
+                min-height: 300px;
+            }
+            
+            #menu ul {
+                width: 200px;
+            }
+            
+            #menu ul li {
+                list-style: url(images/blue-arrow.png) inside;
+                border: 1px solid #999;
+                margin-bottom: 2px;
+                position: relative;
+            }
+            
+            #menu ul li a{
+                text-decoration: none;
+                color: #000;
+                line-height: 25px;
+                padding-left: 10px;
+                display: block;
+            }
+            
+            #menu ul li a:hover{
+                background-color:#3FF;
+            }
+            
+            #menu ul ul {
+                display: none;
+            }
+            
+            #menu .show{
+                display: block;
+                position: absolute;
+                top: -1px;
+                left: 200px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="right">
+            <div id="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">News</a>
+                        <ul class="show">
+                            <li><a href="#">Tin trong nước</a>
+                                <ul>
+                                    <li><a href="#">Kinh tế</a></li>
+                                    <li><a href="#">Giáo dục</a></li>
+                                    <li><a href="#">Giải trí</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Tin thế giới</a>
+                                <ul class="show">
+                                    <li><a href="#">Anh</a></li>
+                                    <li><a href="#">Pháp</a></li>
+                                    <li><a href="#">Mỹ</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Tin thể thao</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

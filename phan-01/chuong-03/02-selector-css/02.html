@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Example 01</title>
+        <style type="text/css">
+            /* 01. img[src] Định dạng các image có thuộc tính src 
+	img[src] { border: 2px solid #F00; } */
+	
+	/* 	02. img[src="small.gif"] Định dạng các image có thuộc tính src bằng 1 giá trị nào đó 
+	img[src="small.gif"] { border: 2px solid #F00; } */
+	
+	/* 	03. img[class~="abc"] Định dạng các image có thuộc tính class tồn tại 1 giá trị nào đó 
+	img[class~="abc"] { border: 2px solid #F00; } */
+	
+	/* 	04. img[alt|="small"] Định dạng các image có thuộc tính alt tồn tại 1 giá trị nào đó (lưu ý dấu -)
+	img[alt|="small"] { border: 2px solid #F00; } */
+	
+	/* 	05. img[title*="small"]	Định dạng các image có thuộc tính title có chứa "small" 
+	img[title*="small"] { border: 2px solid #F00; } */
+	
+	/* 	06. img[title^="small"]	Định dạng các image có thuộc tính title bắt đầu là giá trị "small"	
+	img[title^="small"] { border: 2px solid #F00; }*/
+	
+	/* 	07. img[title$="small"]	Định dạng các image có thuộc tính title kết thúc là giá trị "small"	
+	img[title$="small"] { border: 2px solid #F00; } */
+
+        </style>
+    </head>
+
+    <body>
+        <img src="small.gif" alt="small-main picture" title="small" class="abc xyz" />
+        <img src="" alt="sub picture" title="smalla" class="abc xyz" />
+    </body> 
+</html>

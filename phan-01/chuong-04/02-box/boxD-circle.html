@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Box D - circle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .right{
+                width: 300px;
+                margin: 30px auto;
+                border: solid 1px #F00;
+                padding: 10px;
+                background: yellow;
+            }
+
+            .boxD{
+                font: 12px Arial, Helvetica, sans-serif;
+                text-align: justify;
+            }
+
+            .boxD .header{
+                background: url("images/boxD-circle/tl.png") left top no-repeat;
+            }
+
+            .boxD .header .top-right{
+                background: url("images/boxD-circle/tr.png") right top no-repeat;
+            }
+
+            .boxD .header .top-center{
+                background: url("images/boxD-circle/bc01.jpg") left top repeat-x;
+                height: 12px;
+                margin: 0 14px;
+                border-top: 2px solid #4f4f4f;
+            }
+
+            .boxD .footer{
+                background: url("images/boxD-circle/bl.png") left bottom no-repeat;
+            }
+
+            .boxD .footer .bottom-right{
+                background: url("images/boxD-circle/br.png") right bottom no-repeat;
+            }
+
+            .boxD .footer .bottom-center{
+                background: url("images/boxD-circle/bc.jpg") bottom left repeat-x;
+                height: 12px;
+                margin: 0 16px;
+                border-bottom: 2px solid #4f4f4f;
+            }
+
+            .boxD .content{
+                background: #fbfdfb;
+                border: 2px solid #4f4f4f;
+                border-width: 0px 2px;
+            }
+
+            .boxD .content .top{
+                background: url("images/boxD-circle/tc.jpg") left -12px repeat-x;
+            }
+
+            .boxD .content .bottom{
+                background: url("images/boxD-circle/bc.jpg") left bottom repeat-x;
+                padding: 0 12px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="right">
+            <div class="boxD">
+                <div class="header">
+                    <div class="top-right">
+                        <div class="top-center"></div>
+                    </div>
+                </div>                
+                <div class="content">
+                    <div class="top">
+                        <div class="bottom">ZendVN là cơ sở học tập đầu tiên đảm bảo lượng kiến thức đầy đủ cho học viên miễn phí và trọn đời. Điều đó đồng nghĩa với việc trừ những giờ học cơ bản, bạn luôn được cấp một tài khoản trọn đời để có thể liên tục cập nhật kiến thức mới và ôn lại kiến thức cũ khi cần. Không những thế, khác với lối mòn kiểu cũ, học viên có thể gửi câu hỏi trực tiếp của mình đến giảng viên trong và ngay cả sau khóa học và được hỗ trợ ngay trên các công cụ trực tuyến hiện có. Đây chắc hẳn là điều mà bạn chỉ có thể có được khi học lập trình tại ZendVN - nơi cam kết hoạt động với tiêu chí không ngừng nâng cao chất lượng giảng dạy và thay đổi phương thức truyền tải kiến thức nhanh nhất đến từng học viên.</div>
+                    </div>                    
+                </div>
+                <div class="footer">
+                    <div class="bottom-right">
+                        <div class="bottom-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

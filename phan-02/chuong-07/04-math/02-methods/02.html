@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+
+        <script type="text/javascript">
+            var n = new Number(-7);
+            var enter = "<br>";
+
+            // document.write("Input: " + n + enter);
+            document.write("<hr>");
+            
+            // max (n1, n2, n3, ...)
+
+            // case 1
+            document.write("Max(5,4,5,7,8,54): " + Math.max(5,4,5,7,8,54) + enter);
+
+            // case 2
+            var arrNum = [5,4,5,7,8,54];
+            document.write("Max(5,4,5,7,8,54): " + Math.max.apply(Math, arrNum) + enter);
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

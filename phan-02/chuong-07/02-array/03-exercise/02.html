@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <script type="text/javascript">
+            // Loại các phần tử trùng
+            var arr = Array(1,5,3,6,2,3,5,7);
+            var enter = "<br>";
+
+            // var student = new Array("TienLS", "28", "Single");
+
+            var student = {
+                "name"   : "TienLS",
+                "age"    : 28,
+                "status" : "Single"
+            }
+
+            var result = {};
+            result["name"] = student["name"];
+            result["age"] = student["age"];
+            result["status"] = student["status"];
+
+            for (const x in result) {
+                document.write("student: " + result[x] + enter);            
+            }
+            
+            // document.write("student: " + student + enter);           
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>
