@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 03</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";
+            var s = "http://www.zendvn.com/%20my%20function?a=1&b=2$";
+            var s2= "http%3A%2F%2Fwww.zendvn.com%2F%20my%20function%3Fa%3D1%26b%3D2%24";
+
+            document.write("Input: " + s + enter);
+            document.write("Output decodeURI(): " + decodeURI(s) + enter);
+            document.write("Output decodeURIComponent: " + decodeURIComponent(s2) + enter);
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>
