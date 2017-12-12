@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 07</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";
+
+            this.myValidate = function(){
+                this.getVal = getVal;
+                this.setVal = setVal;
+                this.data     = "First Value";
+
+                function getVal(){
+                    return this.data;
+                }
+
+                function setVal(val){
+                    this.data = val;
+                }
+            };           
+
+            this.myValidateChild = function(){
+                myValidate.call(this);
+            }
+            
+            var myObj = new myValidateChild();
+
+            document.write("Properties: " +  myObj.data + enter);
+
+            myObj.setVal("Javascript");            
+            document.write("Properties: " +  myObj.data + enter);
+            document.write("Properties: " +  myObj.getVal() + enter);
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

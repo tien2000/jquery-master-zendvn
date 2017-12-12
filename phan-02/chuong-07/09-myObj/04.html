@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 04</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            // Cách 02
+            var enter = "<br>";
+            this.myValidate = function(){
+                // Thuộc tính
+                this.data       = "This is a test";
+                var private     = "Private text";
+
+                // Phương thức
+                this.getData = getData;
+                function getData(){
+                    return this.data;
+                }
+
+                this.getPrivate = getPrivate;
+                function getPrivate(){
+                    return private;
+                }
+            };
+            
+            var myObj = new myValidate();
+
+            document.write("Type Of: " + typeof myObj + enter);
+            document.write("Properties - data: " + myObj.data + enter);
+            document.write("Properties - private: " + myObj.private + enter);
+            document.write("Metthods - getPrivate: " + myObj.getPrivate() + enter);
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

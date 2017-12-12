@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 06</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            // Cách 02
+            var enter = "<br>";
+
+            this.myValidate = function(){
+                // Thuộc tính
+                this.data     = "Java";
+
+                // Phương thức
+                this.setData = setData;
+                function setData(val){
+                    this.data = val;
+                }
+            };
+            
+            var myObj = new myValidate();
+            
+
+            document.write("Properties - data - first: " +  myObj.data + enter);
+            document.write(enter);
+
+            myObj.setData("JavaScript");
+            document.write("Properties - data - second: " +  myObj.data + enter);
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

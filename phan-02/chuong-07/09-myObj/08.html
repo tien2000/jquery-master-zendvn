@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 08</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";
+            
+            this.myBox = function(){
+                // Thuộc tính
+                this.text = "";
+                this.attr = "";
+
+                // Phương thức
+                this.createBox = createBox;
+                function createBox(attr, text){
+                    var result;
+                    var style = createStyle(attr);
+
+                    result = "<div style='" + style + "'>" + text + "</div>";
+
+                    return result;
+                }
+
+                var createStyle = createStyle;
+                function createStyle(attr){
+                    var style = "text-align: center; margin-top: 20px; ";
+
+                    style += "width: " + attr[0] + "; ";
+                    style += "height: " + attr[1] + "; ";
+                    style += "background: " + attr[2] + "; ";
+                    style += "color: " + attr[3] + "; ";
+                    style += "line-height: " + attr[1] + "; ";
+
+                    return style;
+                }
+            }
+
+            var box = new myBox();
+            document.write("" + box.createBox(["100px", "100px", "red", "yellow"], "Box 01"));
+            document.write("" + box.createBox(["200px", "200px", "green", "white"], "Box 02"));
+            document.write("" + box.createBox(["50px", "60px", "#cecece", "#f00"], "Box 03"));
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>
