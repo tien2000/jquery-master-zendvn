@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var myProccess = "";
+            function Begin(){
+                myProccess = setInterval(function(){
+                    document.getElementById("content").innerHTML += "Ok hê lô a e<br>";
+                }, 1000);
+            }
+
+            function Stop(){
+                clearInterval(myProccess);
+            }
+
+        </script>
+
+        <style type="text/css">
+        
+        </style>
+
+    </head>
+    <body>
+        <input type="button" value="Start" onclick="Begin()">
+        <input type="button" value="Stop" onclick="Stop()">
+        <div id="content"></div>
+    </body>
+</html>

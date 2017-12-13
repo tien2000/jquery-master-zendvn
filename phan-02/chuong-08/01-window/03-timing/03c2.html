@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 04</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .content{
+                text-align: center;
+                border: 2px solid red;
+                width: 500px;
+                height: 100px;
+                padding: 15px;
+                margin: 10px auto;
+            }
+
+            .content h3{
+                color: red;
+                margin-bottom: 10px;
+            }
+
+            .content input[type=text]{
+                width: 150px;
+                text-align: center;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="content">
+            <h3>My Clock</h3>
+            <input type="text" name="myTime" id="myTime">
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        function clock(){
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            document.getElementById("myTime").value = t;
+        }
+
+        // Cách viết 1
+        // setInterval(function(){
+        //     clock();
+        // }, 1000);
+
+        // Cách viết 2
+        setInterval("clock()", 1000);
+
+    </script>
+</html>

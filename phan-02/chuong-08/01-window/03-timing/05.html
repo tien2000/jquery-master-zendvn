@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 05</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .content{
+                text-align: center;
+                border: 2px solid red;
+                width: 500px;
+                height: 100px;
+                padding: 15px;
+                margin: 10px auto;
+            }
+
+            .content h3{
+                color: red;
+                margin-bottom: 10px;
+            }
+
+            .content input[type=text]{
+                width: 150px;
+                text-align: center;
+            }
+
+            .content ul.control{
+                margin-bottom: 10px;
+            }
+
+            .content ul.control li{
+                list-style: none;
+                display: inline-block;
+            }
+
+            .content ul.control li a{
+                display: block;
+                padding: 5px 8px;
+                background: blueviolet;
+                color: white;
+                text-decoration: none;
+            }
+
+            .content ul.control li a:hover{
+                background: green;
+                text-decoration: underline;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="content">
+            <h3>My Clock</h3>
+            <ul class="control">
+                <li><a href="javascript:startClock()">Start</a></li>
+                <li><a href="javascript:pauseClock()">Pause</a></li>
+                <li><a href="javascript:resetClock()">Reset</a></li>
+            </ul>
+            <input type="text" name="myTime" id="myTime" value="00:00:00">
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        var msec = 0;
+        var sec  = 0;
+        var min  = 0;
+        var proccess;
+
+        function startClock(){
+            document.getElementById("myTime").value = showTwoDigit(min) + ":" + showTwoDigit(sec) + ":" + msec;
+            msec++;
+            if(msec == 100){
+                sec++;
+                msec = 0;
+            }
+
+            if(sec == 60){
+                min++;
+                sec = 0;
+            }
+
+            proccess = setTimeout("startClock()", 10);
+        }
+
+        function pauseClock(){
+            clearTimeout(proccess);
+        }
+
+        function resetClock(){
+            document.getElementById("myTime").value = "00:00:00";
+            msec = 0;
+            sec  = 0;
+            min  = 0;
+        }
+
+        function showTwoDigit(number){
+            if(number < 10){
+                number = "0" + number;                
+            }
+            return number;
+        }
+    </script>
+</html>

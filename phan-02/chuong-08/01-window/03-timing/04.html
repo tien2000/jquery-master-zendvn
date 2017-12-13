@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 04</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .content{
+                text-align: center;
+                width: 600px;
+                height: auto;
+                padding: 15px;
+                margin: 10px auto;
+            }
+
+            .content #areaImg{
+                border: 2px solid red;
+                padding: 10px;
+                display: inline-block;
+            }
+
+            .content input[type=button]{
+                padding: 3px 8px;
+                margin-bottom: 10px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="content">
+            <input type="button" value="Hidden" onclick="setHidden()">
+            <input type="button" value="Show" onclick="setShow()">
+            <div id="areaImg">
+                <img id="picture" src="images/01.jpg" alt="01.jpg">
+            </div>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        var maxOpacity = 1;
+        var minOpacity = 0;
+
+        function setHidden(){
+            var thisObj = document.getElementById("picture");
+            maxOpacity = maxOpacity - 0.1;
+            if(maxOpacity >= 0){
+                thisObj.style.opacity = maxOpacity;
+                setTimeout("setHidden()", 50);
+            } else{
+                thisObj.style.opacity = 0;
+            }
+        }
+
+        function setShow(){
+            var thisObj = document.getElementById("picture");
+            minOpacity = minOpacity + 0.1;
+            if(minOpacity <= 1){
+                thisObj.style.opacity = minOpacity;
+                setTimeout("setShow()", 50);
+            } else{
+                thisObj.style.opacity = 1;
+            }
+        }
+    </script>
+</html>
