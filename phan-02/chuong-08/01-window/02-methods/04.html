@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 04</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            /*
+                URL: Giá trị mặc định: _blank
+                name: {_blank, _parent, _self, _top, name}
+                specs
+                replace:
+                    true: Thay thế tài liệu hiện tại trong danh sách lịch sử
+                    false: Không thay thế tài liệu hiện tại trong danh sách lịch sử, tạo ra một tài liệu mới
+            */
+
+            var newWin = "";
+
+            function callOpen(){
+                var outHeight = window.outerHeight;
+                var outWidth = window.outerWidth;
+                var top = (outHeight - 500) / 2;
+                var left = (outWidth - 400) / 2;
+                var specs = "width=400";
+                specs += ", height=400";
+                specs += ", top=" + top;
+                specs += ", left=" + left;
+
+                newWin = window.open("", "New Window", specs);
+                newWin.document.write("This is a test" + newWin.name);
+            }
+
+            function callClose(){
+                if(newWin != ""){
+                    if(newWin.closed == true){
+                        alert("Cửa sổ đã đóng");
+                    }else{
+                        newWin.close();
+                    }
+                    
+                }else{
+                    alert("Cửa sổ chưa được mở");
+                }
+                
+            }
+        </script>
+
+        <style type="text/css">
+        
+        </style>
+
+    </head>
+    <body>
+        <input type="button" value="Open Window" onclick="callOpen()" />
+        <br><br>
+        <input type="button" value="Close Window" onclick="callClose()" />
+    </body>
+</html>
