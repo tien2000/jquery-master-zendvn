@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 04</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">  
+            var newWin1;
+            var newWin2;
+            function callOpen1(){
+                newWin1 = window.open("", "", "width=200, height=250, top=200, left=200");
+                newWin1.document.write("New Window 1");
+            }
+
+            function callOpen2(){
+                newWin2 = window.open("", "", "width=250, height=300, top=300, left=600");
+                newWin2.document.write("New Window 2");
+
+                // Chỉ có tác dụng trên Firefox @@
+                newWin1.focus();
+                newWin1.blur();
+                newWin2.focus();
+            }
+        </script>
+
+        <style type="text/css">
+        
+        </style>
+
+    </head>
+    <body>
+        <input type="button" value="Open Window 1" onclick="callOpen1()" />
+        <br><br>
+        <input type="button" value="Open Window 2" onclick="callOpen2()" />
+    </body>
+</html>
