@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 04</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            // Di chuyển đến cuối trang.
+            var proccess;
+            var deday = 10;
+            var scrollAmount = 20;
+
+            function getYOffset(){
+                var yOffset = (typeof(window.pageYOffset) == "number") ? window.pageYOffset : document.documentElement.scrollTop;
+                return yOffset;
+            }     
+
+            function animateScroll(){                
+                var yOffset = getYOffset();
+                if(yOffset >= document.body.scrollHeight){
+                    clearInterval(proccess);
+                }else{
+                    window.scrollBy(0, scrollAmount);
+                }
+            }       
+
+            function goBottom(){
+                proccess = setInterval("animateScroll()", deday);
+            }
+        </script>
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .content{
+                width: 400px;
+                margin: 10px auto;          
+                text-align: center;      
+            }
+
+            .content .box{
+                width: 400px;
+                height: 200px;
+                line-height: 200px;
+                background: rgb(172, 212, 107);
+                text-align: center;
+                margin: 0px 10px 10px 0;
+                font-size: 20px;
+            }
+
+            .content a{
+                text-decoration: none;
+                font-size: 20px;       
+                display: inline-block;         
+                background: #cc3333;
+                padding: 3px 8px;
+                margin-bottom: 10px;
+                width: 150px;
+                color: white;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="content">
+            <a href="javascript:goBottom();">Go To Bottom</a>
+            <div class="box">
+                Box 01
+            </div>
+            <div class="box">
+                Box 02
+            </div>
+            <div class="box">
+                Box 03  
+            </div>
+            <div class="box">
+                Box 04  
+            </div>
+            <div class="box">
+                Box 05  
+            </div>
+            <div class="box">
+                Box 06 
+            </div>
+        </div>
+    </body>
+</html>

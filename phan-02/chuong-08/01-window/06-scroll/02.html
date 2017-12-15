@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            function getXOffset(){
+                // Cách viết 1
+                // var xOffset = window.pageXOffset;
+                // if(typeof(window.pageXOffset) != "number"){
+                //     xOffset = document.documentElement.scrollLeft;
+                // }
+
+                // Cách viết 2
+                var xOffset = (typeof(window.pageXOffset) == "number") ? window.pageXOffset 
+                                                                       : document.documentElement.scrollLeft;
+
+                return xOffset;
+            }
+
+            function getYOffset(){
+                var yOffset = (typeof(window.pageYOffset) == "number") ? window.pageYOffset 
+                                                                       : document.documentElement.scrollTop;
+
+                return yOffset;
+            }
+
+            function callScrollBy(){
+                window.scrollBy(200,0);
+                alert(getXOffset());
+            }
+
+            
+        </script>
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .content{
+                width: 2400px;
+                margin: 10px auto;                
+            }
+
+            .content .box{
+                width: 400px;
+                background: rgb(172, 212, 107);
+                line-height: 200px;
+                text-align: center;
+                margin: 0px 10px 10px 0;
+                display: inline-block;
+                zoom: 1;
+                *display: inline;
+            }
+
+            .content .box a{
+                text-decoration: none;
+                font-size: 20px;                
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="content">
+            <div class="box">
+                <a href="javascript:callScrollBy();">Scroll (Position 1)</a>
+            </div>
+            <div class="box">
+                <a href="javascript:callScrollBy();">Scroll (Position 2)</a>
+            </div>
+            <div class="box">
+                <a href="javascript:callScrollBy();">Scroll (Position 3)</a>
+            </div>
+            <div class="box">
+                <a href="javascript:callScrollBy();">Scroll (Position 4)</a>
+            </div>
+            <div class="box">
+                <a href="javascript:callScrollBy();">Scroll (Position 5)</a>
+            </div>
+        </div>
+    </body>
+</html>
