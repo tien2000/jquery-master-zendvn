@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 06</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script type="text/javascript">
+            function closeSelf(){
+                window.self.close();
+            }
+
+            function closeOpener(){
+                window.opener.close();
+            }
+
+            function closeParent(){
+                window.parent.close();
+            }
+
+            if(window.top == window.self){
+                document.write("TOP");
+            }else{
+                document.write("IFRAME");
+            }
+        </script>
+
+    </head>
+    <body>
+        <input type="button" value='Close "Self"'   onclick="closeSelf();">
+        <input type="button" value='Close "Opener"' onclick="closeOpener();">
+        <input type="button" value='Close "Parent"' onclick="closeParent();">
+    </body>
+</html>
