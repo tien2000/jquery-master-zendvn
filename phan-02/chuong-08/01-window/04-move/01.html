@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var myWin;
+            var enter = "<br>";
+
+            function openWindow(){
+                myWin = window.open("", "New Window", "width=200, height=200, top=300, left=200");
+                myWin.document.write("Name: " + myWin.name);
+            }
+
+            function moveByWindow(){
+                myWin.moveBy(10,100);
+                myWin.focus();
+            }
+
+            function moveToWindow(type){
+                var posX;
+                var posY;
+                switch (type) {
+                    case "tl":
+                        posX = window.screenX;
+                        posY = window.screenY;
+                        break;
+                    case "tr":
+                        posX = outerWidth - myWin.outerWidth + window.screenX;
+                        posY = window.screenY;
+                        break;
+                    case "bl":
+                        posX = window.screenX;
+                        posY = outerHeight - myWin.outerHeight +window.screenY;
+                        break;
+                    case "br":
+                        posX = outerWidth - myWin.outerWidth + window.screenX;
+                        posY = outerHeight - myWin.outerHeight +window.screenY;
+                        break;
+                
+                    default:
+                        break;
+                }
+
+
+                myWin.moveTo(posX,posY);
+                myWin.focus();
+            }
+        </script>
+
+        <style type="text/css">
+        
+        </style>
+
+    </head>
+    <body>
+        <input type="button" value="Open Window" onclick="openWindow()">
+        <input type="button" value="Move by" onclick="moveByWindow()">
+        <input type="button" value="Move to" onclick='moveToWindow("br")'>
+        <div id="content">
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var myWin;
+            var enter = "<br>";
+
+            function openWindow(){
+                myWin = window.open("", "New Window", "width=200, height=200, top=300, left=200");
+                myWin.document.write("Name: " + myWin.name);
+            }
+
+            function resizeByWindow(){
+                myWin.resizeBy(200,100);
+                myWin.focus();
+            }
+            function resizeToWindow(){
+                var x = window.outerWidth;
+                var y = window.outerHeight;
+                myWin.resizeTo(x,y);
+                myWin.moveTo(window.screenX, window.screenY);
+                myWin.focus();
+            }
+
+
+        </script>
+
+        <style type="text/css">
+        
+        </style>
+
+    </head>
+    <body>
+        <input type="button" value="Open Window" onclick="openWindow()">
+        <input type="button" value="Resize by" onclick="resizeByWindow()">
+        <input type="button" value="Resize to" onclick='resizeToWindow()'>
+        <div id="content">
+
+        </div>
+    </body>
+</html>
