@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";
+            
+            function checkPlugin(pluginName){
+                var lstPlugins = navigator.plugins;
+                var isExist = false;
+                var patt = new RegExp(pluginName, "igm");
+
+                for (x in lstPlugins) {
+                    if(patt.test(lstPlugins[x].name) == true){
+                        isExist = true;
+                        break;
+                    }
+                    // document.write(lstPlugins[x].name + enter);
+                }
+                return isExist;
+            }            
+            // checkPlugin("Shockwave Flash");
+    
+
+            var flag = checkPlugin("Shockwave Flash");
+            if(flag == true){
+                document.write("Tìm thấy");
+            }else{
+                document.write("Không tìm thấy");
+            }
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>

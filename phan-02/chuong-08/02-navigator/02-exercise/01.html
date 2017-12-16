@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";
+
+            // userAgent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/66.4.134 Chrome/60.4.3112.134 Safari/537.36
+            // userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0
+            // userAgent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; InfoPath.3)
+
+            // document.write("userAgent: " + navigator.userAgent + enter);            
+
+            function detectBrowser(){
+                var userAgent = navigator.userAgent;
+                var browser = {
+                                "coc_coc_browser"   : "Cốc Cốc", 
+                                "Chrome"            : "Google Chrome", 
+                                "Firefox"           : "Firefox", 
+                                "MSIE"              : "Internet Explore", 
+                                "Opera"             : "Opera", 
+                                "Safari"            : "Safari"
+                              };
+
+                for (x in browser) {
+                    var patt = new RegExp(x, "igm");
+                    if(patt.test(userAgent) == true){
+                        return browser[x];
+                        break;
+                    }
+                }
+            }
+
+            document.write(detectBrowser());
+        </script>
+
+    </head>
+    <body>
+    
+    </body>
+</html>
