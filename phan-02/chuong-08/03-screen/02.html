@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";
+            
+            function openWin(w, h){
+                var specs = "";
+                specs += "width= " + w + ", ";
+                specs += "height= " + h + ", ";
+                specs += "top= " + (screen.height - h) / 2 + ", ";
+                specs += "left= " + (screen.width - w) / 2 + ", ";
+                var newWin = window.open("", "_blank", "width=400, height=200, " + specs);
+            }
+        </script>
+
+    </head>
+    <body>
+        <input type="button" value="Open Window" onclick="openWin(500, 300);">
+    </body>
+</html>
