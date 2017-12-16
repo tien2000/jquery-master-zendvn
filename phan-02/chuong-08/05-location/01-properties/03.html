@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 03</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";
+
+            var protocol = location.protocol;
+
+            // ======== Bỏ dấu ":" ============ //
+            // Cách 1
+            // var result = protocol.replace(":", "");
+            // document.write(result);
+
+            // Cách 2
+            var result = protocol.slice(0, protocol.length-1);
+            document.write(result);
+        </script>
+
+        <style type="text/css">
+        
+        </style>
+
+    </head>
+    <body>
+        
+    </body>
+</html>
