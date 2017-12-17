@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="js/cookie.js"></script>
+
+        <script type="text/javascript">        
+            createCookie("fullname", "Tien Le", 10);
+            createCookie("firstname", "Tien LS", "abc");
+            // deleteCookie("fullname");
+
+            var result = getCookie("fullname");
+            document.write(result);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

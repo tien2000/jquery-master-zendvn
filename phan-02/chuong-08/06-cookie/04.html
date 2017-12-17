@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 04
+
+        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <script src="js/cookie.js"></script>        
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            p{
+                margin: 10px;                
+            }
+
+            #result{
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p>Tổng số lần truy cập website <span id="result">1</span></p>
+        <script type="text/javascript">    
+            var cValue = getCookie("counter");
+            if(cValue == null){
+                cValue = 1;
+            }else{
+                cValue = Number(cValue) + 1;
+            }
+    
+            createCookie("counter", cValue);
+    
+            document.getElementById("result").innerHTML = cValue;
+        </script>
+    </body>
+
+    
+</html>

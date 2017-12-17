@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type="text/javascript">
+            var enter = "<br>";
+            
+            // Lưu Cookie
+            function setCookie(){
+                var fullname = document.getElementById("fullname").value;
+                if(fullname != ""){
+                    var now = new Date();
+                    now.setMonth(now.getMonth() + 1);
+                    document.cookie = "fullname= " + escape(fullname) + "; expies= " + now.toUTCString() + enter;
+                    alert("Cookie đã được lưu thành công");
+                }else{
+                    alert("Dữ liệu không được rỗng");
+                }
+            }
+
+            function getCookie(){
+                if(document.cookie.length > 0){
+                    var cookies = document.cookie;
+                    var arrCookie = cookies.split(";");
+                    for(var i = 0; i <= arrCookie.length; i++){
+                        var temp = arrCookie[i].split("=");
+                        var name = temp[0];
+                        var value = unescape(temp[1]);
+                        alert("Name: " + name + " - Value: " + value);
+                    }                    
+                    
+                }else{
+                    alert("Cookie chưa được thiết lập!");
+                }
+            }
+
+            function deleteCookie(name){
+                document.cookie = name + "=; expires= Thu, 1 Jan 1970 00:00:01 GMT;";
+            }
+        </script>
+
+        <style type="text/css">
+        
+        </style>
+
+    </head>
+    <body>
+        <input type="text" name="fullname" id="fullname" />
+        <input type="button" value="Set Cookie" onclick="setCookie();">
+        <input type="button" value="Get Cookie" onclick="getCookie();">
+        <input type="button" value="Delete Cookie" onclick='deleteCookie("fullname");'>
+    </body>
+</html>

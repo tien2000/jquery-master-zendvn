@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 05</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <script src="js/cookie.js"></script>        
+
+        <script type="text/javascript">    
+            function submitForm(){
+                var firstname = document.getElementById("firstname").value;
+                if(firstname != null || firstname != ""){
+                    createCookie("firstname", firstname);
+                }
+            }
+        </script>
+
+        <style type="text/css">
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            .content {
+                margin: 20px auto;
+                width: 500px;
+                border: 1px solid #999;
+            }
+            
+            .form div.row {
+                margin: 10px;
+            }
+            
+            .form div.row span{
+                display: inline-block;
+                width: 200px;
+                text-align: right;
+            }
+            
+            
+            .form div.row input[type=text]{
+                padding: 3px 5px;
+                width: 150px;
+            }
+            
+            .form div.row input[type=button]{
+                padding: 3px 5px;
+                display: block;
+                margin: 0px auto;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <form class="form" action="" method="post">
+            <div class="content">
+                <div class="row">
+                    <span>First Name:</span>
+                    <input type="text" name="firstname" id="firstname" placeholder="firstname">    
+                </div>
+                <div class="row">
+                    <span>First Name:</span>
+                    <input type="text" name="lastname" id="lastname" placeholder="lastname">
+                </div>
+                <div class="row">
+                    <span>First Name:</span>
+                    <input type="text" name="email" id="email" placeholder="email">
+                </div>
+                <div class="row">
+                    <input type="button" value="Submit Form" onclick="submitForm();">
+                </div>
+            </div>
+        </form>            
+    </body>
+
+    <script type="text/javascript">
+        var getFirstname = getCookie("firstname");
+        if(getFirstname != null || getFirstname != ""){
+            document.getElementById("firstname").value = getFirstname;
+        }
+    </script>
+    
+</html>
