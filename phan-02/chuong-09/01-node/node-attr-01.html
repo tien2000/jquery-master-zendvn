@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Node Attr 01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/functions.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var boxA = document.getElementById("boxA");
+            console.log(boxA);
+
+            var nodeAttr = boxA.attributes;
+            console.log(nodeAttr);
+            console.log(nodeAttr.getNamedItem("title"));            // Attribure Object
+            console.log(nodeAttr.getNamedItem("title").value);      // String
+            console.log(nodeAttr.getNamedItem("title").name);      // String
+            console.log(nodeAttr.getNamedItem("title").textContent);      // String (chỉ chạy trên IE-9)
+        }
+    </script>
+
+</head>
+<body>
+    <div id="boxA" class="boxA" title="Tìm hiểu thuộc tính Node">
+        Tìm hiểu thuộc tính Node
+    </div>
+</body>
+</html>
