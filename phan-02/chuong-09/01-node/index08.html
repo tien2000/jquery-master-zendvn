@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Node 01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        window.onload = function(){            
+        };
+
+        function getElementsByClassName(parentNode, targetClass){
+            var retnode = [];
+            var elemts = parentNode.getElementsByTagName("*");
+
+            if(elemts.length > 0){
+                var myClass = new RegExp("\\b" + targetClass + "\\b");  // \b: Biên trái, biên phải.
+                for (var i = 0; i < elemts.length; i++) {
+                    var myClassname = elemts.item(i).className;
+                    if(myClass.test(myClassname) == 1){
+                        retnode.push(elemts.item(i).className);
+                    }
+                }                
+            }
+            return retnode;
+        }
+    </script>
+
+</head>
+<body>
+    <div id="boxA" class="boxA">
+        <h1 class="title">Thuộc tính của Node</h1>
+        <p class="content">www.zendvn.com</p>
+        <div class="author">ZendVN Group</div>
+        <div class="abc content1">www.zendvn.com</div>
+    </div>
+
+    <div id="abc" class="content">div class=abc</div>
+    <div id="def" class="content">div class=def</div>
+</body>
+</html>

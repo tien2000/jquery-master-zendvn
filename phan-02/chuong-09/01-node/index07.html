@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Node 01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var boxA = document.getElementById("boxA");
+            var elemts = boxA.getElementsByClassName("content");
+            if(elemts.length > 0){
+                for (var i = 0; i < elemts.length; i++) {  
+                    elemts.item(i).style.color = "blue";
+                }
+            }
+            console.log(elemts);
+        };
+    </script>
+
+</head>
+<body>
+    <div id="boxA" class="boxA">
+        <h1 id="title">Thuộc tính của Node</h1>
+        <p class="content">www.zendvn.com</p>
+        <div class="author">ZendVN Group</div>
+        <div class="content">www.zendvn.com</div>
+    </div>
+
+    <div id="abc" class="content">div class=abc</div>
+    <div id="def" class="content">div class=def</div>
+</body>
+</html>
