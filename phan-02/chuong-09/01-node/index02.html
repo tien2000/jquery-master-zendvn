@@ -8,14 +8,8 @@
 
     <script type="text/javascript">
         window.onload = function(){
-            var title = document.getElementById("title");
-            console.log(title);
-
-            var author = document.getElementById("author");
-            console.log(author);            
-
-            var website = document.getElementById("website");
-            console.log(website);
+            var elemts = document.getElementsByTagName("div");
+            console.log(elemts);        // HTMLCollection - NodeList
         };
     </script>
 
@@ -23,8 +17,12 @@
 <body>
     <div id="boxA" class="boxA">
         <h1 id="title">Thuộc tính của Node</h1>
+        <p class="content">www.zendvn.com</p>
         <div id="author">ZendVN Group</div>
         <p id="website">www.zendvn.com</p>
     </div>
+
+    <div id="abc">div class=abc</div>
+    <div id="def">div class=def</div>
 </body>
 </html>
