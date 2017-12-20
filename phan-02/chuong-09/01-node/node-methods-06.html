@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Node Method 05</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/functions.js"></script>
+
+    <script type="text/javascript">
+        /*
+            replaceChild(): Kết hợp appendChild và removeNode
+        */
+
+        function reNode(){
+            var boxA = document.getElementById("boxA");
+            var firstNode = boxA.firstChild;
+            if(firstNode.nodeName == "#text"){
+                firstNode = firstNode.nextSibling;
+            }
+            console.log(firstNode);
+
+            var boxB = document.getElementById("boxB");
+            var firstNodeB = boxB.firstChild;
+            if(firstNodeB.nodeName == "#text"){
+                firstNodeB = firstNodeB.nextSibling;
+            }
+            console.log(firstNodeB);
+
+            boxB.replaceChild(firstNode, firstNodeB);
+
+        }
+    </script>
+
+    <style type="text/css">
+        .boxA{
+            height: 120px;
+        }
+
+        .boxA > div{
+            border: 1px solid red;
+            padding: 3px;
+            margin-bottom: 3px;
+            back
+        }
+    </style>
+
+</head>
+<body>
+    <input id="copy" onclick="reNode();" type="button" value="Submit">
+    
+    <div id="boxA" class="boxA">
+        <div>Home</div>
+        <div>About</div>
+        <div>Product</div>
+    </div>
+    <div id="boxB" class="boxA">
+        <p>p Tag</p>
+    </div>
+</body>
+</html>

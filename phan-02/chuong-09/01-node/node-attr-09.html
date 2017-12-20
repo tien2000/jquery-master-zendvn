@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Node Attr 09</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/functions.js"></script>
+
+    <script type="text/javascript">
+
+        window.onload = function(){
+            var boxA = document.getElementById("boxA");
+            console.log(boxA.nodeType);     // value 1: Element Node
+            var cls = boxA.attributes.getNamedItem("class");
+            console.log(cls.nodeType);      // value 2: Attribute Node
+
+            var textNode = boxA.childNodes[0];
+            console.log(textNode + " ");    // object Text, Not String
+            console.log(textNode.nodeType); // value 3: Text Node
+            console.log(textNode.nodeValue);
+        }
+    </script>
+
+</head>
+<body>
+    <div id="boxA" class="boxA">Node Type</div>
+</body>
+</html>
