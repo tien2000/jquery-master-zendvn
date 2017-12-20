@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Node Method 01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/functions.js"></script>
+
+    <script type="text/javascript">
+        /*
+            parentNode: Lấy Node cha của 1 node đã xác định.
+        */
+        
+
+        function checkChilds(){
+            var boxA = document.getElementById("boxA");
+            console.log(boxA.hasChildNodes());
+
+            var boxB = document.getElementById("boxB");
+            console.log(boxB.hasChildNodes());
+
+            var boxC = document.getElementById("boxC");
+            console.log(boxC.hasChildNodes());
+        }
+    </script>
+
+</head>
+<body>
+    <input id="copy" onclick="checkChilds();" type="button" value="Check Child Node">
+    
+    <div id="boxA" class="boxA"></div>
+    <div id="boxB" class="boxA">Box B</div>
+    <div id="boxC" class="boxA">
+        <p>P tag</p>
+    </div>
+</body>
+</html>
