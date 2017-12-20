@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Node Attr 11</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/functions.js"></script>
+
+    <script type="text/javascript">
+        /*
+            parentNode: Lấy Node cha của 1 node đã xác định.
+        */
+
+        window.onload = function(){
+            
+        }
+
+        function copyStyle(){
+            var boxA = document.getElementById("boxA");
+            var boxA_parent = boxA.parentNode;  // Tương đương parentElement
+            console.log(boxA_parent.style);
+            console.log(boxA_parent.style.cssText);
+
+            var boxB = document.getElementById("boxB");
+            boxB.style.cssText = boxA_parent.style.cssText;
+        }
+    </script>
+
+</head>
+<body>
+    <input id="copy" onclick="copyStyle();" type="button" value="Copy boxA value">
+    <div id="boxB" class="boxB">Box B</div>
+    <div style="padding: 3px; border: 2px solid red;">
+        <div id="boxA" class="boxA">Box A</div>
+    </div>      
+</body>
+</html>
