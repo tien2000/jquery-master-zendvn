@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Exercise 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" href="css/style.css" rel="stylesheet">
+        <script type="text/javascript" src="js/functions.js"></script>
+
+        <script type="text/javascript">
+            function newFile(){
+                var btnAddFile = document.getElementById("addFile");
+                var fileUpload = btnAddFile.previousSibling;
+                
+                if(fileUpload.nodeName == "#text"){
+                    fileUpload = fileUpload.previousSibling;
+                }
+
+                var newFileUpload = fileUpload.cloneNode(true);                
+
+                var frmUpload = document.getElementById("uploadForm");
+                console.log(frmUpload);
+                frmUpload.insertBefore(newFileUpload, btnAddFile);
+            }
+        </script>
+
+    </head>
+    <body>
+        <form method="post" action="upload.php" id="uploadForm" name="uploadForm" enctype="multipart/form-data">
+            <div class="row" style="margin: 10px 0;">
+                <label for="">Picture</label>
+                <input type="file" name="upload[]" id="uploadFile">
+            </div>
+            <input type="button" value="Add File" id="addFile" name="addFile" onclick="newFile();">
+            <input type="submit" value="Submit Now" id="btnSubmit" name="submit">
+        </form>
+    </body>
+</html>

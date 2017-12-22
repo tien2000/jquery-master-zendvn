@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Exercise 03</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="js/functions.js"></script>
+
+        <script type="text/javascript">
+            
+            function mRight(){
+                var boxA = document.getElementById("boxA");
+                var boxB = document.getElementById("boxB");
+                var firstNode = boxA.firstChild;
+                if(firstNode.nodeName == "#text"){
+                    firstNode = firstNode.nextSibling;
+                    var nodeText = firstNode.previousSibling;       // Xóa node #text
+                    boxA.removeChild(nodeText);
+                }
+                console.log(firstNode);
+                firstNode.style.backgroundColor = "pink";
+                boxB.appendChild(firstNode);
+            }
+
+            function mLeft(){
+                var boxA = document.getElementById("boxA");
+                var boxB = document.getElementById("boxB");
+                var lastNode = boxB.lastChild;
+                if(lastNode.nodeName == "#text"){
+                    lastNode = lastNode.previousSibling;
+                    var nodeText = firstNode.nextSibling;       // Xóa node #text
+                    boxB.removeChild(nodeText);
+                }
+
+                var childBoxA = boxA.childNodes;
+                for (var i = 0; i < childBoxA.length; i++) {
+                    console.log(childBoxA[i]);
+                }               
+                lastNode.style.backgroundColor = "";
+                if(boxA.hasChildNodes == false){
+                    
+                    boxA.appendChild(lastNode);
+                }else{
+                    var firstNodeBoxA = boxA.firstChild;
+                    boxA.insertBefore(lastNode, firstNodeBoxA);
+                }
+
+                console.log(lastNode);
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class="main">
+            <div id="boxA" class="box fleft">
+                <div class="row">1. Laptop</div>
+                <div class="row">2. iPhone</div>
+                <div class="row">3. Nokia</div>
+                <div class="row">4. Samsung</div>
+                <div class="row">5. Tablet</div>
+            </div>
+            <div id="control" class="fleft">
+                <input type="button" value="Move Right" id="moveRight" onclick="mRight();">
+                <input type="button" value="Move Left" id="moveLeft" onclick="mLeft();">
+            </div>
+            <div id="boxB" class="box fleft">
+                
+            </div>
+        </div>
+    </body>
+</html>

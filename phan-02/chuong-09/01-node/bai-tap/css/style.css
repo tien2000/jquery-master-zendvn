@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* ================ BT-1 ====================== */
+
+#uploadForm{
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid red;
+    width: 500px;
+    height: 300px;
+}
+
+.row{
+    margin: 10px;
+    border: 1px solid #cecece;
+    padding: 3px;
+}
+
+input{
+    padding: 3px;
+}
+
+/* ================ BT-2 ====================== */
+.main{
+    width: 1000px;
+    margin: 20px auto;
+}
+
+.box{
+    width: 300px;
+    border: 2px solid blue;
+    padding: 10px;
+    min-height: 200px;
+}
+
+#control{
+    margin: auto 50px;
+    line-height: 200px;
+}
+
+.fleft{
+    float: left;
+}

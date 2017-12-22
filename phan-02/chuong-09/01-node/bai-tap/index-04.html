@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Exercise 04</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" href="css/style.css" rel="stylesheet">
+        
+        <script type="text/javascript">            
+            function mRight(){
+                var boxA = document.getElementById("boxA");
+                
+                var firstNode = boxA.firstChild;
+                if(firstNode.nodeName == "#text"){
+                    firstNode = firstNode.nextSibling;	
+                    //Xoa node Text o truoc node firstNode
+                    var nodeText = firstNode.previousSibling;
+                    boxA.removeChild(nodeText);
+                }
+                console.log(firstNode);
+                
+                var boxB = document.getElementById("boxB");		
+                boxB.appendChild(firstNode);
+                
+                var childBoxB = boxB.childNodes;
+                for(var i=0;i<childBoxB.length; i++){
+                    console.log(childBoxB.item(i));
+                    var ordering = i + 1;
+                    if(ordering%2 == 0){
+                        childBoxB.item(i).style.backgroundColor = "#CFF";				
+                    }else{
+                        childBoxB.item(i).style.backgroundColor = "#FCC";	
+                    }
+                }
+            }
+
+            function mLeft(){
+                var boxB = document.getElementById("boxB");
+                
+                var lastNode = boxB.lastChild;
+                if(lastNode.nodeName == "#text"){
+                    lastNode = lastNode.previousSibling;	
+                    //Xoa node Text o truoc node firstNode
+                    var nodeText = lastNode.nextSibling;
+                    boxB.removeChild(nodeText);
+                }
+                
+                var boxA = document.getElementById("boxA");
+                lastNode.style.backgroundColor = "";
+                var childsBoxA = boxA.childNodes;
+                
+                
+                if(boxA.hasChildNodes() == false){
+                    boxA.appendChild(lastNode);
+                }else{
+                    var firstNodeBoxA = boxA.firstChild;
+                    boxA.insertBefore(lastNode,firstNodeBoxA);
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class="main">
+            <div id="boxA" class="box fleft">
+                <div class="row">1. Laptop</div>
+                <div class="row">2. iPhone</div>
+                <div class="row">3. Nokia</div>
+                <div class="row">4. Samsung</div>
+                <div class="row">5. Tablet</div>
+            </div>
+            <div id="control" class="fleft">
+                <button type="button" id="moveR" onclick="mRight();">Move right</button>            
+                <button type="button" id="moveL" onclick="mLeft();">Move left</button>
+            </div>
+            <div id="boxB" class="box fleft"></div>
+        </div>
+    </body>
+</html>
