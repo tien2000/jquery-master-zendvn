@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .box{
+                margin: 10px auto;
+                padding: 10px;
+                border: 2px solid red;
+                width: 500px;
+                height: 300px;
+            }
+        </style>
+
+        <script type="text/javascript">
+            window.onload = function(){
+                var boxA = document.getElementById("boxA");
+                console.log(boxA);
+
+                // Cach 1
+                var nodeText = boxA.childNodes;
+                console.log(nodeText);
+
+                console.log(nodeText[0].nodeValue);
+                // =========== Character Text ============== //
+                console.log(nodeText[0].data);
+                console.log(nodeText[0].length);
+            };
+            
+        </script>
+
+    </head>
+    <body>
+        <div id="boxA" class="box">ZendVN Group</div>
+    </body>
+</html>

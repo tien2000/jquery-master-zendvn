@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 03</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .box{
+                margin: 10px auto;
+                padding: 10px;
+                border: 2px solid red;
+                width: 500px;
+                height: 300px;
+            }
+        </style>
+
+        <script type="text/javascript">
+            /*
+                deleteData(number start, number end)
+            */
+            function process(){
+                var textBoxA = document.getElementById("boxA").firstChild; 
+                textBoxA.deleteData(0, 6);
+            }
+        </script>
+
+    </head>
+    <body>
+        <input type="button" value="Process" id="process" onclick="process();">
+        <div id="boxA" class="box">ZendVN Group is very friendly</div>
+    </body>
+</html>
