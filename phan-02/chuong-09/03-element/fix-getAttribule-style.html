@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/browser.js"></script>
+
+        <script type="text/javascript">  
+            function process(){
+                var boxA = document.getElementById("boxA");
+                
+                // Lấy style trên IE 7
+                var vStyle = boxA.getAttribute("style");
+                if (checkIE7() == true) {
+                    vStyle = boxA.style.cssText;
+                }
+                console.log(vStyle);
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>Element Object</h1>
+        <input type="button" value="Process" id="process" onclick="process();">
+        <div id="boxA" class="box" title="Khóa học jQuery Master ZendVN" style="color: blue; font-size: 18px;">
+            Khóa học jQuery Master ZendVN
+        </div>
+    </body>
+</html>

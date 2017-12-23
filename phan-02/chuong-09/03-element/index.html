@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Example 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/style.css">
+
+        <script type="text/javascript">
+            window.onload = function(){
+                var boxA = document.getElementById("boxA");
+                console.log(boxA.tagName);
+                console.log(boxA.nodeName);
+            };
+            
+        </script>
+
+    </head>
+    <body>
+        <h1>Element Object</h1>
+        <input type="button" value="Process" id="process" onclick="process();">
+        <div id="boxA" class="box">Khóa học jQuery Master ZendVN</div>
+    </body>
+</html>
