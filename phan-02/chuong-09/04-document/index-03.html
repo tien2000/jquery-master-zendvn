@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Doc 02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="js/script.js"></script>
+
+        <script type="text/javascript">
+            /*
+                createElement("div"): Tạo ra 1 node
+            */
+
+            function process(){
+                var newNode = document.createElement("div");
+                newNode.setAttribute("class", "box");
+                newNode.setAttribute("id", "boxB");
+                newNode.setAttribute("title", "This is a text boxB");
+                newNode.setAttribute("style", "color: red;");
+
+                var nodeText = document.createTextNode("jQuery Master");
+                newNode.appendChild(nodeText);
+
+                var parent = document.body;
+                console.log(parent);
+                parent.appendChild(newNode);
+                // document.getElementById("boxA").appendChild(newNode);
+            }
+        </script>
+
+    </head>
+    <body>
+    <h1>Document Object</h1>
+    <div id="boxA" class="box" title="This is a test" style="color: red;">
+        jQuery Master
+    </div>
+    <input type="button" value="Process" id="process" onclick="process();">
+    </body>
+</html>
