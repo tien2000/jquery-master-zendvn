@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSSStyleDeclaration 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="js/script.js"></script>
+        <script src="js/myCssElement.js"></script>
+        
+        <script type="text/javascript">
+            function process(){
+                var boxA = document.getElementById("boxA");
+                var cssBoxA = new myCssElement(boxA);
+                // console.log(cssBoxA.element);
+                // console.log(cssBoxA.cssStyle());
+                console.log(cssBoxA.cssStyle().color);
+
+                console.log(cssBoxA.outerWidth());                
+                console.log(cssBoxA.outerHeight());
+
+                console.log(cssBoxA.innerWidth());
+                console.log(cssBoxA.innerHeight());
+
+            }            
+        </script>
+
+    </head>
+    <body>
+        <h1>CSSStyleDeclaration Object</h1>
+        <div id="boxA" class="box color">
+            CSSStyleDeclaration
+        </div>
+        <input class="button" type="submit" id="process" value="Process" onclick="process();">
+        <div id="info" class="box"></div>
+    </body>
+</html>

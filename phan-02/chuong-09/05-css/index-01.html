@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSSStyleDeclaration 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        
+        <script type="text/javascript">
+            function process(){
+                var boxA = document.getElementById("boxA");
+                var txt = '';
+                txt = "boxA.style: " + boxA.style + "<br>"
+                        + "boxA.style.color: " + boxA.style.color + "<br>"
+                        + "boxA.style.backgroundColor: " + boxA.style.backgroundColor + "<br>"
+                        + "boxA.style.paddingLeft: " + boxA.style.paddingLeft;                        
+
+                var boxInfo = document.getElementById("info");
+                boxInfo.innerHTML = txt;
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>CSSStyleDeclaration Object</h1>
+        <div id="boxA" class="box" style="color: blue; background-color: aliceblue;">
+            CSSStyleDeclaration
+        </div>
+        <input type="submit" id="process" value="Process" onclick="process();">
+        <div id="info" class="box"></div>
+    </body>
+</html>

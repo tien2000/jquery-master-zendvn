@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSSStyleDeclaration 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        
+        <script type="text/javascript">
+            /*
+                removeProperty(): Xóa thuộc tính CSS, chỉ chạy IE-9 trở lên
+                                    Giữ nguyên cú pháp của css.
+            */
+            function process(){
+                var boxA = document.getElementById("boxA");
+                console.log(boxA.style.removeProperty);
+                if(boxA.style.removeProperty){
+                    boxA.style.removeProperty("background-color")
+                }else{
+                    boxA.style.removeAttribute("background-color");    // Chạy cho IE-7,8
+                }
+                
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>CSSStyleDeclaration Object</h1>
+        <div id="boxA" class="box" style="color: blue; background-color: aliceblue;">
+            CSSStyleDeclaration
+        </div>
+        <input type="submit" id="process" value="Process" onclick="process();">
+        <div id="info" class="box"></div>
+    </body>
+</html>
