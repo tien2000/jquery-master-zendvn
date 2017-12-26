@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Element</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <script type="text/javascript">
+            /*
+                offsetHeight:   Lấy chiều cao của đối tượng đang xét (content, padding, border).
+                offsetLeft:     Lấy khoảng cách từ đối tượng đến vị trí bên trái trình duyệt.
+                offsetParent:   Lấy đối tượng cha của đối tượng đang xét.
+                offsetTop:      Lấy khoảng cách đỉnh trình duyệt đến đối tượng.
+                offsetWidth:    Tương tự offsetHeight.
+                scrollHeight:   Độ cao của thanh cuộn.
+                scrollWidth:    Độ rộng của thanh cuộn.
+                scrollTop:      Chiều cao từ đỉnh đến vị trí thanh cuộn.
+                scrollLeft:     ...
+            */
+
+            function process(){
+                var boxA = document.getElementById("boxA");
+                var boxInfo = document.getElementById("info");
+                var txt = '';
+
+                txt = "offsetHeight: " + boxA.offsetHeight+ "<br>"
+                        + "offsetLeft: " + boxA.offsetLeft + "<br>"
+                        + "offsetParent: " + boxA.offsetParent + "<br>"
+                        + "offsetTop: " + boxA.offsetTop + "<br>"
+                        + "offsetWidthid: " + boxA.offsetWidth + "<br>"
+                        + "scrollHeight: " + boxA.scrollHeight + "<br>"
+                        + "scrollWidth: " + boxA.scrollWidth + "<br>"
+                        + "scrollTop: " + boxA.scrollTop + "<br>"
+                        + "scrollLeft: " + boxA.scrollLeft + "<br>"
+
+                boxInfo.innerHTML = txt;
+                
+                console.log(boxA.innerText);
+                // console.log(boxA.innerHTML);
+                // boxInfo.style.filter = "alpha(opacity=40)";
+                // boxInfo.style.opacity = 0.4;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>HTMLElement</h1>
+        <div id="boxA" class="box" style="width: 400px; height: 100px; overflow: auto;" title="This is title">
+            <div dir="rtl">1. HTML</div>
+            <div dir="lrt">2. CSS</div>
+            <div>3. JS</div>
+            <div>4. JQUERY</div>
+            <div>4. JQUERY</div>
+            <div>4. JQUERY</div>
+            <div>4. JQUERY</div>
+        </div>
+
+        <input class="button" type="button" value="Process" id="process" onclick="process();">
+        <div id="info" class="box"></div>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Element</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="js/myCssElement-02.js"></script>
+
+
+        <script type="text/javascript">
+            /*
+                
+            */
+
+            function process(){
+                var boxA = document.getElementById("boxA");
+                var boxInfo = document.getElementById("info");
+                var txt = '';
+
+                var cssBoxA = new myCssElement(boxA);
+
+                txt = "outerWidth: " + cssBoxA.outerWidth() + "<br>"
+                        + "outerHeight: " + cssBoxA.outerHeight() + "<br>"
+                        + "innerHeight: " + cssBoxA.innerHeight() + "<br>"
+                        + "innerWidth: " + cssBoxA.innerWidth() + "<br>"
+                        + "positionMax: " + cssBoxA.position().left + " | " 
+                                                + cssBoxA.position().top + " | " 
+                                                + cssBoxA.position().right + " | " 
+                                                + cssBoxA.position().bottom + "<br>" ;
+
+                boxInfo.innerHTML = txt;
+                
+                console.log(cssBoxA.position());
+
+                var boxC = document.getElementById("boxC");
+                boxC.style.position = "absolute";
+                boxC.style.zIndex = 1000;
+                boxC.style.left = cssBoxA.position().right + "px";
+                boxC.style.top = cssBoxA.position().bottom + "px";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>HTMLElement</h1>
+        <div id="boxA" class="box" style="width: 400px; overflow: auto;" title="This is title">
+            <div dir="rtl">1. HTML</div>
+            <div dir="lrt">2. CSS</div>
+            <div>3. JS</div>
+            <div>4. JQUERY</div>
+            <div>4. JQUERY</div>
+            <div>4. JQUERY</div>
+            <div>4. JQUERY</div>
+        </div>
+
+        <input class="button" type="button" value="Process" id="process" onclick="process();">
+        <div id="info" class="box"></div>
+        <div id="boxC" class="boxC"></div>
+    </body>
+</html>
