@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Element</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style-07.css" rel="stylesheet">
+        <script src="js/myCssElement-02.js"></script>
+
+
+        <script type="text/javascript">
+            /*
+                
+            */
+
+            var t;
+
+            function process(){
+                var boxA = document.getElementById("boxA");     
+                var cssBoxA = new myCssElement(boxA).cssStyle();
+                // console.log(cssBoxA);
+                
+                var firstNode = boxA.children[0];
+                var myCss = new myCssElement(firstNode);
+                var cssFirstNode = myCss.cssStyle();
+
+                firstNode.style.marginTop = parseInt(cssFirstNode.marginTop) - 1 + "px";
+
+                var tmp = parseInt(firstNode.offsetHeight)
+                          + parseInt(cssFirstNode.marginTop)
+                          + parseInt(cssBoxA.paddingTop);
+
+                console.log(tmp);
+
+                if (tmp < 5) {
+                    boxA.appendChild(firstNode);
+                    firstNode.style.marginTop = 0;
+                }
+
+                t = setTimeout(process, 50);
+            }
+
+            function stopMove(){
+                clearTimeout(t);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="content">
+            <h1>HTMLElement</h1>
+            <div id="boxA" class="box">
+                <div class="item">
+                    <h2>1. Khóa học lập trình ReactJS</h2>
+                    <div>
+                        Khóa học lập trình ReactJS cung cấp các kiến thức trọng tâm về ReactJS cũng như cách áp dụng ReactJS trong việc xây dựng các project chúng ta thường gặp trong thực tế.
+                    </div>                
+                </div>
+                <div class="item">
+                    <h2>2. Khóa học lập trình Angular 4x</h2>
+                    <div>
+                        Khóa học lập trình Angular 4x là khóa học lập trình trực tuyến với 100% thời gian học qua video
+                    </div>                
+                </div>
+                <div class="item">
+                    <h2>3. Khoá học quản lý mã nguồn với GIT</h2>
+                    <div>
+                        Khoá học quản lý mã nguồn với GIT có tổng cộng 9 chương với khoảng 12 giờ video học trực tuyến, khoá học được biên soạn bám sát với các yêu cầu thực tế.
+                    </div>                
+                </div>
+                <div class="item">
+                    <h2>4. Khóa học lập trình Frontend Master</h2>
+                    <div>
+                        Khóa học lập trình Frontend Master của ZendVN là một khóa học được nâng cấp từ khóa học thiết kế Web.
+                    </div>                
+                </div>
+                <div class="item">
+                    <h2>5. Khóa học lập trình Android</h2>
+                    <div>
+                        Khóa học lập trình Android là khóa học lập trình trực tuyến với 100% thời gian học qua video.
+                    </div>                
+                </div>
+                <div class="item">
+                    <h2>6. Khóa học lập trình WordPress 4.x</h2>
+                    <div>
+                        WordPress là một CMS nổi tiếng hiện nay và WordPress đang đứng ở đầu danh sách các CMS được ưu chuộng nhất trên thế giới.
+                    </div>                
+                </div>
+            </div>
+
+            <input class="button" type="button" value="Process" id="process" onclick="process();">  
+            <input class="button" type="button" value="Top" id="top" onclick="stopMove();">  
+    </div>      
+    </body>
+</html>

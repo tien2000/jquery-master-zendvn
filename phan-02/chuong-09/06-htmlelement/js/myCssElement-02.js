@@ -29,6 +29,10 @@ this.myCssElement = function(objHTML){
         }
     }
 
+    this.cssStyle = function(){
+        return getStyleElement(objHTML);
+    }
+
     /* ===============================
         PRIVATE
     ================================== */

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Element</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style-08-1.css" rel="stylesheet">
+        <script src="js/myCssElement-02.js"></script>
+
+
+        <script type="text/javascript">
+            /*
+                
+            */
+
+            window.onload = function(){                
+                var boxOverflow = document.getElementById("box-overflow");                
+                var boxChild = boxOverflow.children[0];
+                var cssBox = new myCssElement(boxChild).cssStyle();
+                var boxWidth = parseInt(boxChild.offsetWidth) 
+                                + parseInt(cssBox.marginLeft) 
+                                + parseInt(cssBox.marginRight) 
+                                + parseInt(cssBox.paddingLeft) 
+                                + parseInt(cssBox.paddingRight) 
+                                + parseInt(cssBox.borderLeft) 
+                                + parseInt(cssBox.borderRight);
+
+                boxOverflow.style.width = boxWidth * boxOverflow.children.length + "px";
+                // boxOverflow.style.width = "1200px";
+            }
+
+            var t;
+            var y = 0;
+            var flag = false;
+
+            function process(){
+                var boxA = document.getElementById("boxA");
+                var lastNode = boxA.children[0];                
+                var lastNodeChild = lastNode.children[lastNode.children.length - 1];
+                var firstNodeChild = boxA.children[0].children[0];
+                var cssLastNodeChild = new myCssElement(lastNodeChild).cssStyle();
+                var widthLastNodeChild = parseInt(lastNodeChild.offsetWidth)
+                                         + parseInt(cssLastNodeChild.marginLeft);
+
+                if (flag == false) {
+                    boxA.scrollLeft = boxA.scrollWidth;
+                    flag = true;
+                }
+
+                boxA.scrollLeft = boxA.scrollLeft - 1;
+                y = y + 1;
+
+                if (widthLastNodeChild - y <= 0) {
+                    lastNode.insertBefore(lastNodeChild, firstNodeChild);
+                    y = 0;
+                    boxA.scrollLeft = boxA.scrollWidth;                    
+                }
+
+                console.log(boxA.scrollLeft + " " + y + " " + widthLastNodeChild);
+
+                t = setTimeout(process, 5);
+            }
+
+            function stopMove(){
+                clearTimeout(t);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="content">
+            <h1>HTMLElement</h1>
+            <div id="boxA" class="box">
+                <div id="box-overflow" class="box-overflow">
+                    <div class="item">
+                        <h2>1. Khóa học lập trình ReactJS</h2>
+                        <div>
+                            Khóa học lập trình ReactJS cung cấp các kiến thức trọng tâm về ReactJS cũng như cách áp dụng ReactJS trong việc xây dựng các project chúng ta thường gặp trong thực tế.
+                        </div>                
+                    </div>
+                    <div class="item">
+                        <h2>2. Khóa học lập trình Angular 4x</h2>
+                        <div>
+                            Khóa học lập trình Angular 4x là khóa học lập trình trực tuyến với 100% thời gian học qua video
+                        </div>                
+                    </div>
+                    <div class="item">
+                        <h2>3. Khoá học quản lý mã nguồn với GIT</h2>
+                        <div>
+                            Khoá học quản lý mã nguồn với GIT có tổng cộng 9 chương với khoảng 12 giờ video học trực tuyến, khoá học được biên soạn bám sát với các yêu cầu thực tế.
+                        </div>                
+                    </div>
+                    <div class="item">
+                        <h2>4. Khóa học lập trình Frontend Master</h2>
+                        <div>
+                            Khóa học lập trình Frontend Master của ZendVN là một khóa học được nâng cấp từ khóa học thiết kế Web.
+                        </div>                
+                    </div>
+                    <div class="item">
+                        <h2>5. Khóa học lập trình Android</h2>
+                        <div>
+                            Khóa học lập trình Android là khóa học lập trình trực tuyến với 100% thời gian học qua video.
+                        </div>                
+                    </div>
+                    <div class="item">
+                        <h2>6. Khóa học lập trình WordPress 4.x</h2>
+                        <div>
+                            WordPress là một CMS nổi tiếng hiện nay và WordPress đang đứng ở đầu danh sách các CMS được ưu chuộng nhất trên thế giới.
+                        </div>                
+                    </div>
+                </div>
+            </div>
+
+            <input class="button" type="button" value="Process" id="process" onclick="process();">  
+            <input class="button" type="button" value="Stop" id="top" onclick="stopMove();">  
+        </div>       
+    </body>
+</html>
