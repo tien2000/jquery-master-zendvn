@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Element</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="js/myCssElement-02.js"></script>
+
+
+        <script type="text/javascript">
+            /*
+                attachEvent("event", function): Tạo sự kiện cho nút nhấn (Chỉ chạy trên IE).
+                addEventListener(): Tương tự attachEvent, chạy được trên Chrome.
+
+                Typeof: Kiểm tra phương thức có tồn tại ko
+
+                detachEvent("event", function): Xóa bỏ sự kiện cho nút nhấn (Chỉ chạy trên IE).
+                removeEventListener(): Tương tự attachEvent, chạy được trên Chrome.
+            */
+
+            window.onload = function(){
+                /* =========================
+                    btnProcess
+                ============================ */
+                var btnProcess = document.getElementById("process");               
+
+                // btnProcess.attachEvent("onclick", function(){alert("hi")});
+                // btnProcess.addEventListener("click", function(){alert("hi")}, false);
+                
+                // console.log(typeof btnProcess.attachEvent);
+                // console.log(typeof btnProcess.addEventListener);
+
+                if(typeof btnProcess.addEventListener == "function"){
+                    btnProcess.addEventListener("click", process, false);
+                }else{
+                    btnProcess.attachEvent("onclick", process);
+                }
+
+                /* =========================
+                    btnReset
+                ============================ */
+                var btnReset = document.getElementById("reset");
+
+                if(typeof btnReset.addEventListener == "function"){
+                    btnReset.addEventListener("click", reset, false);
+                }else{
+                    btnReset.attachEvent("onclick", reset);
+                } 
+
+                /* =========================
+                    btnRemove
+                ============================ */
+                var btnRemove = document.getElementById("remove");
+
+                if(typeof btnRemove.addEventListener == "function"){
+                    btnRemove.addEventListener("click", remove, false);
+                }else{
+                    btnRemove.attachEvent("onclick", remove);
+                }
+            }
+
+            function process(){                
+                var boxA = document.getElementById("boxA");
+                var elemts = boxA.children;
+                
+                for (var i = 0; i < elemts.length; i++) {
+                    var objHTML = elemts[i];
+                    // console.log(objHTML);
+                    if(i % 2 == 0){
+                        objHTML.style.backgroundColor = "#FCF";
+                    }else{
+                        objHTML.style.backgroundColor = "#CFC";
+                    }
+                }
+            }
+
+            function reset(){
+                var boxA = document.getElementById("boxA");
+                var elemts = boxA.children;
+
+                for (var i = 0; i < elemts.length; i++) {
+                    var objHTML = elemts[i];
+                    if(typeof (objHTML.style.removeProperty) == "function"){
+                        objHTML.style.removeProperty("background-color");
+                    }else{
+                        objHTML.removeAttribute("style");
+                    }
+                }
+            }
+
+            function remove(){
+                var btnProcess = document.getElementById("process");
+                
+                if (typeof (btnProcess.detachEvent) == "function") {
+                    btnProcess.removeEventListener("click", process, false);
+                }else{                    
+                    btnProcess.detachEvent("onclick", process);
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <h1>HTMLElement</h1>
+        <div id="boxA" class="box">
+            <div>1. HTML</div>
+            <div>2. CSS</div>
+            <div>3. JS</div>
+            <div>4. JQUERY</div>
+            <div>4. JQUERY</div>
+            <div>4. JQUERY</div>
+            <div>4. JQUERY</div>
+        </div>
+
+        <center>
+            <input class="button" type="button" value="Process" id="process">            
+            <input class="button" type="button" value="Reset" id="reset">            
+            <input class="button" type="button" value="Remove Event" id="remove">            
+        </center>        
+    </body>
+</html>

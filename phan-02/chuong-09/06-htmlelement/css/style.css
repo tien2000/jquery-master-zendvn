@@ -26,18 +26,13 @@
     filter: alpha(opacity=40);
 }
 
-#process{
-    margin: 20px auto;
-    padding: 3px;
+.button{
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid rgb(199, 39, 39);
 }
 
 .color{
     color: blue; 
     background-color: aliceblue;
-}
-
-.button{
-    font-size: 12px;
-    padding: 3px;
-    border: 1px solid rgb(199, 39, 39);
 }
