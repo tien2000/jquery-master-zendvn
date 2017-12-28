@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <script type="text/javascript">
+            /*
+                document.forms: Lấy Form.
+            */
+            window.onload = function(){
+                console.log(document.forms);
+                console.log(document.appForm + " ");
+                console.log(document.appForm.user + " ");
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>HTML Document</h1>
+        <form name="appForm" action="abc.php" method="post" enctype="multipart/form-data">
+            <label for="">User:</label>
+            <input class="input" type="text" name="user" id="user">
+        </form>
+
+        <form name="appWeb" action="abc.php" method="post" enctype="multipart/form-data">
+            <label for="">Email:</label>
+            <input class="input" type="email" name="email" id="email">
+        </form>
+    </body>
+</html>

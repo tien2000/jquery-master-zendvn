@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content{
+    margin: 20px auto;
+    text-align: center;
+}
+
+.box{
+    text-align: left;
+    margin: 20px auto;
+    padding: 10px;
+    border: 3px solid red;
+    width: 500px;
+    height: 200px;
+    min-height: 100px;
+    overflow: hidden;    
+}
+
+.button{
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid rgb(199, 39, 39);
+}
+
+.item{
+    padding: 5px 10px;
+    border: 1px solid #999;
+    margin-bottom: 7px;
+    background-color: #FFC;
+    zoom: 1;   /* Khắc phục lỗi giao diện trên IE7 */
+}
+
+.item > h2{
+    font-size: 16px;
+    padding: 5px 0;
+    color: #0000ff;
+}
+
+.item > div{
+    font-size: 13px;
+}
