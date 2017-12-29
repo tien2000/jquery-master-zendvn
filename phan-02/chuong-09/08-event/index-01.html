@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    
+    <script type="text/javascript">
+        function way_01(){
+            var boxA = document.getElementById("boxA");
+            boxA.style.backgroundColor = "#CCF";
+        }
+
+        window.onload = function(){
+            var way02 = document.getElementById("way02");
+            
+            way02.onclick = function(){
+                var boxA = document.getElementById("boxA");
+                boxA.style.backgroundColor = "#CCC";    
+            }
+
+            var way03 = document.getElementById("way03");
+
+            if (typeof way03.addEventListener == "function") {
+                way03.addEventListener("click", way_03, false);
+            }else{
+                way03.attachEvent("onclick", way_03);
+            }
+        }
+
+        function way_03(){
+            var boxA = document.getElementById("boxA");
+            boxA.style.backgroundColor = "#FFC";
+        }
+
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">Event</h1>
+    <div id="boxA" class="box">
+        Event is such!!!
+    </div>
+    <center>
+        <input type="button" value="Cach 1" class="button" onclick="way_01();" id="way01">
+        <input type="button" value="Cach 2" class="button" id="way02">
+        <input type="button" value="Cach 3" class="button" id="way03">
+    </center>
+</body>
+</html>

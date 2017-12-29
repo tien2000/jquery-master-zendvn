@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script type="text/javascript" src="js/mySupport.js"></script>
+    
+    <script type="text/javascript">
+        document.onclick = function(){
+            var boxA = document.getElementById("boxA");
+            var  e = event || window.event;       
+            var mySup = new mySupport();    
+
+            console.log(typeof e.pageX);
+
+            var t = "clientX: " + e.clientX
+                    + "<br> clientY: " + e.clientY
+                    + "<br> pageX: " + mySup.pageXY(e).pageX
+                    + "<br> pageY: " + mySup.pageXY(e).pageY;
+
+            boxA.innerHTML = t;
+
+            console.log(e);
+        }
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">Event</h1>
+    <div id="boxA" class="box" style="width: 1500px;"></div>
+</body>
+</html>
