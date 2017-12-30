@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script type="text/javascript" src="js/mySupport.js"></script>
+
+    <style type="text/css">
+        u{
+            color: red;
+        }
+    </style>
+    
+    <script type="text/javascript">
+        /*
+            onmouseover: Di chuyển chuột vào vùng chọn.
+            onmousemove: Di chuyển chuột trong vùng chọn.
+            onmouseout:  Di chuyển chuột ra khỏi vùng chọn.
+
+        */
+        window.onload = function(){
+            var boxA = document.getElementById("boxA");
+            var info = document.getElementById("info");
+            var txt = "";
+            var i = 1;
+
+            boxA.onmouseover = function(){
+                txt =i + "<br>. Bạn đang sử dụng <u>onmouseover Event</u> lên boxA" + txt;
+                info.innerHTML = txt;
+                boxA.style.backgroundColor = "#CFC";
+                i++;
+            }
+
+            boxA.onmouseout = function(){
+                txt =i + "<br>. Bạn đang sử dụng <u>onmouseout Event</u> lên boxA" + txt;
+                info.innerHTML = txt;
+                boxA.style.backgroundColor = "#FCF";
+                i++;
+            }
+
+            boxA.onmousemove = function(){
+                txt =i + "<br>. Bạn đang sử dụng <u>onmousemove Event</u> lên boxA" + txt;
+                info.innerHTML = txt;
+                boxA.style.backgroundColor = "#FCF";
+                i++;
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">Event</h1>
+    <div id="info" class="box" style="float: left; margin-right: 30px;"></div>
+    <div id="boxA" class="box" style="float: left; height: 200px;">Event is such!!!</div>
+</body>
+</html>

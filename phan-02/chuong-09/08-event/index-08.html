@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script type="text/javascript" src="js/mySupport.js"></script>
+    
+    <script type="text/javascript">
+        /*
+            altKey, ctrlKey, shiftKey: Kiểm tra các phím đặc biệt có được click ko.
+        */
+        document.onmousedown = function(){
+            var boxA = document.getElementById("boxA");
+            var  e = event || window.event;
+            console.log(e);
+
+            var t = "altKey: " +  e.altKey 
+                    + "<br>ctrlKey: " +  e.ctrlKey
+                    + "<br>shiftKey: " +  e.shiftKey;
+            boxA.innerHTML = t;    
+
+            console.log(e);
+        }
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">Event</h1>
+    <div id="boxA" class="box" style="width: 1500px;"></div>
+</body>
+</html>

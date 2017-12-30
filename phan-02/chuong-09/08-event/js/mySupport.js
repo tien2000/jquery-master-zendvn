@@ -10,6 +10,10 @@ this.mySupport = function(){
         return mouseButton(e);
     }
 
+    this.disableRigthClick(e) = function(){
+        return disableRigthClick(e);
+    }
+
 
     /* ========================
         PRIVATE
@@ -34,7 +38,7 @@ this.mySupport = function(){
                 case 1: vType = "Left Click";                        
                     break;
 
-                case 2: vType = "Midle Click";
+                case 2: vType = "Middle Click";
                     break;
 
                 case 3: vType = "Right Click";
@@ -60,5 +64,15 @@ this.mySupport = function(){
         }
 
         return vType;
+    }
+
+    function disableRigthClick(e){
+        var mySup = new mySupport();
+        var vType = mySup.mouseButton(e);
+        if (vType == "Right Click") {
+            alert("Right Click Disable");
+            return false;
+        }
+        alert("hi");
     }
 }
