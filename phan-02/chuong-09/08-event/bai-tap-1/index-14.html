@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Doc Exam 01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/moveElement.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function(){            
+            var boxA = document.getElementById("boxA");
+            var xBoxA = boxA.offsetLeft;
+            var yBoxA = boxA.offsetTop;
+            // console.log("A(x,y): " + xBoxA + " | " + yBoxA);
+
+            var xPointB = 833;
+            var yPointB = 100;
+
+            // {xA: 533, yA: 70, xB: 833, yB: 70}
+            var positionObj = {xA: xBoxA, yA: yBoxA, xB: xPointB, yB: yPointB};           
+
+            var btnMove = document.getElementById("btnMove");
+            var moveObj = new moveElement(positionObj);
+            btnMove.onclick = function(){                
+                moveObj.setMoveSize(1);
+                moveObj.setSpeed(10);
+                moveObj.run(boxA);
+            }
+
+            var btnStop = document.getElementById("btnStop");
+            btnStop.onclick = function(){
+                moveObj.stopMove();
+            }
+
+            
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">Event</h1>
+    <div id="parentA" class="box">
+        <div id="boxA" class="box2">BoxAA</div>
+    </div>
+    <center>
+        <input type="button" value="Move" id="btnMove" class="button">
+        <input type="button" value="Stop Move" id="btnStop" class="button">
+    </center>
+</body>
+</html>
