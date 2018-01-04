@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Keyboard Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    
+    <script type="text/javascript">
+        /*
+            Giới hạn số ký tự truyền vào.
+            content.onchange: Chống sử dụng chuột cắt dán.
+            this: tương đương với content.
+        */
+        window.onload = function(){
+            var content = document.appForm.content;
+            content.onchange = content.onkeyup = function(){
+                var charLength = document.getElementById("charLength");
+                
+                if (this.value.length >= 0) {
+                    this.value = this.value.substr(0,100);
+                }
+                charLength.innerText = this.value.length;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Keyboard Events</h1>
+    <form class="box" action="" name="appForm" method="post" enctype="multipart/form-data">
+        <label for="">Content: </label>
+        <br>
+        <textarea name="content" class="input" id="content" cols="65" rows="10"></textarea>
+        <br>
+        Giới hạn là 100 ký tự (Số ký tự hiện thời là <span id="charLength">0</span>)
+    </form>
+</body>
+</html>
