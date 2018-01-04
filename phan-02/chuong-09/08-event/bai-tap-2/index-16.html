@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Doc Exam 01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/myCssElement-02.js"></script>
+    <script src="js/move.js"></script>   
+
+    <script type="text/javascript">
+        /*
+             e.target: Lấy đối tượng HTML được click vào.
+             target.parentNode.id: Xác định cha của đổi tượng HTML được click vào.
+        */
+        window.onload = function(){            
+            document.onclick = function(){
+                var e = event || window.event;
+                var target = e.target != null ? e.target : e.srcElement;
+
+                if (target.parentNode.id == "boxA") {
+                    moveIt(target);
+                }                
+                // console.log(target.parentNode);
+            }
+        }
+
+        function moveIt(objHTML){
+            var cssTarget       = new myCssElement(objHTML);
+            var offsetTarget    = cssTarget.getOffset(objHTML);
+            objHTML.style.width = objHTML.offsetWidth + "px";
+            objHTML.style.backgroundColor  = "#FFC";
+            document.body.appendChild(objHTML);
+
+            var boxB       = document.getElementById("boxB");
+            var cssBoxB    = new myCssElement(boxB);            
+
+            var offsetBoxB = cssTarget.getOffset(boxB);
+
+            var xB = offsetBoxB.left 
+                        + parseInt(cssBoxB.cssStyle().paddingLeft)
+                        + parseInt(cssBoxB.cssStyle().borderLeftWidth);
+
+            var yB = offsetBoxB.top 
+                        + parseInt(cssBoxB.cssStyle().paddingTop)
+                        + parseInt(cssBoxB.cssStyle().borderTopWidth);
+
+            var posObj = {xA: offsetTarget.left,
+                          yA: offsetTarget.top,
+                          xB: xB,
+                          yB: yB};
+
+            var mObj   = new moveElement(posObj);
+            mObj.run(objHTML);
+            mObj.setSpeed(10);
+
+            console.log(offsetTarget);
+            console.log(offsetBoxB);
+            console.log(xB + " | " + yB);
+            console.log(posObj);
+            console.log(mObj.getDirection());
+        }
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center;">Events</h2>
+    <div id="boxA" class="box fleft">
+        <div class="items">1. HTML</div>
+        <div class="items">2. CSS</div>
+        <div class="items">3. JAVASCRIPT</div>
+        <div class="items">4. PHP</div>
+        <div class="items">5. MYSQL</div>
+    </div>
+
+    <div id="boxB" class="box fleft"></div>
+    <div class="clr"></div>
+</body>
+</html>
