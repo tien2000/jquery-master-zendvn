@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Object Events - onload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    
+    <script type="text/javascript">
+        /*
+            Cách 1: txtUsername:: Viết hàm, gán trực tiếp vào thẻ thông qua thuộc tính onfocus, onblur (Chỉ sử dụng khi chỉ có 1 phần tử đơn độc).
+            Cách 2: txtPassword:: Viết hàm, gọi hàm vào thuộc tính onfocus, onblur của JS, truyền tham số.
+            Cách 3: txtEmail:: Viết hàm, sử dụng thuộc tính addEventListener để gọi hàm.
+        */
+
+        window.onload = function(){
+            var txtUsername = document.appForm.username;
+            var txtPassword = document.appForm.password;
+            var txtEmail = document.appForm.email;
+
+            txtPassword.onfocus = function(){
+                focusElement(this);
+            }
+
+            txtPassword.onblur = function(){
+                blurElement(this);
+            }
+
+            txtEmail.addEventListener("focus", function(){ focusElement(this); }, false);
+            txtEmail.addEventListener("blur", function(){ blurElement(this); }, false);
+        }
+
+        function focusElement(elemt){
+            elemt.style.setProperty("background-color", "#CFC");
+        }
+
+        function blurElement(elemt){
+            elemt.style.removeProperty("background-color");
+        }
+    </script>
+</head>
+<body>
+    <h1>Object Events</h1>
+    <h2>onblur - onchange - onfocus - onreset - onselect - onsubmit</h2>
+    <div id="boxA" class="box">
+        <form name="appForm" action="process.php" method="post" enctype="multipart/form-data">
+            <ul class="list">
+                <li>
+                    <label for="">Username:</label>
+                    <input onfocus="focusElement(this);" onblur="blurElement(this);" type="text" name="username" id="username" class="input txtShort">
+                </li>
+                <li>
+                    <label for="">Password:</label>
+                    <input type="password" name="password" id="password" class="input txtMedium">
+                </li>
+                <li>
+                    <label for="">Email:</label>
+                    <input type="email" name="email" id="email" class="input txtMedium">
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>

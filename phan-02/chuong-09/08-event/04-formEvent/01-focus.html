@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Object Events - onload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    
+    <script type="text/javascript">
+        /*
+            onfocus: 
+            onblur: Chuyển đối tượng được xác định sang đối tượng khác.
+        */
+
+        window.onload = function(){
+            var txtUsername = document.appForm.username;
+
+            txtUsername.onfocus = function(){
+                this.style.setProperty("background-color", "#CFC");
+            }
+
+            txtUsername.onblur = function(){
+                this.style.removeProperty("background-color");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Object Events</h1>
+    <h2>onblur - onchange - onfocus - onreset - onselect - onsubmit</h2>
+    <div id="boxA" class="box">
+        <form name="appForm" action="process.php" method="post" enctype="multipart/form-data">
+            <ul class="list">
+                <li>
+                    <label for="">Username:</label>
+                    <input type="text" name="username" id="username" class="input txtShort">
+                </li>
+                <li>
+                    <label for="">Password:</label>
+                    <input type="password" name="password" id="password" class="input txtMedium">
+                </li>
+                <li>
+                    <label for="">Email:</label>
+                    <input type="email" name="email" id="email" class="input txtMedium">
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
