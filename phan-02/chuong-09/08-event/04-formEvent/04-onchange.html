@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form Events - onchange</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    
+    <script type="text/javascript">
+        /*
+            obj.selectedIndex: Cho biết đang chọn ở phần tử nào.
+            obj.options: Tập hợp các phần tử option.
+        */
+
+        function getInfo(obj){
+            var val = obj.value;
+            var txtCode = document.appForm.code;
+
+            var optSelected = obj.options[obj.selectedIndex];
+
+            txtCode.value = val + " | " + optSelected.text;
+
+            // console.log(optSelected.text);
+        }
+    </script>
+</head>
+<body>
+    <h1>Form Events - onchange</h1>
+    <h2>onblur - onchange - onfocus - onreset - onselect - onsubmit</h2>
+    <div id="boxA" class="box">
+        <form name="appForm" action="process.php" method="post" enctype="multipart/form-data">
+            <ul class="list">
+                <li>
+                    <label for="">Username:</label>
+                    <select class="input txtShort" name="city" id="city" onchange="getInfo(this);">
+                        <option value="hcm">Tp. HCM</option>
+                        <option value="hn">Hà Nội</option>
+                        <option value="dn">Đà Nẵng</option>
+                        <option value="ct">Cần Thơ</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="">Value:</label>
+                    <input type="text" name="code" id="password" class="input txtMedium">
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
