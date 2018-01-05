@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.box{
+    margin: 20px auto;
+    padding: 10px;
+    border: 3px solid red;
+    width: 500px;
+    height: 200px;
+    overflow: auto;
+}
+
+.content{
+    height: 1000px;
+    width: 1200px;
+    background-color: #ccc;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Object Events - onload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    
+    <script type="text/javascript">
+        function changeColor(){
+            alert("Page id loaded. Window will change background color");
+            document.body.style.backgroundColor = "green";
+        }
+    </script>
+</head>
+<body onload="changeColor();">
+    <h1>Object Events</h1>
+    <h2>onload - onunload - onresize - onscroll</h2>
+</body>
+</html>

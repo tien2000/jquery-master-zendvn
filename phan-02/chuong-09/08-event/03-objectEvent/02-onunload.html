@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Object Events - onload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    
+    <script type="text/javascript">
+        /*
+            onunload: Thực hiện tác vụ khi đóng trình duyệt (Ko chạy được trên tất cả các trình duyệt).
+            window.onbeforeunload: Giống onunload, chạy được trên tất cả các trình duyệt.
+        */
+
+        window.onbeforeunload = function(){
+            return "Do you want to quit?";
+        }        
+    </script>
+</head>
+<body>
+    <h1>Object Events</h1>
+    <h2>onload - onunload - onresize - onscroll</h2>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Object Events - onload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    
+    <script type="text/javascript">
+        /*
+            window.onresize: Hiển thị kích thước khi thay đổi độ rộng của trình duyệt.
+        */
+
+        window.onload = function(){
+            var boxA = document.getElementById("boxA");
+            boxA.innerHTML = "w: " + window.outerWidth + " h: " + window.outerHeight;
+        }  
+
+        window.onresize = function(){
+            var boxA = document.getElementById("boxA");
+            boxA.innerHTML = "w: " + window.outerWidth + " h: " + window.outerHeight;
+        }      
+    </script>
+</head>
+<body>
+    <h1>Object Events</h1>
+    <div class="box" id="boxA"></div>
+</body>
+</html>

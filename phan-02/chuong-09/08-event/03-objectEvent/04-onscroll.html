@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Object Events - onload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style-04.css" />
+    
+    <script type="text/javascript">
+        /*
+            boxA.scrollLeft = boxA.scrollWidth - boxA.clientWidth
+            boxA.scrollTop = boxA.scrollHeight - boxA.clientHeight
+        */
+
+        window.onload = function(){
+            showInfo();
+            var boxA = document.getElementById("boxA");
+            boxA.onscroll = showInfo;
+        }
+
+        function showInfo(){
+            var boxA = document.getElementById("boxA");
+            var info = document.getElementById("info");
+            info.innerHTML = "boxA.w: " + boxA.clientWidth + "<br>"
+                                + "boxA.h: " + boxA.clientHeight + "<br>"
+                                + "<hr/>"
+                                + "boxA.scrollWidth: " + boxA.scrollWidth + "<br>"
+                                + "boxA.scrollHeight: " + boxA.scrollHeight + "<br>"
+                                + "<hr/>"
+                                + "Current Width: " + boxA.scrollLeft + "<br>"
+                                + "Current Top: " + boxA.scrollTop + "<br>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Object Events</h1>
+    <div class="box" id="boxA">
+        This is a Top
+        <br>
+        <div class="content"></div>
+        This is a Bottom
+    </div>
+
+    <div id="info" class="box"></div>
+</body>
+</html>
