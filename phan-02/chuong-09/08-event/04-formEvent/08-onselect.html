@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form Events - onchange</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    
+    <script type="text/javascript">
+        /*
+            window.getSelection: Trường hợp chạy trên Chrome , IE9 trở lên.
+        */
+
+        function getVal(obj){
+            var info = document.getElementById("info");
+
+            if (window.getSelection) {
+                var activeElemt = document.activeElement;
+                // console.log(activeElemt.tagName);
+                if (activeElemt.tagName == "TEXTAREA" || activeElemt.tagName == "INPUT") {
+                    var txtElemt = document.activeElement.value;
+                    var startPos = document.activeElement.selectionStart;
+                    var endPos = document.activeElement.selectionEnd;
+                    var valText = txtElemt.substring(startPos, endPos);
+
+                    // console.log(startPos + " | " + endPos);                    
+                }
+            } else{
+                // Chạy trên IE8 trở xuống.
+                if (document.selection.createRange) {
+                    var range = document.selection.createRange();
+                    console.log(range.text);
+                    var valText = range.text;
+                }
+
+                // console.log("IE");
+            }
+
+            info.innerHTML = "Select String: " + valText;
+        }
+    </script>
+</head>
+<body>
+    <h1>Form Events - onchange</h1>
+    <h2>onblur - onchange - onfocus - onreset - onselect - onsubmit</h2>
+    <div id="info" class="box"></div>
+    <div id="boxA" class="box">
+        <form name="appForm" action="process.php" method="get" enctype="multipart/form-data" onreset="return confirmReset();">
+            <ul class="list">
+                <li>
+                    <label for="">Content: </label>
+                    <textarea onselect="getVal(this);" name="content" id="" cols="58" rows="6" class="input">JavaScript DOM khó quá, học mệt quá!!!</textarea>
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
