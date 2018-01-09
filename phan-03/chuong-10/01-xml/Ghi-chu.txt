@@ -9,3 +9,11 @@
 	+ > : &gt;
 	+ " : &quot;
 	+ ' : &apos;
+
+- <xsl:template match="/"> Nội dung </xsl:template>:
+	+ match: Chọn thẻ bắt đầu (dấu "/" là toàn bộ tập tin).
+
+- <xsl:if test="book/weight &gt; 500"> Nội dung </xsl:if>: Điều kiện trong xsl.
+
+- for-each select="book": Vòng lặp.
+- sort select="weight" order="descending" data-type="number": Sắp xếp theo chiều giảm dần của weight.

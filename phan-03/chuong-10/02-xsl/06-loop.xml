@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xml" href="06-loop.xsl"?>
+
+<book_shop>
+    <book>
+        <title>Lập trình jQuery</title>
+        <author>ZendVN Group</author>
+        <pages>500</pages>
+        <weight units="gam">400</weight>
+    </book>
+    <book>
+        <title>Lập trình PHP</title>
+        <author>ZendVN Group</author>
+        <pages>800</pages>
+        <weight units="gam">900</weight>
+    </book>
+    <book>
+        <title>Lập trình WP</title>
+        <author>ZendVN Group</author>
+        <pages>1200</pages>
+        <weight units="gam">1500</weight>
+    </book>
+</book_shop>
