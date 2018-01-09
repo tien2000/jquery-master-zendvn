@@ -1,0 +1,11 @@
+﻿- Mỗi tập tin XML phải có 1 nút gốc.
+- Mở thẻ phải đóng thẻ.
+- Thẻ không có dữ liệu ở giữa có thể ghi tắt (Vd: <img />)
+- Thẻ đóng và thẻ mở phải giống nhau, thẻ đóng có thêm dấu "/", (XML phân biệt hoa thường).
+- Sử dụng ngoặc kép để chứa thông tin dữ liệu trong thuộc tính thẻ.
+- Ko được sử dụng những giá trị đặc biệt (& < > " ') vào trong nội dung thẻ và nội dung thuộc tính. Nếu muốn sử dụng phải dùng keycode
+	+ & : &amp;
+	+ < : &lt;
+	+ > : &gt;
+	+ " : &quot;
+	+ ' : &apos;

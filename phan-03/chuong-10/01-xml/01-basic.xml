@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<book>
+    <title>Lập trình jQuery</title>
+    <author>ZendVN Group</author>
+    <pages>500</pages>
+    <weight units="gam">400</weight>
+</book>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<book_shop>   <!-- Nút gốc -->
+    <book>
+        <title>Lập trình jQuery</title>
+        <author>ZendVN Group</author>
+        <pages>500</pages>
+        <weight units="gam">400</weight>
+    </book>
+    <book>
+        <title>Lập trình PHP</title>
+        <author>ZendVN Group</author>
+        <pages>600</pages>
+        <weight units="gam">500</weight>
+    </book>
+    <book>
+        <title>Lập trình WP</title>
+        <author>ZendVN Group</author>
+        <pages>700</pages>
+        <weight units="kg">1</weight>
+    </book>
+</book_shop>

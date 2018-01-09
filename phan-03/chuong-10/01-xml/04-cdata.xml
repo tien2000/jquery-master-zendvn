@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+    
+ -->
+
+<book>
+    <title>Lập trình &amp; jQuery</title>
+    <author>ZendVN &gt; Group</author>
+    <pages>500</pages>
+    <weight units="gam">400</weight>
+    <content>
+    <![CDATA[
+        <title>Lập trình &amp; jQuery</title>
+        <author>ZendVN &gt; Group</author>
+        <pages>500</pages>
+        <weight units="gam">400</weight>
+    ]]>
+    </content>
+</book>
