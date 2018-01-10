@@ -15,5 +15,14 @@
 
 - <xsl:if test="book/weight &gt; 500"> Nội dung </xsl:if>: Điều kiện trong xsl.
 
-- for-each select="book": Vòng lặp.
-- sort select="weight" order="descending" data-type="number": Sắp xếp theo chiều giảm dần của weight.
+- xsl:for-each select="book": Vòng lặp.
+- xsl:sort select="weight" order="descending" data-type="number": Sắp xếp theo chiều giảm dần của weight.
+
+=============================================
+XPATH:
+- Dấu //: Truy xuất đến bất kỳ phần tử nào nằm trong tập tin xml, thêm node vào phía sau dấu // (Vd: select="//book")
+- + - * /(dấu chia ký hiệu "div").
+- format-number(): Làm tròn số lẻ thập phân ('##0.###').
+- round(): Làm tròn nguyên số lẻ.
+- count(): Đếm.
+- sum(): Tính tổng.
