@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script type="text/javascript" src="js/xml.js"></script>
+
+    <script type="text/javascript">
+        /*
+            xHttp.open(): Khi readyState : 0 (Chưa chuẩn bị đọc tập tin được truyền vào).
+                          Khi readyState : 1 (Chuẩn bị đọc tập tin được truyền vào nhưng chưa lấy về).
+            xHttp.send(): Khi readyState : 4 (Đã nhận được dữ liệu về).
+            xHttp.responseXML: Lấy dữ liệu XML về từ máy chủ.
+        */
+        window.onload = function(){
+            var btnProcess = document.getElementById("process");
+            btnProcess.onclick = function(){
+                var boxA = document.getElementById("boxA");
+
+                var val = loadFile("files/002.php", "GET", "text");
+
+                boxA.innerHTML = val;
+
+                console.log(val);
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <center>
+        <div id="boxA" class="box">
+            
+        </div>
+        <div>
+            <input type="button" value="Process" id="process" name="process" class="button">
+        </div>
+    </center>
+</body>
+</html>
