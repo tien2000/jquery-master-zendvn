@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+    <script type="text/javascript">
+        /*
+            xHttp.setRequestHeader(label, val): Dùng để khai báo cách truyền dữ liệu từ trình duyệt lên máy chủ
+        */
+        window.onload = function(){
+            var btnProcess = document.getElementById("process");
+            btnProcess.onclick = function(){
+                var boxA    = document.getElementById("boxA");
+                var method  = "POST";
+                var url     = "files/005.php";
+
+                if (window.XMLHttpRequest) {
+                    var xHttp = new XMLHttpRequest;
+                } else{
+                    var xHttp = new ActiveXObject("Microsoft.XMLHTTP");     // Chạy trên iE
+                }               
+
+                var user    = document.appForm.username.value;
+                var pwd     = document.appForm.password.value;
+                var params  = "username=" + user + "&password=" + pwd;                
+
+                // Xác định phương thức và tập tin muốn lấy thông tin.
+                // Phương thức GET - POST
+                xHttp.open(method, url, true);
+
+                xHttp.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+                // Gửi yêu cầu đến máy chủ.
+                // console.log(params);
+                xHttp.send(params);
+                
+
+                // Lấy nội dung trả về từ máy chủ.                
+                xHttp.onreadystatechange = function(){
+                    if (xHttp.readyState == 4 && xHttp.status == 200) {
+                        // var val = xHttp.responseText;
+                        var xmlDOM  = xHttp.responseXML;
+                        var flag    = xmlDOM.getElementsByTagName("flag")[0].childNodes[0].nodeValue;
+                        var msg     = "";
+
+                        if (flag == "error") {
+                            msg = xmlDOM.getElementsByTagName("msg")[0].childNodes[0].nodeValue;
+                        } else{
+                            msg = "Các bạn đã đăng nhập thành công";    
+                        }                       
+
+                        boxA.innerHTML = msg;
+
+                        console.log(msg);
+                        console.log(flag);
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div id="boxA" class="box">
+        
+    </div>
+
+    <div id="form" class="box">
+        <form id="appForm" name="appForm" action="" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="">Username:</label>
+                <input type="text" name="username" id="username" class="input txtShort">
+            </div>
+            <div>
+                <label for="">Password:</label>
+                <input type="password" name="password" id="password" class="input txtShort">
+            </div>
+        </form>
+    </div>
+
+    <div style="text-align: center;">
+        <input type="button" value="Process" id="process" name="process" class="button">
+    </div>
+</body>
+</html>

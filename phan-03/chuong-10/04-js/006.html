@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+    <script type="text/javascript">
+        /*
+
+        */
+        window.onload = function(){
+            var btnProcess = document.getElementById("process");
+            btnProcess.onclick = function(){
+                var boxA = document.getElementById("boxA");
+                var method = "GET";
+                var url = "files/006.php";
+
+                if (window.XMLHttpRequest) {
+                    var xHttp = new XMLHttpRequest;
+                } else{
+                    var xHttp = new ActiveXObject("Microsoft.XMLHTTP");     // Chạy trên iE
+                }                
+
+                // Xác định phương thức và tập tin muốn lấy thông tin.
+                // Phương thức GET - POST
+                xHttp.open(method, url, true);
+
+                xHttp.setRequestHeader("Token", "9999");
+                xHttp.setRequestHeader("Token123", "1111");
+
+                // Gửi yêu cầu đến máy chủ.
+                xHttp.send();
+
+                xHttp.onreadystatechange = function(){
+                    if (xHttp.readyState == 4 && xHttp.status == 200) {
+                        var val = xHttp.responseText;
+                        boxA.innerHTML = val;
+
+                        console.log(val);
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div id="boxA" class="box">
+        
+    </div>
+    <center>
+        <div>
+            <input type="button" value="Process" id="process" name="process" class="button">
+        </div>
+    </center>
+</body>
+</html>
