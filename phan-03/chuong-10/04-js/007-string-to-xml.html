@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+    <script type="text/javascript">
+        /*
+            window.DOMParser: Chuyển đổi chuỗi thành đối tượng XML.
+            parser.parseFromString(string, mimeType): Chuyển chuỗi thành XML.
+            xmlDOM.async: Thiết lập đồng bộ (false: Không đồng bộ).
+            xmlDOM.loadXML(text): Phương thức lấy nội dung.
+        */
+
+        var text; 
+        text = '<book id="11">';
+        text += '<title>Lập trình jQuery</title>';
+        text += '<author>ZendVN Group</author>';
+        text += '<pages>500</pages>';
+        text += '<weight units="gam">400</weight>';
+        text += '<price>';
+        text += '<real>35.50</real>';
+        text += '<sale-off>35.00</sale-off>';
+        text += '</price>';
+        text += '<shipping>';
+        text += '<US>1.3</US>';
+        text += '<EU>2.3</EU>';
+        text += '<VN>5.6</VN>';
+        text += '</shipping>';
+        text += '</book>';
+
+        window.onload = function(){
+            var btnProcess = document.getElementById("process");
+            btnProcess.onclick = function(){                
+                if (window.DOMParser) {
+                    var parser = new DOMParser();
+                    var xmlDOM = parser.parseFromString(text, "text/xml");                    
+                } else{  // IE
+                    var xmlDOM = new ActiveXObject("Microsoft.XMLDOM");     // Chạy trên iE
+                    xmlDOM.async = false;
+                    xmlDOM.loadXML(text);
+                }
+
+                console.log(xmlDOM);
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div id="boxA" class="box">
+        
+    </div>
+    <center>
+        <div>
+            <input type="button" value="Process" id="process" name="process" class="button">
+        </div>
+    </center>
+</body>
+</html>
