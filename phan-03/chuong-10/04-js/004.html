@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+    <script type="text/javascript">
+        /*
+            xHttp.getAllResponseHeaders(): Lấy all thông tin trả về từ máy chủ.
+            xHttp.getResponseHeader("content-type"): Lấy thông tin được truyền vào từ máy chủ.
+            xHttp.readyState: Thông báo trạng thái của đối tượng 
+                                (bằng 0 nghĩa là chưa thực thi trạng thái open()
+                                 bằng 4 nghĩa là đã thực thi trạng thái open() và đã send()
+                                 bằng 2 nghĩa là yêu cầu đã được gửi đến máy chủ nhưng chưa nhận đc giá trị trả về
+                                 bằng 3 nghĩa là đã nhận được dữ liệu trả về nhưng chưa phải là toàn bộ dữ liệu.)
+
+            xHttp.status: = 200: quá trình gửi nhận dữ liệu thành công.
+                          = 400 - 599: Quá trình gửi nhận đã có lỗi.
+
+            xHttp.statusText: - OK: Thực thi thành công.
+                              - Not Found: Thất bại.
+
+            xHttp.onreadystatechange: open(, , true): Kiểm soát các trạng thái trong quá trình xử lý Ajax
+        */
+        window.onload = function(){
+            var btnProcess = document.getElementById("process");
+            btnProcess.onclick = function(){
+                var boxA = document.getElementById("boxA");
+                var method = "GET";
+                var url = "files/004.php";
+
+                if (window.XMLHttpRequest) {
+                    var xHttp = new XMLHttpRequest;
+                } else{
+                    var xHttp = new ActiveXObject("Microsoft.XMLHTTP");     // Chạy trên iE
+                }
+
+                
+
+                // Xác định phương thức và tập tin muốn lấy thông tin.
+                // Phương thức GET - POST
+                xHttp.open(method, url, true);
+
+                // Gửi yêu cầu đến máy chủ.
+                xHttp.send();
+
+                // console.log(xHttp.getAllResponseHeaders());
+                // console.log(xHttp.getResponseHeader("content-type"));
+
+                // Lấy nội dung trả về từ máy chủ.
+                // var val = xHttp.responseText;
+                // boxA.innerHTML = val;
+
+                // console.log(val);
+
+                // console.log(xHttp.readyState);  // 0, 1, 4, 2, 3
+                // console.log(xHttp.status);         // 200: ok - 404: error
+                // console.log(xHttp.statusText);
+
+                xHttp.onreadystatechange = function(){
+                    if (xHttp.readyState == 4 && xHttp.status == 200) {
+                        var val = xHttp.responseText;
+                        boxA.innerHTML = val;
+
+                        console.log(val);
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <center>
+        <div id="boxA" class="box">
+            
+        </div>
+        <div>
+            <input type="button" value="Process" id="process" name="process" class="button">
+        </div>
+    </center>
+</body>
+</html>
