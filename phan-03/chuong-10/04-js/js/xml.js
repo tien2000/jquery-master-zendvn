@@ -22,3 +22,15 @@ function loadFile(url, method, type){
 
     return val;
 }
+
+function getNode(parent, tageName){
+    return parent.getElementsByTagName(tageName)[0];
+}
+
+function getNodeValue(node){
+    return node.childNodes[0].nodeValue;
+}
+
+function getAttributeNode(node, attrName){
+    return node.getAttribute(attrName);
+}
