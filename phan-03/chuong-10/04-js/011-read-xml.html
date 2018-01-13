@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/xml.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        /*
+
+        */        
+
+        window.onload = function(){
+            var btnProcess = document.getElementById("process");
+            btnProcess.onclick = function(){       
+                var boxA        = document.getElementById("boxA");
+                var xmlDOM      = loadFile("files/01-books.xml", "GET", "xml");
+                var books       = xmlDOM.getElementsByTagName("book");
+                var str         = "";
+                for (var i = 0; i < books.length; i++) {
+                    var book = books[i];        
+                    var title = book.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                    str += "Title: " + title + "<br>";
+
+                    var author = book.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+                    str += "Author: " + author + "<br>";                   
+                    
+                    var pages = book.getElementsByTagName("pages")[0].childNodes[0].nodeValue;
+                    str += "Pages: " + pages + "<br>";     
+                    
+                    var weight = book.getElementsByTagName("weight")[0].childNodes[0].nodeValue;
+                    var units = book.childNodes[7].getAttribute("units");
+                    str += "Weight: " + weight + units + "<br>";                     
+
+                    var price = book.getElementsByTagName("price")[0];
+
+                    var real = price.getElementsByTagName("real")[0].childNodes[0].nodeValue;
+                    str += "Real price: " + real + "<br>";    
+
+                    var sale_off = price.getElementsByTagName("sale-off")[0].childNodes[0].nodeValue;
+                    str += "sale_off price: " + sale_off + "<br>";    
+
+                    var shipping = book.getElementsByTagName("shipping")[0];
+                    var US = shipping.getElementsByTagName("US")[0].childNodes[0].nodeValue;
+                    str += "Shipping to US: " + US + "<br>";    
+
+                    var EU = shipping.getElementsByTagName("EU")[0].childNodes[0].nodeValue;
+                    str += "Shipping to EU: " + EU + "<br>";    
+
+                    var VN = shipping.getElementsByTagName("VN")[0].childNodes[0].nodeValue;
+                    str += "Shipping to VN: " + VN + "<br>";    
+                    
+                    str += "=============================<br>";                  
+
+                    // console.log(book.getElementsByTagName("title")[0].childNodes[0].nodeValue);                                
+                }
+                
+                boxA.innerHTML  = str;
+
+                
+            }
+        }
+    </script>
+
+</head>
+<body>
+        <center>
+                <div>
+                    <input type="button" value="Process" id="process" name="process" class="button">
+                </div>
+            </center>
+    <div id="boxA" class="box">
+        
+    </div>    
+</body>
+</html>
