@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/xml.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        /*
+            Truy xuất dữ liệu bằng xpath.
+            title.iterateNext(): Lấy ra thẻ title.
+        */        
+
+        window.onload = function(){
+            var btnProcess = document.getElementById("process");
+            btnProcess.onclick = function(){
+                var boxA        = document.getElementById("boxA");
+                var xmlDOM      = loadFile("files/01-books.xml", "GET", "xml");
+
+                // var books       = xmlDOM.getElementsByTagName("book");
+                // var srt         = "";
+                // boxA.innerHTML  = str;
+
+                if (xmlDOM.evaluate) { // Chrome - W3C
+                    var title = xmlDOM.evaluate("//title", xmlDOM, null, XPathResult.ANY_TYPE, null);
+                    var titleResult = title.iterateNext();
+                    console.log(titleResult.childNodes[0].nodeValue);
+
+                    var title2 = xmlDOM.evaluate("//book[22]/title", xmlDOM, null, XPathResult.ANY_TYPE, null);
+                    var title2Result = title.iterateNext();
+                    console.log(title2Result.childNodes[0].nodeValue);
+                } else{  // IE
+
+                }
+
+                
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <center>
+        <div>
+            <input type="button" value="Process" id="process" name="process" class="button">
+        </div>
+    </center>
+    <div id="boxA" class="box">
+        
+    </div>    
+</body>
+</html>

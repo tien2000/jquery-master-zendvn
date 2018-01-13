@@ -26,3 +26,30 @@ XPATH:
 - round(): Làm tròn nguyên số lẻ.
 - count(): Đếm.
 - sum(): Tính tổng.
+
+=============================================
+XMLHttpRequest
+- xHttp.getAllResponseHeaders(): Lấy all thông tin trả về từ máy chủ.
+- xHttp.getResponseHeader("content-type"): Lấy thông tin được truyền vào từ máy chủ.
+- xHttp.readyState: Thông báo trạng thái của đối tượng 
+	= 0 nghĩa là chưa thực thi trạng thái open(), 
+	= 4 nghĩa là đã thực thi trạng thái open() và đã send()
+        = 2 nghĩa là yêu cầu đã được gửi đến máy chủ nhưng chưa nhận đc giá trị trả về
+        = 3 nghĩa là đã nhận được dữ liệu trả về nhưng chưa phải là toàn bộ dữ liệu.)
+
+- xHttp.setRequestHeader(label, val): Dùng để khai báo cách truyền dữ liệu từ trình duyệt lên máy chủ
+
+=============================================
+Convert XML
+- window.DOMParser: Chuyển đổi chuỗi thành đối tượng XML.
+- parser.parseFromString(string, mimeType): Chuyển chuỗi thành XML.
+- xmlDOM.async: Thiết lập đồng bộ (false: Không đồng bộ).
+- xmlDOM.loadXML(text): Phương thức lấy nội dung.
+
+- new XMLSerializer()).serializeToString(xmlDOM): Chạy trên Chrome
+- xmlDOM.xml: Chạy trên IE
+
+=============================================
+Read nodes 05
+- var title = xmlDOM.evaluate("//title", xmlDOM, null, XPathResult.ANY_TYPE, null);
+- var titleResult = title.iterateNext();
