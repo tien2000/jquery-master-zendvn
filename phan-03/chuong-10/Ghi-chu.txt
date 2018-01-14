@@ -53,3 +53,9 @@ Convert XML
 Read nodes 05
 - var title = xmlDOM.evaluate("//title", xmlDOM, null, XPathResult.ANY_TYPE, null);
 - var titleResult = title.iterateNext();
+
+=============================================
+SimpleXML
+- simplexml_load_string($strXML): Biến 1 chuỗi thành đối tượng.
+- simplexml_load_file($file): Load file xml.
+- $xml->asXML(): Chuyển đối tượng XML thành chuỗi.

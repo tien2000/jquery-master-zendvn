@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    
+    <script type="text/javascript">
+        var data;
+        data = {
+                    string: "Lập trình jQuery",
+                    interger: 100,
+                    float: 1.23,
+                    arr: ["HTML", "CSS", "JAVASCRIPT"],
+                    obj: {
+                            title: "Happy Life",
+                            author: "TienLS"
+                         }
+               };
+
+        window.onload = function(){
+            var btnProcess = document.getElementById("process");
+
+            btnProcess.onclick = function(){
+                console.log(data.string);
+                console.log(data.float);
+                console.log(data.arr[2]);
+                console.log(data.obj.title);
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <center style="padding: 20px;">
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+</body>
+</html>

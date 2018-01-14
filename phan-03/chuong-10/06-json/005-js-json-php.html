@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script type="text/javascript" src="js/json2.js"></script>
+    <script type="text/javascript" src="js/xml.js"></script>
+    
+    <script type="text/javascript">
+        /*
+            JSON.stringify(books): Chuyển định dạng JSON thành chuỗi.
+        */
+
+        var book;
+        book = {
+                    data                : {
+                        title           : "Lập trình jQuery",
+                        author          : "ZendVN Group",
+                        pages           : 500,
+                        weight          : {
+                            data        : 400,
+                            attributes  : {units: "gam"}
+                        },
+                        price           : {
+                            real        : 20,
+                            saleoff     : 15
+                        },
+                        shipping        : {
+                            US          : 1.2,
+                            EU          : 2.3,
+                            VN          : 3.4
+                        }
+                    },
+                    attributes  : {
+                        id   : 11,
+                        type : "small"
+                    }
+               };
+
+        var books;
+        books = {
+            data: [
+                {
+                    data                : {
+                        title           : "Lập trình jQuery",
+                        author          : "ZendVN Group",
+                        pages           : 500,
+                        weight          : {
+                            data        : 400,
+                            attributes  : {units: "gam"}
+                        },
+                        price           : {
+                            real        : 20,
+                            saleoff     : 15
+                        },
+                        shipping        : {
+                            US          : 1.2,
+                            EU          : 2.3,
+                            VN          : 3.4
+                        }
+                    },
+                    attributes  : {
+                        id   : 11,
+                        type : "small"
+                    }
+                },
+                {
+                    data                : {
+                        title           : "Lập trình PHP",
+                        author          : "ZendVN Group",
+                        pages           : 700,
+                        weight          : {
+                            data        : 600,
+                            attributes  : {units: "gam"}
+                        },
+                        price           : {
+                            real        : 30,
+                            saleoff     : 25
+                        },
+                        shipping        : {
+                            US          : 2.2,
+                            EU          : 3.3,
+                            VN          : 4.4
+                        }
+                    },
+                    attributes  : {
+                        id   : 22,
+                        type : "small"
+                    }
+                },
+                {
+                    data                : {
+                        title           : "Lập trình Wordpress",
+                        author          : "ZendVN Group",
+                        pages           : 800,
+                        weight          : {
+                            data        : 700,
+                            attributes  : {units: "gam"}
+                        },
+                        price           : {
+                            real        : 40,
+                            saleoff     : 35
+                        },
+                        shipping        : {
+                            US          : 3.2,
+                            EU          : 4.3,
+                            VN          : 5.4
+                        }
+                    },
+                    attributes  : {
+                        id   : 33,
+                        type : "small"
+                    }
+                }
+            ]
+        };
+
+        window.onload = function(){
+            var boxA = document.getElementById("boxA");
+            var btnProcess = document.getElementById("process");
+
+            btnProcess.onclick = function(){
+                var strBook = JSON.stringify(books);
+                var url = "files/json.php?val=" + strBook;
+                var xmlBook = loadFile(url, "GET", "text");
+
+                // console.log(typeof books);          // Object
+                // console.log(typeof strBook);        // string
+
+                boxA.innerHTML = xmlBook;
+
+                console.log(xmlBook);
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <center style="padding: 20px;">
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+    <div id="boxA" class="box">
+
+    </div>
+</body>
+</html>
