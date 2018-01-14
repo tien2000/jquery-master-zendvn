@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jQuery Basic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            $(document) = jQuery(document)
+
+            1. jQuery(HTML Object).
+            2. jQuery(selectors).
+            3. jQuery(HTML String).
+            4. jQuery(HTML String, Attribute Object)
+        */
+
+        // console.log(document + "");
+    
+        jQuery(document).ready(function(e){
+            /*
+            // var boxA = document.getElementById("boxA");     //HTML OBJECT
+            // $(boxA).css("border", "1px solid blue");         // 1
+            // console.log(boxA + " ");
+            */
+
+            // $("#boxA").css("border", "1px solid blue");         // 2
+
+            // 3. jQuery(HTML String).
+            // var str = '<span style="color: red; font-size: 20px;">jQuery Basic</span>';
+            // console.log(str);
+            // $(str).appendTo("#boxA");
+
+            // 4. jQuery(HTML String, Attribute Object)
+            $("<div></div>", {"class": "bg01", "text": "jQuery Master"}).appendTo("#boxA");
+        });
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">jQuery(val);</h1>
+    <div id="boxA" class="box">
+
+    </div>
+</body>
+</html>
