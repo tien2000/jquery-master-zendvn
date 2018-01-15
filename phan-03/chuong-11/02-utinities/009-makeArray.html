@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Utinity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/xml.js"></script>
+
+    <script type="text/javascript">
+        /*
+            jQuery.makeArray(obj): Chuyển đối tượng jQuery thành mảng 
+                                    (Thường dùng để đảo các phần tử HTML).
+        */
+
+        jQuery(document).ready(function(e){
+            var a = $("#boxA .item");
+
+            $("#process").click(function(e){
+                // console.log(a);
+                // console.log(a + "");
+
+                var b = $.makeArray(a);
+                console.log(b);
+                console.log(b + "");
+
+                console.log(b.reverse());
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">
+        jQuery.makeArray(obj);
+    </h1>
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+    <div id="boxA" class="box">
+        <div class="item">1. HTML</div>
+        <div class="item">2. CSS</div>
+        <div class="item">3. JAVASCRIPT</div>
+        <div class="item">4. PHP</div>
+    </div>
+</body>
+</html>
