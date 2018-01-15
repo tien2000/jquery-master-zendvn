@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Utinity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            Không dùng deep: Thay object vào target.
+        */
+
+        jQuery(document).ready(function(e){
+            var defaults = {
+                                title   : "Lập trình jQuery",
+                                author  : "ZendVN Group",
+                                pages   : 500,
+                                price   : 40.25,
+                                shipping: {
+                                            us: 1.2,
+                                            eu: 2.3,
+                                            vn: 3.4
+                                        }
+                            };
+
+            var book = {
+                                title   : "Lập trình PHP",
+                                author  : "ZendVN Group",
+                                pages   : 600,
+                                price   : 50.25,
+                                shipping: {
+                                            us: 2.2,
+                                            vn: 3.3,
+                                            sg: 4.4
+                                        }
+                            };
+            
+            $("#process").click(function(e){
+                console.log(defaults);
+                console.log(book);
+                $.extend(defaults, book);
+                console.log(defaults);
+
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">
+        jQuery.extend(target, object1, objectN);<br>
+        jQuery.extend(deep, target, object1, objectN);
+    </h1>
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+    <div id="boxA" class="box">
+        <div class="item">1. HTML</div>
+        <div class="item">2. CSS</div>
+        <div class="item">3. JAVASCRIPT</div>
+        <div class="item">4. PHP</div>
+    </div>
+</body>
+</html>
