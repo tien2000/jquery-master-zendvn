@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Utinity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            jQuery.grep(): Giống jQuery.each() nhưng jQuery.grep() trả về giá trị.
+        */
+
+        jQuery(document).ready(function(e){            
+            var arr = [0,4,3,5,6,5,3,5];
+            console.log(arr);
+            $("#process").click(function(e){
+                var newArr = $.grep(arr, function(val, i){
+                    // return (val > 2);
+                    // return (val > 2 && val < 6);
+                    return (val > 2 && i < 6);
+                });
+                console.log(newArr);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">
+        jQuery.grep(array, function(elementOfArray, indexInArray), invert);
+    </h1>
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+    <div id="boxA" class="box">
+        <div class="item">1. HTML</div>
+        <div class="item">2. CSS</div>
+        <div class="item">3. JAVASCRIPT</div>
+        <div class="item">4. PHP</div>
+    </div>
+</body>
+</html>
