@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Selector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#process").click(function(){
+                // TH 1
+                // $("#boxA").addClass("bg02");
+
+                // TH 2
+                //  $("#boxA .text2").addClass("bg02");
+
+                // TH 3
+                //  $("#boxA .text2.bg01").addClass("bg02");
+
+                // TH 4
+                //  $("#boxA p, #boxB p").addClass("bg02");
+
+                // TH 5
+                // $("#boxA p.text2, #boxB p.text2").addClass("bg02");
+
+                // TH 6
+                $("#boxA #html.item").addClass("bg02");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">jQuery("tag")</h1>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="boxA" class="box">
+        <div id="html" class="item">1. HTML</div>
+        <p class="item text2">2. CSS</p>
+        <div class="item"><strong>3. JAVASCRIPT</strong></div>
+        <span class="item bg01 text2">4. JQUERY</span>
+    </div>
+
+    <div id="boxB" class="box">
+        <div class="item">1. PHP</div>
+        <p class="item ">2. ASP</p>
+        <div class="item">3. JSP</div>
+        <span class="item text2 bg01">4. PERL</span>
+        <span class="item text3">5. ASPX</span>
+    </div>
+</body>
+</html>
