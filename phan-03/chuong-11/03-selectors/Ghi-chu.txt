@@ -1,0 +1,54 @@
+﻿============ Basic Filters ==================
+$("#boxA div:eq(index)"): Chỉ số.
+$("#boxA div:even")  : Lấy chỉ số chẵn.
+$("#boxA div:odd")   : Lấy chỉ số lẻ.
+$("#boxA div:first") : Lấy chỉ số đầu.
+$("#boxA div:last")  : Lấy chỉ số cuối.
+$("#boxA :gt(0)")    : Lấy chỉ số lớn hơn 9
+$("#boxA :lt(2)")    : Lấy chỉ số nhỏ hơn 2
+ $(":header")        : Lấy phần tử heading
+$("#boxB :not(p, span)"): Lấy phần tử ko thuộc tập hợp được truyền vào.
+
+============ Content Filters ==================
+$("#boxA :contains('HTML')"): Kiểm tra giá trị được truyền vào.
+$(".item > p:empty()")      : Lấy những phần tử ko có nội dung(Khoảng trống là 1 nội dung).
+$("div#boxA:has(div)")      : Kiểm tra tồn tại của 1 thẻ bên trong thẻ khác.
+$("#boxA:parent")           : Kiểm tra có phải node cha ko.
+
+============ Visibility Filters ==================
+$("#boxA > div:hidden"): Kiểm tra những phần tử có giá trị ẩn.
+$("#boxA > div:visible"): Kiểm tra những phần tử có giá trị hiện.
+
+============ Attribute [name="value"] ==================
+$("name|='A']"):Lựa chọn các phần tử có thuộc tính là [A] 
+				và thuộc tính đó có giá trị [B] 
+				hoặc là [B] và có dấu gạch ngang.
+				giá trị [B] phải đứng đầu.
+
+$("name*='A']"): Lựa chọn các phần tử có thuộc tính là [A] 
+                                và thuộc tính đó có giá trị [B]
+				giá trị [B] có thể nằm bất cứ đâu trong thuộc tính [A].
+
+$("name~='A']"): Lựa chọn các phần tử có thuộc tính là [A] 
+                                và thuộc tính đó có giá trị [B]
+                                giá trị [B] có thể nằm bất cứ đâu 
+                                nhưng phải cách các giá trị khác bằng 1 khoảng trắng.
+
+$("name$='A']"): Lựa chọn các phần tử có thuộc tính là [A] 
+                                và thuộc tính đó có giá trị [B]
+                                giá trị [B] nằm ở cuối chuỗi.
+
+$("name='A']"): Lựa chọn các phần tử có thuộc tính là [A] 
+                                và thuộc tính đó có giá trị [B]
+                                giá trị [B] là duy nhất.
+
+$("name!='A']"): Lựa chọn các phần tử có thuộc tính là [A] 
+                                và thuộc tính đó không có giá trị [B]
+
+$("name^='A']"): Lựa chọn các phần tử có thuộc tính là [A] 
+                                và thuộc tính đó có giá trị [B],
+                                giá trị [B] phải đứng đầu
+
+$("[A]"): Lựa chọn các phần tử có thuộc tính là [A]                         
+
+$("[A][B]"): Lựa chọn các phần tử có thuộc tính là [A] và [B]                        
