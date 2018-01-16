@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Selector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/04-content.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#process").click(function(){
+                // TH 1
+                $(".item > p:empty()").css("border", "2px solid red");
+
+                // var tmp = $("#boxA :contains(CSS)");
+                // console.log(tmp);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">Content Filters</h1>   
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="boxA" class="box">
+        <div class="item">
+            <h2>1. HTML</h2>
+            <p>
+                HTML is HTML..
+                HTML is HTML...
+                HTML is HTML.....
+            </p>
+        </div>
+        <div class="item">
+            <h2>2. CSS</h2>
+            <p>
+                CSS is CSS..
+                CSS is CSS...
+                CSS is CSS.....
+                HTML
+            </p>
+        </div>
+        <div class="item">
+            <h2>2. JS</h2>
+            <p>
+                JS is JS..
+                JS is JS...
+                JS is JS.....
+                HTML
+            </p>
+        </div>
+        <div class="item">
+                <h2>2. JQUERY</h2>
+                <p></p>
+            </div>
+    </div>
+</body>
+</html>
