@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            filter(): Lấy ra tập hợp các phần tử trong tập hợp các phần tử nào đó.
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                /* ================ filter(selector) =================== */
+                // var elemt = $("#boxA > *").filter("div.item");
+                // $(elemt).addClass("bg02");                
+                // $("#boxA > *").filter("div.item").addClass("bg02");
+                // console.log(elemt);
+
+                /* ================ filter(element) =================== */
+                // var elemt = $("#boxA > *").filter("p");
+                // $(elemt).addClass("bg02");
+                // console.log($(elemt).text());
+
+                /* ================ filter(function(index) =================== */
+                var elemt = $("#boxA > *").filter(function(i){
+                    return ($(this).text().length > 6);
+                    // console.log(i);
+                    // console.log($(this).text().length);
+                });
+
+                $(elemt).addClass("bg02");
+                console.log(elemt);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>Filtering - filter(selector) | filter(function(index) | filter(element))</h1>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+    
+    <div id="boxA" class="box">
+        <p class="item">1. HTML</p>
+        <div class="item">2. CSS</div>
+        <p class="item">3. JS</p>
+        <p class="item">4. JQUERY</p>
+        <div class="item">5. PHP</div>
+        <p class="item">6. ASP</p>
+        <p class="item">7. JSP</p>
+    </div>
+</body>
+</html>

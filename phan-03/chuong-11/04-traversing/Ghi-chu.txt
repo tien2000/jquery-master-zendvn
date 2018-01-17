@@ -1,0 +1,8 @@
+﻿==================== Filtering ===========================
+eq(): Lấy giá trị của phần tử có chỉ số được truyền vào.
+
+filter(): Lấy ra tập hợp các phần tử trong tập hợp các phần tử nào đó.
+	- filter(selector): 
+	- filter(element):
+	- filter(function(index):
+
