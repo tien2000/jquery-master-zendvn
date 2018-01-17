@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            .removeAttr(): Xóa thuộc tính thẻ.
+        */
+
+        $(document).ready(function(e){
+            $("#appForm :disabled").val("Textbox 1 đã bị khóa");
+            $("#appForm :enabled").val("Textbox 2 chưa bị khóa");
+            $("#process").click(function(e){
+                $("#appForm :disabled").removeAttr("disabled").val("Hết khóa rồi ^^");
+            });
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Form Element</h1>
+        <input type="button" value="Process" id="process" class="button">    
+    </center>
+
+    <form action="" method="post" id="appForm" name="appForm" class="box" enctype="multipart/form-data">
+        <div>
+            <label for="">Textbox 1:</label>
+            <input class="input" type="text" name="username" id="username" placeholder="Username" value="TienLS" disabled>
+        </div>
+        <div>
+            <label for="">Textbox 2:</label>
+            <input class="input" type="text" name="email" id="password" placeholder="Email" value="neo_tien200065@gmail.com">
+        </div>
+    </form>    
+</body>
+</html>

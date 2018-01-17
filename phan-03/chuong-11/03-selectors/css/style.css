@@ -88,3 +88,11 @@ body{
     font-style: italic;
     color: #00F;
 }
+
+#appForm{
+
+}
+
+#appForm > div{
+    padding: 4px 10px;
+}

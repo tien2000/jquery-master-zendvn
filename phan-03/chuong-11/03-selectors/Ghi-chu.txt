@@ -9,15 +9,18 @@ $("#boxA :lt(2)")    : Lấy chỉ số nhỏ hơn 2
  $(":header")        : Lấy phần tử heading
 $("#boxB :not(p, span)"): Lấy phần tử ko thuộc tập hợp được truyền vào.
 
+
 ============ Content Filters ==================
 $("#boxA :contains('HTML')"): Kiểm tra giá trị được truyền vào.
 $(".item > p:empty()")      : Lấy những phần tử ko có nội dung(Khoảng trống là 1 nội dung).
 $("div#boxA:has(div)")      : Kiểm tra tồn tại của 1 thẻ bên trong thẻ khác.
 $("#boxA:parent")           : Kiểm tra có phải node cha ko.
 
+
 ============ Visibility Filters ==================
 $("#boxA > div:hidden"): Kiểm tra những phần tử có giá trị ẩn.
 $("#boxA > div:visible"): Kiểm tra những phần tử có giá trị hiện.
+
 
 ============ Attribute [name="value"] ==================
 $("name|='A']"):Lựa chọn các phần tử có thuộc tính là [A] 
@@ -53,6 +56,7 @@ $("[A]"): Lựa chọn các phần tử có thuộc tính là [A]
 
 $("[A][B]"): Lựa chọn các phần tử có thuộc tính là [A] và [B]       
 
+
 ============ Child Filters ==================
 :first-child: Lấy phần tử đầu tiên trong 1 tập hợp.
 
@@ -75,6 +79,14 @@ $("[A][B]"): Lựa chọn các phần tử có thuộc tính là [A] và [B]
 :only-of-type: Lấy phần tử con duy nhất của đối tượng.(p:only-of-type, div:only-of-type ...)
 
 
+============ Form ==================
+:input[name='username']
+:text[name='username'] = <input type="text" name="username" />
+
+.attr(): Chỉ liên quan đến thuộc tính.
+.prop(): Liên quan đến DOM.   (property)
+
+Chú ý: Khi sử dụng .attr() không được như mong muốn thì phải sử dụng .prop()
 
 
 

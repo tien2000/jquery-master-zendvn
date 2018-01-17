@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            
+        */
+
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                var checks = $("#appForm :checkbox[name='programming']:checked");
+
+                $.each(checks, function(e){
+                    console.log($(this).val());                    
+                });
+                console.log(checks.length);
+            });
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Form Element</h1>
+        <input type="button" value="Process" id="process" class="button">    
+    </center>
+
+    <form action="" method="post" id="appForm" name="appForm" class="box" enctype="multipart/form-data">
+        <div>
+            <input type="checkbox" name="programming" class="input" value="html">HTML<br>
+            <input type="checkbox" name="programming" class="input" value="css">CSS<br>
+            <input type="checkbox" name="programming" class="input" value="js">JS<br>
+            <input type="checkbox" name="programming" class="input" value="jquery">JQUERY<br>
+        </div>
+    </form>    
+</body>
+</html>

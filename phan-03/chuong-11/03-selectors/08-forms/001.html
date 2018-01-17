@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                // console.log($("form[name='appForm']"));
+
+                // $("#appForm [name='username']").addClass("bg02");
+                // $("#appForm :input[name='username']").addClass("bg02");
+
+                console.log($("#appForm :input[name='username']"));
+            });            
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Form Element</h1>
+
+        <input type="button" value="Process" id="process" class="button">    
+
+        <form action="" method="post" id="appForm" name="appForm" class="box" enctype="multipart/form-data">
+            <div>
+                <input class="input" type="text" name="username" id="username" placeholder="Username" value="TienLS">
+            </div>
+            <div>
+                <input class="input" type="password" name="password" id="password" placeholder="Password" value="TienLS">
+            </div>
+        </form>
+    </center>
+</body>
+</html>
