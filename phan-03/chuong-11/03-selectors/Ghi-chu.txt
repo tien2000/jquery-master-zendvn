@@ -51,4 +51,36 @@ $("name^='A']"): Lựa chọn các phần tử có thuộc tính là [A]
 
 $("[A]"): Lựa chọn các phần tử có thuộc tính là [A]                         
 
-$("[A][B]"): Lựa chọn các phần tử có thuộc tính là [A] và [B]                        
+$("[A][B]"): Lựa chọn các phần tử có thuộc tính là [A] và [B]       
+
+============ Child Filters ==================
+:first-child: Lấy phần tử đầu tiên trong 1 tập hợp.
+
+:first-of-type: Lấy phần tử đầu tiên có kiểu được truyền vào (p:first-of-type, div:first-of-type ...)
+
+:last-child: Lấy phần tử cuối cùng trong 1 tập hợp.
+
+:first-of-type: Lấy phần tử cuối cùng có kiểu được truyền vào.
+
+:nth-child(val): Lấy phần tử được truyền vào.
+
+:nth-last-child(val): Lấy phần tử được truyền vào theo thứ tự từ dưới lên.
+
+:nth-last-of-type(val): Lấy phần tử cuối cùng được truyền vào theo thứ tự từ dưới lên.
+
+:nth-of-type(val): Lấy phần tử có kiểu được truyền vào (p:nth-of-type(val), div:nth-of-type(val) ...)
+
+:only-child: Lấy đối tượng có phần tử con duy nhất.
+
+:only-of-type: Lấy phần tử con duy nhất của đối tượng.(p:only-of-type, div:only-of-type ...)
+
+
+
+
+
+
+
+
+
+
+                 

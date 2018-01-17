@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Child Filter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/05-visibility.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            :nth-child(1n): n: số nguyên (1,2,3...)
+        */
+
+        $(document).ready(function(){                  
+            $("#process").click(function(e){
+                // $("#boxA > :nth-child(1)").addClass("bg02");
+                // $("#boxB > :nth-child(1)").addClass("bg02");
+
+                // $("#boxA > :nth-child(3)").addClass("bg02");
+                // $("#boxB > :nth-child(3)").addClass("bg02");
+
+                // $("#boxA > :nth-child(1n)").addClass("bg02");  // n:0-N | 1*0 | 1*1 | 1*2
+                // $("#boxB > :nth-child(1n)").addClass("bg02");
+
+                // $("#boxA > :nth-child(2n)").addClass("bg02");  // n:0-N | 2*0 | 2*1 | 2*2
+                // $("#boxB > :nth-child(2n)").addClass("bg02");
+
+                $("#boxA > :nth-child(2n+1)").addClass("bg02");  // n:0-N | 2*0+1 | 2*1+1 | 2*2+1
+                $("#boxB > :nth-child(2n+1)").addClass("bg02");
+            });           
+        });
+    </script>
+
+</head>
+<body>
+    <h1 style="text-align: center;">jQuery( ":nth-child(val)");</h1>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="boxA" class="box">
+        <p class="item">1. HTML</p>
+        <p class="item">2. CSS</p>
+        <p class="item">3. JS</p>
+        <p class="item">4. JQUERY</p>
+    </div>
+
+    <div id="boxB" class="box">
+            <div class="item">1. PHP</div>
+            <p class="item">2. ASP</p>
+            <p class="item">3. WORDPRESS</p>
+            <p class="item">4. JOOMLA</p>
+        </div>
+</body>
+</html>
