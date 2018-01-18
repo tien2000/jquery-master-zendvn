@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            each(): Trong each là function, trước là 1 tập hợp thì bên trong function là 1 vòng lặp.
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                $("#boxA > *").each(function(i, elemt){
+                    if (i % 2 == 0) {
+                        $(elemt).addClass("bg02");
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>Mics - each(function(index, element))</h1>
+    </center>
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+    
+    <div id="boxA" class="box">
+        <p class="item tmp1">1. HTML</p>
+        <div class="item tmp2">2. CSS</div>
+        <p class="item tmp3">3. JS</p>
+        <p class="item">4. JQUERY</p>
+        <div class="item">5. PHP</div>
+        <p class="item">6. ASP</p>
+        <p class="item">7. JSP</p>
+    </div>
+</body>
+</html>

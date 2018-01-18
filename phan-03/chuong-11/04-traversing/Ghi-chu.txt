@@ -6,3 +6,55 @@ filter(): Lấy ra tập hợp các phần tử trong tập hợp các phần t�
 	- filter(element):
 	- filter(function(index):
 
+has(): Kiểm tra phần tử con có chứa gì đó ko, giá trị trả về là thẻ con chứa những thứ đó.
+
+is(): Kiểm tra đối tượng được truyền vào có tồn tại ko. Trả về true/false.
+
+map(): Trả về những phần tử theo điều kiện truyền vào.
+
+not(): Ngược với eq().
+
+slice(start, [end]): Lấy những phần tử có thứ tự được truyền vào.
+
+==================== Tree ===========================
+children(selector): Lấy giá trị là phần tử con của đối tượng cần kiểm tra.
+
+closest(selector): Lấy ra phần tử gần nhất so với đối tượng đã được đánh dấu, thường là phần tử cha.
+
+find(): Tìm tất cả các phần tử (kể cả con cháu).
+
+next(): Lấy phần tử kế bên phần tử được xác định.
+nextAll(): Lấy tất cả phần tử kế bên phần tử được xác định.
+
+nextUntil(): Lấy phần tử kế bên phần tử được xác định.
+nextUntil(":last"): Dừng lại (Không lấy) ở phần tử được truyền vào.
+
+parent(): Lấy ra phần tử phía ngoài phần tử được lựa chọn.
+
+parents(): Lấy ra phần tử phía ngoài phần tử được lựa chọn.
+parents([selector]): Lấy ra những phần tử cha có tham số truyền vào.
+
+parentsUntil(): Lấy ra phần tử phía ngoài phần tử được lựa chọn.
+parentsUntil([selector]): Lấy ra phần tử phía ngoài phần tử được lựa chọn, dừng lại ở tham số được truyền vào.
+
+siblings(): Lấy ra phần tử cùng cấp với phần tử được lựa chọn.
+siblings([selector]): Lấy ra phần tử cùng cấp được truyền vào.
+
+
+==================== Mics ===========================
+add():
+
+contents(): Lấy ra tập hợp các node bao gồm NodeText, Node phần tử.
+
+each(): Trong each là function, trước là 1 tập hợp thì bên trong function là 1 vòng lặp.
+
+
+
+
+
+
+
+
+
+
+
