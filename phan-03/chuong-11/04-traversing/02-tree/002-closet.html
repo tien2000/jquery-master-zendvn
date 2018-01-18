@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            closest(selector): Lấy ra phần tử gần nhất so với đối tượng đã được đánh dấu,
+                                thường là phần tử cha.
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                // var tmp = $("#boxA strong").closest(".box");
+                // var tmp = $("#boxA strong").closest("div");
+                // var tmp = $("#boxA strong").closest("p");
+                var tmp = $("#boxA strong").closest("body");
+                
+
+                $(tmp).addClass("bg02");
+                console.log(tmp);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>Tree - closest(selector) | closest(element) | closest(jQuery obj)</h1>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+    
+    <div id="boxA" class="box">
+        <p class="item abc">1. HTML</p>
+        <div class="item"><strong>2. CSS</strong></div>
+        <p class="item">3. JS</p>
+        <p class="item">4. JQUERY</p>
+        <div class="item">5. PHP</div>
+        <p class="item">6. ASP</p>
+        <p class="item">7. JSP</p>
+    </div>
+    <div class="box" id="boxB"></div>
+</body>
+</html>

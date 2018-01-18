@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            siblings(): Lấy ra phần tử cùng cấp với phần tử được lựa chọn.
+            siblings([selector]): Lấy ra phần tử cùng cấp được truyền vào.
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                $("#boxA p.abc").addClass("bg01");
+
+                // var tmp = $("#boxA p.abc").siblings();
+
+                var tmp = $("#boxA p.abc").siblings("div");
+
+                $(tmp).addClass("bg02");
+                console.log(tmp);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>Tree - siblings([selector])</h1>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+    
+    <div id="boxA" class="box">
+        <p class="item">1. HTML</p>
+        <div class="item"><strong class="abc">2. CSS</strong></div>
+        <p class="item abc">3. JS</p>
+        <p class="item">4. JQUERY</p>
+        <div class="item">5. PHP</div>
+        <p class="item">6. ASP</p>
+        <p class="item">7. JSP</p>
+    </div>
+</body>
+</html>
