@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            has(): Kiểm tra phần tử con có chứa gì đó ko, 
+                     giá trị trả về là thẻ con chứa những thứ đó.
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                // ========== has(selector) =================
+                var elemt = $("#boxA > *").has("strong.abc");
+                $(elemt).addClass("bg02");
+
+                console.log(elemt);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>Filtering - has(selector) | has(element)</h1>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+    
+    <div id="boxA" class="box">
+        <p class="item">1. HTML</p>
+        <div class="item">2. CSS</div>
+        <p class="item">3. JS</p>
+        <p class="item"><strong>4. JQUERY</strong></p>
+        <div class="item"><strong class="abc">5. PHP</strong></div>
+        <p class="item">6. ASP</p>
+        <p class="item">7. JSP</p>
+    </div>
+</body>
+</html>
