@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            .val(): Lấy ra thông tin phần tử được truy cập.
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                console.clear();
+                var txt = $("#appForm :text[name='txt']").val();
+                console.log("Textbox Field: " + txt);
+
+                var pwd = $("#appForm :password[name='pwd']").val();
+                console.log("Password Field: " + pwd);
+
+                var upload = $("#appForm :file[name='upload']").val();
+                console.log("Upload Field: " + upload);
+
+                var sex = $("#appForm :radio[name='sex']:checked").val();
+                console.log("radio button: " + sex);
+
+                var prog = $("#appForm :checkbox[name='prog']:checked").val();
+                console.log("Checkbox: " + prog);
+
+                var content = $("#appForm textarea[name='content']").val();
+                console.log("Textarea: " + content);
+                
+                var city = $("#appForm select[name='city']").val();
+                console.log("Selectbox: " + city);
+                
+                var district = $("#appForm select[name='district']").val();
+                console.log("Selectbox Multi: " + district);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Attributes - CSS
+        </h1>
+        <h2>
+            .val() | val(value) | val(function(index, value))
+        </h2>
+    </center>  
+
+    <form action="" class="box" id="appForm" name="appForm" method="post" enctype="multipart/form-data">
+        <div>
+            Textbox Field: <input type="text" name="txt" class="input">
+        </div>
+        <div>
+            Password Field: <input type="password" name="pwd" class="input">
+        </div>
+        <div>
+            File Upload: <input type="file" name="upload" class="input">
+        </div>
+        <div>
+            Radio Button:
+            <input type="radio" name="sex" value="male">Male
+            <input type="radio" name="sex" value="female">Female
+        </div>
+        <div>
+            CheckBox:
+            <input type="checkbox" name="prog" value="php">PHP
+            <input type="checkbox" name="prog" value="jsp">JSP
+        </div>
+        <div>
+            Textarea:
+            <textarea class="input" name="content" cols="50" rows="4">The jQuery course</textarea>
+        </div>
+        <div>
+            SelectBox:
+            <select name="city" class="input">
+                <option value="hanoi">Hà Nội</option>
+                <option value="hcm">Hồ Chí Minh</option>
+                <option value="danang">Đà Nẵng</option>
+                <option value="cantho">Cần Thơ</option>
+            </select>
+        </div>
+        <div>
+            SelectMulti:
+            <select name="district" class="input" size="5" multiple="multiple" style="width: 200px;">
+                <option value="q1">Quận 1</option>
+                <option value="q2">Quận 2</option>
+                <option value="q3">Quận 3</option>
+                <option value="q4">Quận 4</option>
+                <option value="q5">Quận 5</option>
+                <option value="q6">Quận 6</option>
+            </select>
+        </div>
+    </form>
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+</body>
+</html>

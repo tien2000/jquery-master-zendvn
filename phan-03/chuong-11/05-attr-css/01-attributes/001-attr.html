@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            .attr(attributeName): Lấy ra 1 giá trị trong thuộc tính của giá trị nào đó.
+            .attr(attributeName, value): Thiết lập giá trị cho đối tượng đã xác định.
+            .attr(attributeName, function(index, attr)): Bên trong function là vòng lặp,
+                                                          đối tượng cần kiểm tra là 1 tập hợp.
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                // ======== .attr(attributeName) =========
+                // var tmp = $("#boxA").attr("title");
+
+                // ======== .attr(attributeName, value) =========
+                // $("#boxA").attr("align", "center");
+                // $("#boxA").attr({
+                //     "align": "center",              // "AttrName": "AttrValue"
+                //     "title": "ZendVN Group"
+                // });
+
+                // ======== .attr(attributeName, function(index, attr)) =========
+                // $("#boxB").children().attr("title", function(i, attr){
+                //     console.log(i + " - " + attr);
+                // });
+
+                $("#boxB").children().attr("id", function(i, attr){
+                    return "course-" + i;       // Thêm id cho từng phần tử.
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Attributes - CSS
+        </h1>
+        <h2>
+            .attr(attributeName) | .attr(attributeName, value) |
+            .attr(attributeName, function(index, attr))
+        </h2>
+    </center>
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="boxA" class="box bg01" title="jQuery Course" style="font-size: 18px;">
+        The jQuery course of ZendVN.
+    </div>
+    
+    <div id="boxB" class="box">
+        <p class="item" title="HTML course">1. HTML</p>
+        <p class="item" title="CSS course">2. CSS</p>
+        <p class="item" title="JS course">3. JS</p>
+        <p class="item" title="JQUERY course">4. JQUERY</p>
+        <p class="item" title="PHP course">5. PHP</p>
+    </div>
+</body>
+</html>
