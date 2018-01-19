@@ -1,0 +1,45 @@
+﻿==================== Atrribute ========================
+.attr(attributeName): Lấy ra 1 giá trị trong thuộc tính của giá trị nào đó.
+.attr(attributeName, value): Thiết lập giá trị cho đối tượng đã xác định.
+.attr(attributeName, function(index, attr)): Bên trong function là vòng lặp, đối tượng cần kiểm tra là 1 tập hợp.
+
+.prop(attributeName): Lấy ra 1 giá trị trong thuộc tính của giá trị nào đó.
+.prop(attributeName, value): Thiết lập giá trị cho đối tượng đã xác định.
+.prop(attributeName, function(index, attr)): Bên trong function là vòng lặp, đối tượng cần kiểm tra là 1 tập hợp.
+
+.removeAttr(attributeName): Xóa thuộc tính.
+
+.removeProp(attributeName): Xóa giá trị của thuộc tính.
+
+.val(): Lấy giá trị thuộc tính.
+
+
+==================== CSS ========================
+.addClass(className):
+
+.css(propertyName):
+
+.hasClass(className):
+
+.removeClass([className])
+
+.toggleClass(className): Xóa class trong lần click thứ nhất & thêm lại class trong lần nhấn thứ 2.
+
+==================== Dimensions ========================
+.height() | innerHeight() | outerHeight([includeMargin])
+
+.width() | innerWidth() | outerWidth([includeMargin])
+
+.width(value) |.height(value)
+
+
+==================== offset ========================
+.offset(): Trả về 2 đối tượng left, top.
+
+.offsetParent(): Xác định phần tử cha của đối tương (chỉ khi vị trí phần tử cha là tương đối:: position: relative).
+
+.position(): Xác định đường viền left và top của đối tượng so với đối tượng cha (đối tượng cha là đối tượng có position: relative).
+
+
+
+

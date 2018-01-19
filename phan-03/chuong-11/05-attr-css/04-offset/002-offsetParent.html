@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            .offsetParent(): Xác định phần tử cha của đối tương (chỉ khi vị trí phần tử cha là tương đối:: position: relative)
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                var tmp = $("#boxC").offsetParent();
+
+                var boxC = $("#boxC").offset();
+
+                $("#move").offset({left: boxC.left, top : boxC.top});
+
+                console.log(boxC);
+                console.log(tmp);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Attributes - CSS
+        </h1>
+        <h2>
+            .offsetParent()
+        </h2>
+    </center>
+
+    <div id="info" class="box">info</div>
+
+    <div id="boxA" class="borderA" style="position: relative;">
+        boxA
+        <div id="boxB" class="borderB">
+            boxB
+            <div id="boxC" class="borderC">boxC</div>
+        </div>
+    </div>    
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>  
+
+    <div id="move" class="move">Move</div>
+</body>
+</html>
