@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            .replaceWith(target): Viết ngược lại replaceAll().
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                // htmlString
+                // $("#boxA .abc").replaceWith('<div class="item bg02">SomeThing</div>');
+
+                // Element
+                // var asp = document.getElementById("asp");
+                // $("#boxA .abc").replaceWith(asp);
+
+                // jQuery Obj
+                // $("#boxA .abc").replaceWith($("#asp"));
+
+                // function
+                $("#boxA .abc").replaceWith(function(){
+                    return '<p class="item bg01">'+ $(this).html() +'</p>';
+                });
+            });            
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Manipulation
+        </h1>
+        <h2>
+            .replaceWith(newContent) | .replaceWith(function());
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="boxA" class="box">
+        <div class="item"><strong>1. HTML</strong></div>
+        <div class="item abc">2. CSS</div>
+        <div class="item">3. JS</div>
+        <div class="item">4. JQUERY</div>
+        <div class="item abc">5. PHP</div>
+    </div>
+
+    <div id="boxB" class="box">
+        <div id="asp" class="item">6. ASP</div>
+    </div>
+</body>
+</html>

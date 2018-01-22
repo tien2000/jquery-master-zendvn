@@ -1,0 +1,54 @@
+﻿================== Manipulation ======================
+.clone():Copy 1 đối tượng HTML.
+         Có 2 tham số true/fasle. true: thực thi, false: không thực thi.
+
+.wrap(): Đưa 1 phần tử bao bọc 1 phần tử được xác định.
+
+.wrapAll(): Tạo ra thẻ bao bọc tập hợp đối tượng được xác định.
+
+.wrapInner(): Tạo ra thẻ bao bọc nội dung ở phía trong của các phần tử được xác định.
+
+.append(): Đưa 1 (hoặc nhiều) phần tử HTML vào trong 1 (hoặc nhiều) phần tử HTML khác & đưa vào phía cuối phần tử được xác định.
+append(function(index, html): Tham số HTML chứa nội dung HTML của các phần tử trong tập hợp.
+
+.appendTo(): Viết ngược lại so với append.
+
+.prepend(): Đưa 1 (hoặc nhiều) phần tử HTML vào trong 1 (hoặc nhiều) phần tử HTML khác & đưa vào phía đầu phần tử được xác định.
+
+.prepend(function(index, html): Tham số HTML chứa nội dung HTML của các phần tử trong tập hợp.
+
+.html(): Lấy ra 1 đối tượng HTML.
+
+.text(): Lấy ra 1 đối tượng text.
+
+.after(content[, content]): Thêm vào phía sau phần tử được xác định, di chuyển 1 tập hợp lấy được ở trang đó.
+
+.insertAfter(target): Viết ngược lại after.
+
+.before(content[, content]): Thêm vào phía trước phần tử được xác định, di chuyển 1 tập hợp lấy được ở trang đó.
+
+.insertBefore(target): Viết ngược lại before.
+
+.detach([selector]): Xóa những phần tử được xác định.
+
+.empty([selector]): Xóa nội dung của những phần tử được xác định.
+
+.remove([selector]): Giống detach().
+
+.unwrap([selector]): Xóa những phần tử bao bọc phần tử được xác định.
+
+.replaceAll(target): Thay đổi đối tượng thành 1 đối tượng mới.
+
+.replaceWith(target): Viết ngược lại replaceAll().
+
+
+
+
+
+
+
+
+
+
+
+
