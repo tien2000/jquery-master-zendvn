@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body{
+    padding: 20px;
+}
+
+.box{
+    margin: 10px auto;
+    padding: 10px;
+    border: 3px solid red;
+    width: 600px;
+    min-height: 100px;
+    overflow: auto;
+}
+
+.boxInfo{
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+    margin: 5px auto;
+    border: 3px solid red;
+}
+
+.box div{
+    padding: 3px;
+}
+
+.item{
+    border: 1px solid gray;
+    padding: 3px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.button{
+    margin: 20px 0 10px 0;
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid rgb(199, 39, 39);
+    background-color: aquamarine;
+}
+
+.input{
+    padding: 3px;
+    border: 2px solid #000;
+    font-size: 14px;
+}
+
+.list{
+    list-style: none inside;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.list li{
+    margin-bottom: 7px;
+}
+
+.list label{
+    display: block;
+    padding: 3px 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.txtShort{
+    width: 200px;
+}
+
+.txtMedium{
+    width: 400px;
+}
+
+.txtLong{
+    width: 100%;
+}
+
+.bg01{
+    background: #f7ffaf;
+}
+
+.bg02{
+    background: #7ddeec;
+}
+
+.text2{
+    font-weight: bold;
+    color: #F00;
+}
+
+.text3{
+    font-style: italic;
+    color: #00F;
+}
+
+#appForm{
+
+}
+
+#appForm > div{
+    padding: 4px 10px;
+}
+
+.move{
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+    border: 3px solid red;
+    background: #f9f46b;
+}
+
+.borderA{
+    width: 450px;
+    padding: 5px;
+    margin: 5px auto;
+    border: 3px solid red;
+}
+
+.borderB{
+    width: 450px;
+    padding: 5px;
+    margin: 5px auto;
+    border: 3px solid rgb(0, 119, 255);
+}
+
+.borderC{
+    padding: 5px;
+    margin: 5px auto;
+    border: 3px solid rgb(255, 153, 0);
+}

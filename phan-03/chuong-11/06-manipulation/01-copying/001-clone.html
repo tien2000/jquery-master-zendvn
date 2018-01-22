@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            .clone(): Copy 1 đối tượng HTML.
+                      Có 2 tham số true/fasle. true: thực thi, false: không thực thi
+        */
+        $(document).ready(function(e){
+            $("#boxA .abc").click(function(e){
+                $(this).addClass("bg01");
+            });
+
+            $("#process").click(function(e){
+                // $("#boxA .abc").appendTo($("#boxB"));
+                // $("#boxA .abc").clone().appendTo($("#boxB"));
+                $("#boxA .abc").clone(true).appendTo($("#boxB"));
+
+                // console.log($("#boxA .abc").clone().appendTo($("#boxB")));
+            });            
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Manipulation
+        </h1>
+        <h2>
+            .clone([withDataAndEvents])
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="boxA" class="box">
+        <div class="item">1. HTML</div>
+        <div class="item abc">2. CSS</div>
+        <div class="item">3. JS</div>
+        <div class="item">4. JQUERY</div>
+        <div class="item">5. PHP</div>
+    </div>
+
+    <div id="boxB" class="box"></div>
+</body>
+</html>
