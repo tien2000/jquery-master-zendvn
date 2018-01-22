@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Traversing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            append(): Đưa 1 (hoặc nhiều) phần tử HTML vào trong 1 (hoặc nhiều) phần tử HTML khác & đưa vào phía cuối phần tử được xác định.
+            .append(function(index, html): Tham số HTML chứa nội dung HTML của các phần tử trong tập hợp.
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                // $("#boxA").append("<div class='item'>6. ASP</div>");
+                // $("#boxA").append("<div class='item'>6. ASP</div>", "<div class='item'>7. JSP</div>");
+
+                $("#boxA > *").append(function(i, html){
+                    if (i % 2 == 0) {
+                        return "<div class='bg01'>Phần tử chẵn</div>";
+                    }else{
+                        return "<div class='bg02'>Phần tử lẻ</div>";
+                    }
+
+                    console.log(html);
+                });
+            });            
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Manipulation
+        </h1>
+        <h2>
+            .append(content[, content]) | .append(function(index, html));
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="boxA" class="box">
+        <div class="item"><strong>1. HTML</strong></div>
+        <div class="item abc">2. CSS</div>
+        <div class="item">3. JS</div>
+        <div class="item">4. JQUERY</div>
+        <div class="item">5. PHP</div>
+    </div>
+
+    <div id="boxB" class="borderB"></div>
+</body>
+</html>
