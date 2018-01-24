@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Effects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            .fadeIn(): Tăng giá trị thuộc tính opacity từ 0-1.
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(){
+                // ============== .hide([duration][, complete]) ===============
+                // $("#box-child").fadeIn("1000", function(){
+                //     $("#info").text("My box đã hiển thị");
+                // });
+
+                // ============== .hide([duration] [, easing] [, complete]) ===============
+                // $("#box-child").fadeIn("slow", "linear", function(){
+                //     $("#info").text("My box đã hiển thị");
+                // });
+
+                // =============== .fadeIn(options) ======================
+                $("#box-child").fadeIn({
+                    duration : "slow",
+                    easing   : "linear",
+                    complete : function(){
+                                    $("#info").text("My box đã hiển thị");
+                                }
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Effects
+        </h1>
+        <h2>
+            .fadeIn() | .fadeIn([duration][, complete]) | .fadeIn(options) | <br>
+            .fadeIn([duration] [, easing] [, complete]);
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="info" class="boxInfo"></div>
+
+    <div id="boxA" class="box">
+        <div id="box-child" class="box-child" style="display: none;">My Box</div>
+    </div>
+
+    
+</body>
+</html>
