@@ -1,0 +1,64 @@
+﻿E:\xampp\htdocs\jquery-master-zendvn\phan-03\chuong-11\07-effects\01-basics
+
+================== Effects ======================
+=========== Basic ============
+.hide(): Thêm thuộc tính display:none vào đối tượng được xác định.
+
+.show(): Bỏ thuộc tính display:none vào đối tượng được xác định.
+
+.toggle(): Thêm/Bỏ thuộc tính display vào đối tượng được xác định khi nhấn nút.
+
+=========== Fading ============
+.fadeIn(): Tăng giá trị thuộc tính opacity từ 0-1.
+
+.fadeOut(): Giảm giá trị thuộc tính opacity từ 1-0 và thêm thuộc tính display:none.
+
+.fadeTo(): Giảm giá trị thuộc tính opacity theo thông số truyền vào.
+
+=========== Custom ============
+.animate(): {width, height}: Thay đổi kích thước của đối tượng (number | % | toggle).
+
+$.fx.off = true: Tắt hiệu ứng effect.
+
+$.fx.interval = 1000: (default = 1s (1s = 1000)): Thời gian thực hiện chuyển động.
+
+.queue("fx"): Lấy số phần tử nằm trong hàng đợi.
+
+.clearQueue(): Xóa bỏ hàng đợi.
+
+.delay(duration): 
+
+.dequeue(): Tiếp tục thực hiện hàng đợi.
+
+.stop():
+
+
+=========== Sliding ============
+slideDown(): Bỏ thuộc tính display: none; kèm hiệu ứng cho đối tượng.
+
+slideUp(): Thêm thuộc tính display: none; kèm hiệu ứng cho đối tượng.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
