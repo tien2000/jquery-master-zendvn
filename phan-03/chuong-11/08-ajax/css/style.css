@@ -90,6 +90,11 @@ body{
     width: 100%;
 }
 
+.txtError{
+    color: red;
+    font-style: italic;
+}
+
 .bg01{
     background: #f7ffaf;
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../js/post.js"></script>
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - Shorthand
+        </h1>
+        <h2>
+            jQuery.post(url, [,data] [,success(data, textStatus, jqXHR)] [,dataType]);
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+
+    <form id="appForm" name="appForm" action="" method="post" enctype="multipart/form-data" class="box">
+        <div>
+            Username: 
+            <input type="text" name="username" id="username" class="input">
+        </div>
+        <div>
+            Password: 
+            <input type="password" name="password" id="password" class="input">
+        </div>
+        <input type="button" value="Login" id="btnLogin" class="button">
+    </form>
+</body>
+</html>
