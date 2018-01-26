@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            
+            
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(){
+                // ================== .get(url, success) ===================
+                var url, data2;
+                // url = "../files/file-002.php?id=10&name=Apple&t=" + Math.random();
+                // $.get(url, function(data, status, jsXHR){     
+                //     $("#info").html(data);
+                //     console.log($.type(data));
+                //     console.log(status);
+                //     console.log(jsXHR);                
+                // });
+
+                // ================== .get(url, data, success()) ===================
+                // url = "../files/file-002.php";
+                // data2 = {id: 10, name: "Apple", t: Math.random()};
+                // $.get(url, data2, function(data, status, jsXHR){
+                //     $("#info").html(data);
+                // });
+
+                // ================== .get(url, data, success(), dataType: xml, json, script, html) ===================
+                // url = "../files/books.xml";
+                // $.get(url, function(data, status, jsXHR){
+                //     $(data).find("title");
+                //     // console.log($(data).find("title"));
+                //     var txt = "";
+                //     $(data).find("title").each(function(i, val){
+                //         // console.log(i);
+                //         // console.log(val);
+                //         // console.log($(val).text());
+                //         txt += $(this).text() + "<br>";
+                //     });
+
+                //     $("#info").html(txt);
+                // }, "xml");
+
+                // ================== json ===================
+                // url = "../files/file-002a.php";
+                // $.get(url, function(data){                    
+                //     console.log(data);
+                //     console.log($.parseJSON(data));
+                //     var txt = "";                    
+                //     $.each($.parseJSON(data), function(i, val){
+                //         // console.log(i);
+                //         // console.log(val);
+                //         txt += i + ": " + val + "<br>";
+                //     });
+                //     $("#info").html(txt);
+                // });
+
+                // ================== script ===================
+                url = "../files/test.js";
+                $.get(url, function(data){                    
+                    console.log(data);
+                    hello();
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - Shorthand
+        </h1>
+        <h2>
+            jQuery.get(url, [,data] [,success(data, textStatus, jqXHR)] [,dataType]);
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+</body>
+</html>
