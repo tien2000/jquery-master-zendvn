@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            data: Dữ liệu truyền theo phương thức POST
+            t=Math.random(): Tránh Cache trên IE.
+            responeText: Lấy nội dung load về từ máy chủ.
+            textStatus: Trả về trạng thái của quá trình Ajax 
+                        (success: Đã lấy được giá trị trả về, 
+                        error: 1. Đường dẫn ko tồn tại, 2. TimeOut).
+        */
+        $(document).ready(function(e){
+            $("#process").click(function(){
+                var url, data;
+
+                // ============ load(url) ==============
+                // url = "../files/file-001.html";
+                // url = "../files/file-001.php";
+                // $("#info").load(url);
+
+                // ============ load(url, data) ==============
+                // data    = {title: "jQuery Master"};                     // POST
+                // url     = "../files/file-001a.php";                  // POST
+                // url     = "../files/file-001a.php?id=10&name=apple&t=" + Math.random();    // GET
+                // $("#info").load(url, data);
+
+                // ============ load(url, function()) ==============
+                // url = "../files/file-001a.php?t=" + Math.random();
+                // $("#info").load(url, function(respone, status, jQXHR){
+                //     // console.log(respone);        // Lấy nội dung load về từ máy chủ.
+                //     // console.log(status);            // Trả về trạng thái của quá trình Ajax (success: Đã lấy được giá trị trả về, error: 1. Đường dẫn ko tồn tại, 2. TimeOut)
+                //     console.log(jQXHR);
+                // });
+
+                url = "../files/books.xml";
+                $("#info").load(url, function(respone, status, jQXHR){
+                    console.log(respone);
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - Shorthand
+        </h1>
+        <h2>
+            .load(url [,data] [,complete(responeText, textStatus, XMLHttpRequest)])
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+</body>
+</html>
