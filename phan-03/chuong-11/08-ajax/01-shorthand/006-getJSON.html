@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        // ==================== json =====================
+            // console.log(data);
+            //     console.log($.parseJSON(data));
+            //     var txt = "";                    
+            //     $.each($.parseJSON(data), function(i, val){
+            //         // console.log(i);
+            //         // console.log(val);
+            //         txt += i + ": " + val + "<br>";
+            //     });
+            //     $("#info").html(txt);
+        // ==================== json =====================
+
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                var url, dta;
+                var txt = '';
+                url = "../files/file-006.php?t=" + Math.random();
+                dta = {id: 1};
+                
+                $.getJSON(url, dta, function(data, status, jsXHR){
+                    console.log(data);
+                    console.log(status);
+                    console.log(jsXHR);
+
+                    txt += "Title: " + data.title + "<br>"
+                            + "Author: " + data.author + "<br>"
+                            + "Pages: " + data.pages + "<br>"
+                    $("#info").html(txt);
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - getJSON
+        </h1>
+        <h2>
+            jQuery.getJSON(url, [,data] [,success(data, textStatus, jqXHR)]);
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+</body>
+</html>

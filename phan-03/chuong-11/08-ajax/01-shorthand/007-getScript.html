@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                var url;
+                url = "../files/test.js";
+                
+                $.getScript(url, function(data, status, jsXHR){
+                    hello();
+
+                    console.log(data);
+                    console.log(status);
+                    console.log(jsXHR);                    
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - getScript
+        </h1>
+        <h2>
+            jQuery.getScript(url, [,success(data, textStatus, jqXHR)]);
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+</body>
+</html>
