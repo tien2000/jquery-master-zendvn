@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                $.ajax({
+                    url         : "../files/file-005.php",
+                    type        : "GET",           // default: GET
+                    data        : {
+                        title       : "jQuery Master",
+                        author      : "ZendVN Group"
+                    },                    
+                    success     : function(data, status, jqXHR){
+                                        console.log(status);
+                                        $("#boxA").html(data);
+                                    },
+                    error       : function(jqXHR, status, errorThrown){
+                                        console.log(status);
+                                    },
+                    beforeSend  : function(jqXHR, setting){             // Chạy trước success.
+                                        console.log("beforeSend");
+                                        // return false;                   // dừng những tiến trình phía sau.
+                                        // console.log(jqXHR);
+                                        // console.log(setting);
+                                        // setting.url  = "files/file-003a.php";
+                                    },
+                    complete    : function(jqXHR, textStatus){          // Chạy sau success.
+                                        console.log("complete");
+                                        $("#boxA :odd").addClass("bg01");
+                                        $("#boxA :even").addClass("bg02");
+                                    },
+                    dataFilter  : function(data, type){                 // Chạy trước success, chặn dữ liệu trong success
+                                        console.log("dataFilter");
+                                        console.log(data);
+                                        console.log($(data));           // Chuyển dữ liệu về dạng mảng.
+                                        return data;                    // Trả dữ liệu về đối tượng của ajax.
+                                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - Low
+        </h1>
+        <h2>
+            jQuery.ajax(url [, setting]) | jQuery.ajax([setting]);
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>    
+    <div id="boxA" class="box"></div>
+
+</body>
+</html>

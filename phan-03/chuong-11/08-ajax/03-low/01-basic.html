@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                $.ajax({
+                    url         : "../files/file-001.php",
+                    type        : "POST",           // default: GET
+                    data        : {
+                        title       : "jQuery Master",
+                        author      : "ZendVN Group"
+                    },
+                    dataType    : "html",           // html | text | json | xml
+                    timeout     : 3000,             // Thời gian request đến server.
+                    async       : true,             // true: readyState: 0 - 1 - 4.
+                    contentType :"application/x-www-form-urlencoded; charset=UTF-8",        // Khai bảo dữ liệu được gửi lên server.
+                    statusCode  : {                 // HTTP Status Code
+                        404: function(){
+                            alert("Đường dẫn không tồn tại");
+                        },
+                        200: function(){
+                            alert("Đã gửi dữ liệu thành công");
+                        },
+                        500: function(){        // Gửi dữ liệu thành công nhưng server có vấn đề.
+                            alert("Server đang bảo trì");
+                        }
+                    },
+                    success     : function(data, status, jqXHR){
+                                        console.log(data);
+                                        console.log(status);
+                                        console.log(jqXHR);
+                                    },
+                    error       : function(jqXHR, status, errorThrown){
+                                        console.log(jqXHR);
+                                        console.log(status);
+                                        console.log(errorThrown);
+                                    },
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - Low
+        </h1>
+        <h2>
+            jQuery.ajax(url [, setting]) | jQuery.ajax([setting]);
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>    
+</body>
+</html>

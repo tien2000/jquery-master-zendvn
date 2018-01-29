@@ -1,18 +1,15 @@
-
+<?php 
+    // Bổ sung cho thuộc tính crossDomain trong $.ajax.
+    header('Access-Control-Allow-Origin: *');
+?>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <?php
-    // GET | POST
-    echo "Nhận dữ liệu từ phương thức GET" . "<br>";
-    echo "==========================" . "<br>";
-    echo "<pre>";
-    echo print_r($_GET);
-    echo "</pre>";
-    echo "==========================" . "<br>";
+    $book = array(
+        "title"  => "jQuery Master",
+        "author" => "ZendVN Group",
+        "pages"  => 500
+    );
 
-    echo "Nhận dữ liệu từ phương thức POST" . "<br>";
-    echo "==========================" . "<br>";
-    echo "<pre>";
-    echo print_r($_POST);
-    echo "</pre>";
-    echo "==========================" . "<br>";
+    $jsonStr = json_encode($book);
+    echo $jsonStr;
 ?>

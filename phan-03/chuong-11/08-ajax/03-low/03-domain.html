@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                var u = "http://localhost/jquery-master-zendvn/phan-03/chuong-11/08-ajax/files/file-003.php";
+                $.ajax({
+                    url         : u,
+                    type        : "GET",           // default: GET
+                    data        : {
+                        title       : "jQuery Master",
+                        author      : "ZendVN Group"
+                    },
+                    dataType    : "html",           // html | text | json | xml
+                    crossDomain : true,
+                    success     : function(data, status, jqXHR){
+                                        console.log(data);
+                                        console.log(status);
+                                        console.log(jqXHR);
+                                    },
+                    error       : function(jqXHR, status, errorThrown){
+                                        console.log(jqXHR);
+                                        console.log(status);
+                                        console.log(errorThrown);
+                                    },
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - Low
+        </h1>
+        <h2>
+            jQuery.ajax(url [, setting]) | jQuery.ajax([setting]);
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>    
+</body>
+</html>
