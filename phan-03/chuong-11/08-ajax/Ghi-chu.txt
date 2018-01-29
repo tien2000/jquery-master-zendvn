@@ -1,0 +1,57 @@
+﻿E:\xampp\htdocs\jquery-master-zendvn\phan-03\chuong-11\08-ajax
+
+================== Shorthand ======================
+=========== Load ============
+data: Dữ liệu truyền theo phương thức POST
+&t=Math.random(): Tránh Cache trên IE.
+responeText: Lấy nội dung load về từ máy chủ.
+textStatus: Trả về trạng thái của quá trình Ajax (success: Đã lấy được giá trị trả về, error: 1. Đường dẫn ko tồn tại, 2. TimeOut).
+
+=========== Get ============
+
+
+=========== Post ============
+
+
+=========== getJSOn - getScript ===========
+
+
+=========== Helper- param ===========
+jQuery.param(obj): 
+
+
+=========== Helper- serialize ===========
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

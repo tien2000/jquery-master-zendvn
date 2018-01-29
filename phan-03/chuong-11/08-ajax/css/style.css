@@ -27,6 +27,8 @@ body{
 
 .box div{
     padding: 3px;
+    border: 1px solid gray;
+    margin-bottom: 5px;
 }
 
 .box-child{
