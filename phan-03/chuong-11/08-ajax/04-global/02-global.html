@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                $.ajax({
+                    url         : "../files/file-001.php",
+                    type        : "POST",
+                    data        : {"title" : "jQuery Master"},
+                    global      : true,             // default: true: Thực hiện / không thực hiện các hàm global Ajax.
+                    success     : function(data){
+                                        $("#info").html(data);
+                                    }
+                });                
+            });
+
+            $(document).ajaxStart(function(event){
+                console.log("ajaxStart");
+                console.log("--------------------------");
+                console.log(event);
+                console.log("============================");
+            });
+
+            $(document).ajaxSend(function(event, jqXHR, ajaxOptions){
+                console.log("ajaxSend");
+                console.log("--------------------------");
+                console.log(event);
+                console.log(jqXHR);
+                console.log(ajaxOptions);
+                console.log("============================");
+            });
+
+            $(document).ajaxSuccess(function(event, jqXHR, ajaxOptions){
+                console.log("ajaxSuccess");
+                console.log("--------------------------");
+                console.log(event);
+                console.log(jqXHR);
+                console.log(ajaxOptions);
+                console.log("============================");
+            });
+
+            $(document).ajaxError(function(event, jqXHR, ajaxOptions){
+                console.log("ajaxError");
+                console.log("--------------------------");
+                console.log(event);
+                console.log(jqXHR);
+                console.log(ajaxOptions);
+                console.log("============================");
+            });
+
+            $(document).ajaxComplete(function(event, jqXHR, ajaxOptions){
+                console.log("ajaxComplete");
+                console.log("--------------------------");
+                console.log(event);
+                console.log(jqXHR);
+                console.log(ajaxOptions);
+                console.log("============================");
+            });
+
+            $(document).ajaxStop(function(event){
+                console.log("ajaxStop");
+                console.log("--------------------------");
+                console.log(event);
+                console.log("============================");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - Global
+        </h1>
+        <h2>
+            Global Ajax Event Handlers.
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>    
+</body>
+</html>
