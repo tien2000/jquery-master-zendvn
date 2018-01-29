@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                // ================== jQuery.param(obj) ===================
+                // var obj = {
+                //     "title" : "jQuery Master",
+                //     "author": "ZendVN Group"
+                // };
+                // var str;
+                // str = $.param(obj);
+                // url = "files/file-001.php?t=" + Math.random() + "&" + str;
+                // console.log(str);
+                // console.log(url);
+
+                // ================== jQuery.param(obj, tradisional) ===================
+                var obj = {
+                    "book1":{
+                        "title" : "jQuery Master",
+                        "author": "ZendVN Group"                                       
+                    },
+                    "book2":{
+                        "title" : "Wordpress",
+                        "author": "ZendVN Group"                                       
+                    }
+                };
+                var str;
+                str = $.param(obj, false);                
+                console.log(str);
+                var str2;
+                str2 = $.param(obj, true);
+                console.log(str2);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - Helper - param
+        </h1>
+        <h2>
+            jQuery.param(obj) | jQuery.param(obj, tradisional);
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+</body>
+</html>

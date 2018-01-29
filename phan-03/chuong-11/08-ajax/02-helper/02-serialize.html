@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../js/json2.js"></script>
+
+    <script type="text/javascript">
+        /*
+            .serialize(): Lấy các giá trị trong Form tạo thành chuỗi (Ko xử lý được dữ liệu).
+            .serializeArray(): Lấy ra đối tượng chứa thông tin đã nhập vào form (Xử lý dữ liệu trước khi gửi đi).
+        */
+
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                var val;
+                val = $("#appForm").serialize();
+                console.log(val);
+
+                val2 = $("#appForm").serializeArray();
+                console.log(val2);
+
+                var picture = $("#appForm :file[name='picture']").val();
+                console.log(picture);
+
+                var fileName = picture.match(/[^\/\\]+$/i);
+                console.log(fileName);
+
+                // Lấy ra tên tập tin.
+                if ($.isArray(fileName) == true) {
+                    fileName = fileName[0];
+                }
+                console.log(fileName);
+
+                val = val + "&picture=" + fileName;
+                console.log(val);
+
+                val2.push( {name: "picture", value: fileName} );
+
+                var tmp = JSON.stringify(val2);
+                console.log(tmp);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Ajax - Helper - serialize
+        </h1>
+        <h2>
+            .serialize() | .serializeArray();
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <form id="appForm" class="box" name="appForm" action="" method="post" enctype="multipart/form-data">
+        <div>
+            TextBox:
+            <input type="text" name="username" id="username" class="input" value="tienls">
+        </div>
+        <div>
+            Password:
+            <input type="password" name="password" id="password" class="input" value="123456">
+        </div>
+        <div>
+            File Upload:
+            <input type="file" name="picture" class="input">
+        </div>
+        <div>
+            SelectBox:
+            <select name="mobile">
+                <option value="nokia">Nokia</option>
+                <option value="apple">Apple</option>
+                <option value="samsung">Samsung</option>
+                <option value="xiaomi">Xiaomi</option>
+            </select>
+        </div>
+        <div>
+            Radio Group:
+            <input type="radio" name="skill" class="input" value="html"> HTML
+            <input type="radio" name="skill" class="input" value="css"> CSS
+            <input type="radio" name="skill" class="input" value="js"> JAVASCRIPT
+            <input type="radio" name="skill" class="input" value="jquery"> JQUERY
+        </div>
+        <div>
+            Button:
+            <input name="btnSubmit" type="submit" value="Submit" class="button">
+            <input name="btnReset" type="reset" value="Reset" class="button">
+        </div>
+    </form>
+</body>
+</html>
