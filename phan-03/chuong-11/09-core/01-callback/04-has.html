@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            callback.has(callback): Kiểm tra tồn tại của hàm (true | false).
+        */
+
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                var callback = $.Callbacks();       // Callbacks Object
+
+                callback.add(tmp1);
+                callback.add(tmp2);
+
+                console.log(callback.has(tmp1));
+                console.log(callback.has(tmp2));
+                console.log(callback.has(tmp3));
+
+                callback.fire("Hello", "jQuery Master 123");
+
+                
+
+                // console.log(callback);
+            });
+
+            function tmp1(val){
+                console.log("tmp1: " + val);
+            };
+
+            function tmp2(val1, val2){
+                console.log("tmp2: " + val1 + " - " + val2);
+            };
+        });        
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Core - callback
+        </h1>
+        <h2>
+            callback.fired();
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="info" class="box-child">Ready...</div>
+</body>
+</html>
