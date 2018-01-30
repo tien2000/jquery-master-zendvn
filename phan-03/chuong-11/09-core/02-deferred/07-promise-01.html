@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            Biến 1 đối tượng thành đối tượng Deferred:
+                - Khai báo phương thức được gọi sau khi đối tượng hành động (done() | fail()).
+                - Sử dụng promise() trả về để biến đối tượng thành đối tượng deferred()  (inportant).
+
+            deferred.resolve(): Khi được viết trong hàm nào đó thì hàm đó sử dụng được phuong thức done().
+        */
+
+        $(document).ready(function(e){            
+            $("#process").click(function(e){
+                hideBox("#boxA").done(function(){
+                    $("#info").html("Ẩn BoxA rồi!");
+                }).fail(function(){
+                    $("#info").html("Không thực thi được khi fail()");
+                });
+
+                console.log(hideBox);
+            });
+
+            var hideBox = function(selector){
+                var dfd = $.Deferred();
+                $(selector).fadeOut(1000);
+                dfd.resolve();
+                return dfd.promise();
+            }
+        });        
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Core - Deferred
+        </h1>
+        <h2>
+            deferred.promise([args]);   
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="info" class="box-child">Ready...</div>
+    <div id="boxA" class="box bg02">Ready...</div>
+</body>
+</html>
