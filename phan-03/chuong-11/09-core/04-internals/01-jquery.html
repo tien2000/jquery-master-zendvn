@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            $.fn.jquery: kiểm tra phiên bản của jQuery.
+        */
+
+        $(document).ready(function(e){
+            $("#process").click(function(e){
+                console.log($.fn.jquery);
+
+                var a, b;
+                a = {title : "jQuery Master"};          // javascript Object
+                if (a.jquery) {
+                    console.log("a là đối tượng jQuery");
+                }
+                b = $("#boxA");                         // jQuery Object
+                if (b.jquery) {
+                    console.log("b là đối tượng jQuery");
+                }
+            });            
+        });        
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Core - Internal
+        </h1>
+        <h2>
+            .jquery([index])
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="info" class="box-child">Ready...</div>
+    <div id="boxA" class="box">
+        <div>1. HTML</div>
+        <div>2. CSS</div>
+        <div>3. JS</div>
+        <div>4. JQUERY</div>
+    </div>
+</body>
+</html>

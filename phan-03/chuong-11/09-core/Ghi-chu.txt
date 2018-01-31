@@ -1,4 +1,6 @@
-﻿====================== Core =========================
+﻿E:\xampp\htdocs\jquery-master-zendvn\phan-03\chuong-11\09-core
+
+====================== Core =========================
 ============== Callbacks ================
 callback.add(val)      : Gọi hàm vào trong phương thức callback.
 callback.fire("Hello") : Truyền giá trị vào hàm.
@@ -34,6 +36,30 @@ deferred.state() : Hoàn thành | Dừng lại | Đang làm.
         - pendding: Đang làm ( progress() ).
         - resolved: Đã thực hiện - Đã hoàn thành ( done() ).
         - Rejected: Đã dừng lại ( fail() ).
+
+
+============== DOM ================
+.get([index]):
+
+.index(): Trả về chỉ số của phần tử được xác định.
+
+.toArray():
+
+
+============== Internal ================
+$.fn.jquery: kiểm tra phiên bản của jQuery.
+
+$.fn.context: Lấy đối tượng của tài liệu đang viết mã.
+
+.length: Đếm số phần tử trong đối tượng.
+
+.pushStack(val): Lấy ra tập hợp các đối tượng của jQuery được truyền vào (chỉ nhận 1 mảng được truyền vào, ko nhận 1 phần tử).
+
+
+
+
+
+
 
 
 

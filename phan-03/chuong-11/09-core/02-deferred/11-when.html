@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            $.when(): Là một đối tượng deferred.
+                        Xác định đối tượng có đúng hoàn toàn ko, nếu có 1 đối tượng sai sẽ trả về fail().
+                        Hay dùng với then().
+
+        */
+
+        $(document).ready(function(e){            
+            $("#process").click(function(e){
+                $.ajaxSetup({
+                    type    : "GET",
+                    data    : {title : "jQuery Master"}
+                });
+                // $.when(
+                //     $.ajax("../files/file-001.php"),
+                //     $.ajax("../files/file-001.php")
+                // ).done(function(){
+                //     $("#info").html("done()");
+                // }).fail(function(){
+                //     $("#info").html("fail()");
+                // });
+
+                $.when(
+                    $.ajax("../files/file-001.php"),
+                    $.ajax("../files/file-001a.php")
+                ).then(function(){
+                            $("#info").html("done()");
+                        },function(){
+                            $("#info").html("fail()");
+                        });
+            });
+        });        
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Core - When
+        </h1>
+        <h2>
+            jQuery.when(deferreds);
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="info" class="box-child">Ready...</div>
+</body>
+</html>
