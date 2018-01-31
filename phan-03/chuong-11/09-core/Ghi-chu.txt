@@ -1,0 +1,49 @@
+﻿====================== Core =========================
+============== Callbacks ================
+callback.add(val)      : Gọi hàm vào trong phương thức callback.
+callback.fire("Hello") : Truyền giá trị vào hàm.
+callback.fired()       : Kiểm tra phương thức .fire có hoạt động không (trả về true | false).
+callback.disable()     : Tắt tất cả hàm được đưa vào phương thức fire.
+callback.has(callback) : Kiểm tra tồn tại của hàm (true | false).
+callback.empty()       : Xóa toàn bộ phương thức được add vào đối tượng callback.
+callback.locked()      : Kiểm tra đối tượng có đang bị khóa không.
+callback.remove(tmp1)  : Loại bỏ hàm khỏi danh sách.
+callback.fireWith()    : Tạo ra đối tượng ngay trong tham số đầu tiên.
+
+
+============== Deferred ================
+deferred.done()        : Thực hiện phương thức khi làm 1 điều gì đó thành công.
+deferred.fail()        : Ngược lại với .done().
+deferred.then()        : Bao gồm cả 2 hàm success và error.
+deferred.always()      : Chạy bất chấp.
+
+deferred.resolve()     : Giải quyết những công việc đã hoàn thành (Chạy những hàm nằm trong hàm done()).
+deferred.resolve()     : Khi được viết trong hàm nào đó thì hàm đó sử dụng được phương thức done().
+deferred.resolveWith() : Giống deferred.resolve()  (Chạy sau done()).
+
+deferred.reject()      : Ngược lại với resolve (Không chạy sau done(), chỉ chạy sau fail()).
+deferred.rejectWith()  : Giống deferred.reject() (Chạy sau fail()).
+
+deferred.notify()      : chỉ chạy sau progress() (trạng thái pendding).
+
+deferred.promise()     : Biến 1 đối tượng thành đối tượng Deferred:
+	- Khai báo phương thức được gọi sau khi đối tượng hành động (done() | fail()).
+        - Sử dụng promise() trả về để biến đối tượng thành đối tượng deferred()  (inportant).
+
+deferred.state() : Hoàn thành | Dừng lại | Đang làm.
+        - pendding: Đang làm ( progress() ).
+        - resolved: Đã thực hiện - Đã hoàn thành ( done() ).
+        - Rejected: Đã dừng lại ( fail() ).
+
+
+
+
+
+
+
+
+
+
+
+
+

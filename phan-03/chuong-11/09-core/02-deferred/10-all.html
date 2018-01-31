@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            dfd.state(): Hoàn thành | Dừng lại | Đang làm.
+
+        */
+
+        $(document).ready(function(e){            
+            $("#process").click(function(e){
+                // dfd.state(): Hoàn thành | Dừng lại | Đang làm.
+                /*
+                    pendding: Đang làm ( progress() ).
+                    resolved: Đã thực hiện - Đã hoàn thành ( done() ).
+                    Rejected: Đã dừng lại ( fail() ).
+                */
+
+                var p = 16;
+                var c = check(p).done(function(selector, note){
+                    $(selector).html(note + " <br>Điểm của bạn là: " + p);
+                }).fail(function(selector, note){
+                    $(selector).html(note + " <br>Điểm của bạn là: " + p);
+                }).progress(function(selector, note){
+                    $(selector).html(note + " <br>Điểm của bạn là: " + p);
+                });
+
+                console.log(c.state());
+            });
+
+            var check = function(point){
+                var dfd = $.Deferred();
+                if(point <= 17){
+                    dfd.reject("#info", "Rớt rồi!");
+                } else if(point <= 22){
+                    dfd.notify("#info", "Đợi nguyện vọng 2");
+                }else{
+                    dfd.resolve("#info", "Chúc mừng! Bạn đậu rồi ^^");
+                }
+
+                return dfd.promise();
+            }
+        });        
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Core - Deferred
+        </h1>
+        <h2>
+            deferred.rejectWith(context [, args]);
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="info" class="box-child">Ready...</div>
+</body>
+</html>

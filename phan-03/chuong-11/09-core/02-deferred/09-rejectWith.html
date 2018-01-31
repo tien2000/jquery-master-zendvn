@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+
+    <script type="text/javascript">
+        /*
+            deferred.rejectWith(): 
+        */
+
+        $(document).ready(function(e){            
+            $("#process").click(function(e){
+                var deferred = $.Deferred();
+                // deferred.fail(function(val1, val2){
+                //     $(this).html("================ fail() ================<br>")
+                //               .append(val1 + " - " + val2);
+                //     console.log(this);
+                // });
+
+                // deferred.resolveWith($("#info"), [100, 200]);
+
+                var book = {title : "jQuery Master"};
+                deferred.fail(function(selector, val1, val2){
+                    $(selector).html("================ fail() ================<br>")
+                               .append(val1 + " - " + val2 + " - " + this.title);
+                    console.log(this);
+                });
+
+                deferred.rejectWith(book, ["#info", 100, 200]);
+            });
+        });        
+    </script>
+
+</head>
+<body>
+    <center>
+        <h1>
+            Core - Deferred
+        </h1>
+        <h2>
+            deferred.rejectWith(context [, args]);
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" value="Process" id="process" class="button">
+    </center>
+
+    <div id="info" class="box-child">Ready...</div>
+</body>
+</html>
