@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form Events - onchange</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+    
+    <script type="text/javascript">
+        /*
+            window.getSelection: Trường hợp chạy trên Chrome , IE9 trở lên.
+        */
+
+        // ================= JAVASCIPT =====================
+        // function getVal(obj){
+        //     var info = document.getElementById("info");
+        //     if (window.getSelection) {
+        //         var activeElemt = document.activeElement;
+        //         // console.log(activeElemt.tagName);
+        //         if (activeElemt.tagName == "TEXTAREA" || activeElemt.tagName == "INPUT") {
+        //             var txtElemt = document.activeElement.value;
+        //             var startPos = document.activeElement.selectionStart;
+        //             var endPos = document.activeElement.selectionEnd;
+        //             var valText = txtElemt.substring(startPos, endPos);
+        //             // console.log(startPos + " | " + endPos);                    
+        //         }
+        //     } else{
+        //         // Chạy trên IE8 trở xuống.
+        //         if (document.selection.createRange) {
+        //             var range = document.selection.createRange();
+        //             console.log(range.text);
+        //             var valText = range.text;
+        //         }
+        //         // console.log("IE");
+        //     }
+        //     info.innerHTML = "Select String: " + valText;
+        // }
+
+
+        // ==================== JQUERY =====================
+        $(document).ready(function(e){
+            var content = $("#appForm textarea[name='content']");
+            content.select(function(e){
+                $("#info").text("Đã có dữ liệu.");
+                var txtElemt = $(this).val();
+                var startPos = $(this)[0].selectionStart;
+                var endPos = $(this)[0].selectionEnd;
+                var valText = txtElemt.substring(startPos, endPos);
+                $("#info").text(valText);
+
+                console.log(valText);
+            });
+
+            
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <h1>
+            Event - Form
+        </h1>
+        <h2>
+            .select()
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo"></div>
+    <div id="boxA" class="box">
+        <form id="appForm" name="appForm" action="process.php" method="get" enctype="multipart/form-data">
+            <ul class="list">
+                <li>
+                    <label for="">Content: </label>
+                    <textarea name="content" id="" cols="58" rows="6" class="input">JavaScript DOM khó quá, học mệt quá!!!</textarea>
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>

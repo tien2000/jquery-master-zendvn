@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form Events - onchange</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+    
+    <script type="text/javascript">
+        /*
+            
+        */
+
+        // ================= JAVASCIPT =====================
+        // function validatorSubmit(){
+        //    var txtKeywords = document.appForm.keywords;
+        //     if (txtKeywords.value.length < 3) {
+        //         alert("Từ khóa phải có ít nhất 3 ký tự");
+        //         return false;
+        //     }
+        //     var radioEngine = document.appForm.engine;
+        //     var flag        = false;
+        //     var engine      = "none";
+        //     for (var i = 0; i <= radioEngine.length - 1; i++) {
+        //         if (radioEngine[i].checked == true) {
+        //             engine = radioEngine[i].value;
+        //             if (engine != "none") {
+        //                 flag = true;
+        //             }
+        //             break;
+        //         }
+        //     }
+        //     if (flag == false) {
+        //         alert("Xin vui lòng chọn 1 máy tìm kiếm");
+        //         return false;                
+        //     } else{
+        //         switch (engine) {
+        //             case "google": document.appForm.action = "http://gooogle.com";                        
+        //                 break;
+
+        //             case "yahoo": document.appForm.action = "http://yahoo.com";                        
+        //                 break;
+
+        //             case "bing": document.appForm.action = "http://bing.com";                        
+        //                 break;
+                
+        //             default:
+        //                 break;
+        //         }
+        //     }
+        //     console.log(radioEngine);            
+        // }
+
+        // ==================== JQUERY =====================
+        $(document).ready(function(e){
+            $("#appForm").submit(function(e){
+                if ($("#appForm :text[name='keywords']").val().length < 3) {
+                    alert("Từ khóa phải có ít nhất 3 ký tự");
+                    return false;
+                }
+
+                var checked = $("#appForm :radio[name='engine']:checked");
+                if (checked.length == 0) {
+                    alert("Xin vui lòng chọn máy tìm kiếm");
+                    return false;
+                }else{
+                    var engine = checked.val();
+                    // console.log(engine);
+                    // return false;
+                    switch (engine) {
+                        case "google": $("#appForm").attr("action", "http://gooogle.com");
+                            break;
+
+                        case "yahoo": $("#appForm").attr("action", "http://yahoo.com");
+                            break;
+
+                        case "bing": $("#appForm").attr("action", "http://bing.com");
+                            break;
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <h1>
+            Event - Form
+        </h1>
+        <h2>
+            .submit();
+        </h2>
+    </center>
+    
+    <div id="boxA" class="box">
+        <form id="appForm" name="appForm" action="process.php" method="get" enctype="multipart/form-data">
+            <ul class="list">
+                <li>
+                    <label for="">Keywords: </label>
+                    <input type="text" name="keywords" id="keywords" value="" class="input txtMedium">
+                </li>
+                <li>
+                    <label for="">Search engine: </label>
+                    <input type="radio" name="engine" value="none"> none 
+                    <input type="radio" name="engine" value="google"> Google 
+                    <input type="radio" name="engine" value="yahoo"> Yahoo 
+                    <input type="radio" name="engine" value="bing"> Bing 
+                </li>
+                <li>
+                    <input type="submit" name="submit" id="submit" value="Send" class="input">
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
