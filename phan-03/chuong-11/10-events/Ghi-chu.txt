@@ -1,0 +1,74 @@
+﻿E:\xampp\htdocs\jquery-master-zendvn\phan-03\chuong-11\10-events
+
+====================== Event =========================
+============== Browser events ================
+.resize(handler(eventObject)): Thay đổi kích thước trình duyệt.
+.scroll(handler(eventObject)): Thay đổi kích thước thanh cuộn.
+
+============== Form events ================
+.focus(): 
+.blur():
+
+============== Keyboard events ================
+.keydown()    : Tạo sự kiện nhấn nút trên bàn phím.
+.keyup()      :
+.keypress()   :
+.change()     : Thay đổi nội dung được xác định khi nhấn chuột.
+.on()         : Kết hợp nhiều sự kiện.
+
+============== Mouse events ================
+.click()      :
+.dblclick()   :
+.hover()      :
+.mousedown()  : 
+.mouseup()    :
+.mousemove()  :
+.mouseover()  :
+.mouseout()   : 
+.mouseenter() : 
+.mouseleave() :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
