@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mouse Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(e){
+            // ============== .mouseover(handler(eventObject)) =============
+            var i1 = 0, i2 = 0;
+            $("#boxA").mouseover(function(e){
+                $("#info span:first").text("Mouse Over: " + (++i1));
+            }).mouseout(function(e){
+                $("#info span:last").text("Mouse Over: " + (++i2));
+            });
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <h1>
+            Event - Mouse
+        </h1>
+        <h2>
+            .mouseover(handler(eventObject)) | .mouseout(handler(eventObject))
+        </h2>
+    </center>
+    <div id="info" class="boxInfo">
+        <span>Mouse over: 0</span>
+        <br>
+        <span>Mouse out: 0</span>
+    </div>
+
+    <div id="boxA" class="box bg02">
+        <div id="boxB" class="boxB bg01">
+            Box B
+            <div id="boxC">Box C</div>
+        </div>
+    </div>
+</body>
+</html>
