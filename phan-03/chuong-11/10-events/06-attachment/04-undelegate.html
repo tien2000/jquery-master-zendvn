@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event Attachment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+    
+    <script type="text/javascript">
+        /*
+            .undelegate(): Tương tự .unbind().
+        */
+        $(document).ready(function(e){
+            $("#boxA").delegate("*",{
+                click: function(e){
+                    $(this).toggleClass("bg02");
+                },
+                mouseenter: function(e){
+                    $(this).addClass("bg01");
+                },
+                mouseleave: function(e){
+                    $(this).removeClass("bg01");
+                }
+            });
+
+            $("#undelegate").click(function(e){
+                // ======== .undelegate() =========
+                // $("#boxA").undelegate();
+
+                // ======== .undelegate() =========
+                // $("#boxA").undelegate("*", "click");
+
+                // $("#boxA").undelegate("#php", "click");     // error: Not Working.
+
+                $("#boxA").undelegate("*", "mouseenter mouseleave");
+            });
+        });        
+    </script>
+</head>
+<body>
+    <center>
+        <h1>
+            Event - Attachment
+        </h1>
+        <h2>
+            .undelegate() | <br>
+            .undelegate( selector, eventType ) | <br>
+            .undelegate( selector, eventType, handler ) | <br>
+            .undelegate( selector, events ) | <br>
+            .undelegate( namespace )
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" id="undelegate" value="Undelegate" class="button">
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>    
+
+    <div id="boxA" class="box">
+        <span class="item">1. HTML</span>
+        <div class="item">2. CSS</div>
+        <div class="item">3. JS</div>
+        <p class="item">4. JQUERY</p>
+        <div class="item" id="php">5. PHP</div>
+    </div>
+</body>
+</html>

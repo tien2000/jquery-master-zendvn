@@ -5,9 +5,11 @@
 .resize(handler(eventObject)): Thay đổi kích thước trình duyệt.
 .scroll(handler(eventObject)): Thay đổi kích thước thanh cuộn.
 
+
 ============== Form events ================
 .focus(): 
 .blur():
+
 
 ============== Keyboard events ================
 .keydown()    : Tạo sự kiện nhấn nút trên bàn phím.
@@ -29,11 +31,28 @@
 .mouseleave() :
 
 
+============== Event Object ================
+e.currentTarget  : Lấy ra phần tử vừa kích hoạt.
+e.data           : Tham số thứ nhất được truyền vào.
+e.pageX          : Khoảng cách từ bên trái trình duyệt đến vị trí được click.
+e.pageY          : Khoảng cách từ bên trên trình duyệt đến vị trí được click.
+e.target         : Giống e.currentTarget.
+e.timeStamp      : Hiển thị số giây từ năm 1/1/1970.
+
+e.preventDefault()               : Chặn hành động mặc định của phần tử (Vd: Chặn link của thẻ a).
+e.isDefaultPrevented()           : Kiểm tra phương thức e.preventDefault() đã chạy chưa.
+e.stopPropagation()              : Dừng những sự kiện đã gán vào phần tử cha của phần tử được xác định.
+e.isPropagationStopped()         : Kiểm tra phương thức e.stopPropagation() đã chạy chưa.
+e.stopImmediatePropagation()     : Chặn những hành động thứ 2 của phần tử.
+e.isImmediatePropagationStopped(): Kiểm tra phương thức e.stopImmediatePropagation() đã chạy chưa.
+e.relatedTarget			 : Những phần tử liên quan đến phần tử được xác định (Thay đổi tùy trường hợp).
 
 
-
-
-
+============== Event Handler Attachment ================
+.bind(): Kết hợp nhiều sự kiện (click, mouseover, mouseout...).
+.unbind(): Bỏ các sự kiện được truyền vào (Nếu ko có tham số truyền vào sẽ bỏ hết các sự kiện).
+.delegate(): Tương tự .bind(Cách viết hơi khác).
+.undelegate(): Tương tự .unbind().
 
 
 

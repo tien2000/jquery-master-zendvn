@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event Attachment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+    
+    <script type="text/javascript">
+        /*
+            .unbind(): Bỏ các sự kiện được truyền vào (Nếu ko có tham số truyền vào sẽ bỏ hết các sự kiện).
+        */
+        $(document).ready(function(e){
+            $("#bind").click(function(e){
+                $("#boxA > *").bind({
+                    click: function(e){
+                        $(this).toggleClass("bg02");
+                    },
+                    mouseenter: function(e){
+                        $(this).addClass("bg01");
+                    },
+                    mouseleave: function(e){
+                        $(this).removeClass("bg01");
+                    }
+                });
+            });           
+
+            // ============== .unbind( eventType [, handler ] ) ==============
+            $("#unbind").click(function(e){
+                $("#boxA > *").unbind();
+
+                // $("#boxA > *").unbind("click");
+
+                // $("#boxA > *").unbind("mouseleave mouseenter");
+            });
+        });        
+    </script>
+</head>
+<body>
+    <center>
+        <h1>
+            Event - Attachment
+        </h1>
+        <h2>
+            .unbind( eventType [, handler ] ) | <br>
+            .unbind( eventType, false ) | <br>
+            .unbind( event )
+        </h2>
+    </center>
+
+    <center>
+        <input type="button" id="bind" value="Bind" class="button">
+        <input type="button" id="unbind" value="Unbind" class="button">
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>    
+
+    <div id="boxA" class="box">
+        <div>1. HTML</div>
+        <div>2. CSS</div>
+        <div>3. JS</div>
+        <div>4. JQUERY</div>
+        <div>5. PHP</div>
+    </div>
+</body>
+</html>
