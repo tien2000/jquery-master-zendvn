@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event Object</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+    
+    <script type="text/javascript">
+        /*
+            e.stopPropagation(): Dừng những sự kiện đã gán vào phần tử cha của phần tử được xác định.
+            e.isPropagationStopped(): Kiểm tra phương thức e.stopPropagation() đã chạy chưa.
+        */
+        $(document).ready(function(e){
+            $("#boxA > *").click({cls: "bg02"}, function(e){
+                $(this).toggleClass(e.data.cls);
+            });
+
+            $("#js").click(function(e){
+                alert("Hello");
+                console.log(e.isPropagationStopped());
+                e.stopPropagation();
+                console.log(e.isPropagationStopped());
+            });
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <h1>
+            Event - Object
+        </h1>
+        <h2>
+            .click(handler(eventObject)) | .click([eventData] , handler(eventObject)) | .click();
+        </h2>
+    </center>
+    <div id="info" class="boxInfo">Ready...</div>
+
+    <div id="boxA" class="box">
+        <div class="item"> 1. HTML</div>
+        <div class="item">2. CSS</div>
+        <div><strong id="js">3. JS</strong></div>
+        <div class="item">4. JQUERY</div>
+        <div class="item">5. PHP</div>
+    </div>
+</body>
+</html>
