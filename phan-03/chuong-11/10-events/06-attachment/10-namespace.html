@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event Attachment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script src="../js/jquery-1.12.4.js"></script>
+    
+    <script type="text/javascript">
+        /*
+            e.namespace: Giá trị đặt cho đối tượng (gần giống custom-event).
+        */
+        $(document).ready(function(e){
+            $("#boxA").on("row.click", "*", function(e){
+                $(this).toggleClass("bg02");
+                console.log(e);
+            });
+
+            $("#boxA > *").on("click", function(e){
+                $(this).trigger("row.click");
+            });
+        });        
+    </script>
+</head>
+<body>
+    <center>
+        <h1>
+            Event - Trigger
+        </h1>
+        <h2>
+            e.namespace
+        </h2>
+    </center>
+
+    <div id="info" class="boxInfo">Ready...</div>    
+
+    <div id="boxA" class="box">
+        <span class="item">1. HTML</span>
+        <div class="item">2. CSS</div>
+        <div class="item">3. JS</div>
+        <p class="item">4. JQUERY</p>
+        <div class="item" id="php">5. PHP</div>
+    </div>
+</body>
+</html>

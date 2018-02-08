@@ -53,8 +53,13 @@ e.relatedTarget			 : Những phần tử liên quan đến phần tử được 
 .unbind(): Bỏ các sự kiện được truyền vào (Nếu ko có tham số truyền vào sẽ bỏ hết các sự kiện).
 .delegate(): Tương tự .bind(Cách viết hơi khác).
 .undelegate(): Tương tự .unbind().
+.on(): tương tự bind(), delegate() | (hoàn thiện hơn, có thể thay thế cho bind(), delegate()).
+.off(): 
+.trigger(): Kích hoạt sự kiện của phần tử được chọn (Có thể dùng để tạo ra sự kiện mới).
+.triggerHandler(): Giống trigger() | Phần đơn giản của trigger().
 
-
+e.namespace: Giá trị đặt cho đối tượng (gần giống custom-event).
+e.stopPropagation(): Ngăn ảnh hưởng đến phần tử cha.
 
 
 
