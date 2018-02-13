@@ -32,7 +32,7 @@
 $(document).ready(function(e){
     $("#zoomIn").click(function(e){
         $("#boxA").zoomIt({width: 80, height: 70})
-                  .removeClass("bg02").addClass("bg01");
+                  .removeClass("bg02").addClass("bg01");    
     });
     $("#zoomOut").click(function(e){
         $("#boxA").zoomIt({width: 120, height: 170})
