@@ -1,0 +1,18 @@
+#ztooltip-contener{
+    background-color: #000;
+    max-width: 300px;
+    min-width: 200px;
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+    position: absolute;
+    display: none;
+}
+
+#ztooltip-source-html{
+    display: none;
+}
