@@ -1,23 +1,36 @@
 <?php
 	include("connection.php");
-	
-	
-	$keyword 	= (string)$_POST["keywords"];
-	$limit		= (int)$_POST["limit"];
-	
-	$sql = "SELECT `id`,`name` 
-			FROM `products` 
-			WHERE `status` = 1 
-			AND `name` LIKE '%{$keyword}%' 
-			ORDER BY `order` ASC, `name` ASC 
+
+	// echo "<pre>";
+	// print_r($_POST);
+	// echo "</pre>";
+
+	$keywords = (string)$_POST["keywords"];
+	$limit    = (int)$_POST["limit"];
+
+	$sql = "SELECT `id`, `name`
+			FROM `products`
+			WHERE `status` = 1
+			AND `name` LIKE '%{$keywords}%'
+			ORDER BY `order` ASC, `name` ASC
 			LIMIT " . $limit;
-	
-	$result = mysql_query($sql,$link);
-	$books = array();
-	while($row = mysql_fetch_assoc($result)){
-		$books[] = $row;	
+
+	$result = mysqli_query($conn, $sql);
+	$books  = array();
+
+	while ($row = mysqli_fetch_assoc($result)) {
+		$books[] = $row;
 	}
-	
-	
-	$bookObj = json_encode($books);
-	echo $bookObj;
+
+	$booksObj = json_encode($books);
+
+	echo $booksObj;
+
+	// echo "<pre>";
+	// print_r($books);
+	// echo "</pre>";
+
+	// echo $keywords;
+	// echo $limit . "<br>";
+	// echo $sql;	
+?>

@@ -1,14 +1,15 @@
 <?php
-	$link = mysql_connect("localhost","root","");
-	if(!$link){
-		echo "Could not connect to mysql";
+	$conn = mysqli_connect("localhost", "root", "");
+
+	if (!$conn) {
+		echo "Could not connect to mySQL";
 		exit;
 	}
-	
-	if(!mysql_select_db("books",$link)){
-		echo "Could not select database";
-		exit;	
+
+	if (!mysqli_select_db($conn, "autocomplete")) {
+		echo "Could not connect to database";
+		exit;
 	}
-	
-	mysql_query("set names 'utf8'",$link);
+
+	mysqli_query($conn, "set names 'utf8'");
 ?>
