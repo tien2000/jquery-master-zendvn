@@ -6,7 +6,7 @@
 		exit;
 	}
 
-	if (!mysqli_select_db($conn, "autocomplete")) {
+	if (!mysqli_select_db($conn, "books")) {
 		echo "Could not connect to database";
 		exit;
 	}

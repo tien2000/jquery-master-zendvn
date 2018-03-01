@@ -1,9 +1,9 @@
 <?php
 	include("connection.php");
 
-	// echo "<pre>";
-	// print_r($_POST);
-	// echo "</pre>";
+	echo "<pre>";
+	print_r($_POST);
+	echo "</pre>";
 
 	$keywords = (string)$_POST["keywords"];
 	$limit    = (int)$_POST["limit"];
