@@ -1,0 +1,76 @@
+#tSlider{    
+    background: url("../images/grad.jpg") center center no-repeat #c5c5c5;
+    width: 950px;
+    min-height: 200px;
+}
+
+.tSlider-img{
+    padding: 15px;
+}
+
+.tSlider-img-ins{
+    width: 920px;
+    height: 360px;    
+    overflow: hidden;
+    position: relative;
+}
+
+.tSlider-img-content{
+    width: 1840px;
+    height: 360px;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.tSlider-img-content img{
+    float: left;
+}
+
+.tSlider-bar{
+    padding: 0 15px;
+}
+
+.tSlider-bar-content{
+    padding: 5px 0;
+    margin: 0 40px;
+    text-align: center;
+}
+
+.tSlider-bar-title{
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tSlider-bar-detail{
+    font-size: 11px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tSlider-bar{
+    position: relative;
+}
+
+.tSlider-left-arrow{
+    background: url("../images/arrows.png") left top no-repeat;
+    width: 15px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.tSlider-right-arrow{
+    background: url("../images/arrows.png") right top no-repeat;
+    width: 15px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+
+
