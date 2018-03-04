@@ -72,5 +72,53 @@
     right: 20px;
 }
 
+.tSlider-thumb{
+    margin: 15px;    
+   
+}
+
+.tSlider-thumb-bar{
+    background: #b9b9b9;
+    border: 1px solid #fff;
+    height: 79px;
+    overflow: hidden;
+    border-width: 1px 0px;
+    position: relative;
+}
+
+.tSlider-thumb-bar ul{
+    list-style: none inside;
+    width: 4000px;
+    position: absolute;
+    left: 0px;
+}
+
+.tSlider-thumb-bar ul li{
+    float: left;
+    margin: 3px 4px 3px 0px;
+    position: relative;
+}
+
+
+.tSlider-thumb-bar .mask{
+    position: absolute;
+    width: 114px;
+    height: 72px;
+    background: #000;
+    left: 0px;
+    top: 0px;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    cursor: pointer;
+}
+
+.tSlider-thumb-bar .maskHover{
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+
+
+
 
 
