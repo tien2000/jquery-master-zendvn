@@ -32,20 +32,126 @@
         var itemTitle       = options.title;
         var itemDetail      = options.detail;
         var widthUl         = 0;
-        var runFlag         = "right";
+        var runFlag         = "left";
         var divMask         = "";
+        var timeOut;
 
         // console.log(itemTotal);
 
         // ==============================================
         // Gọi hàm chạy mặc định thi chạy Plugin
         // ==============================================
-        init();
+        init().done(function (e) {
+            console.log("Init Done");
+            run();
+        });
+
+        // ==============================================
+        // Hàm chạy slider
+        // ==============================================
+        function run() {
+            timeOut = setInterval(function (e) {
+                if (runFlag == "right") {
+                    console.log("Run Left");
+                    runRigth();
+                }else{
+                    console.log("Run Right");
+                    runLeft();
+                }
+            }, 2000);
+        }
+
+        // ==============================================
+        // Hàm chạy slider về bên phải
+        // ==============================================
+        function runRigth(){
+            $(options.pic).animate({                
+                "left"      : "-920px",
+                "duration"  : 500
+            }, function (e) {
+                console.log("Run left 920px");
+
+                // Thiết lập lại hình kế tiếp sẽ hiển thị
+                itemSelected = itemSelected + 1;
+
+                // Loại bỏ các class maskHover của các thẻ div.mask
+                $(divMask).removeClass("maskHover");
+
+                // Thiết lập lại vị trí chứa 2 hình lớn.
+                $(options.pic).css({"left" : "0px"});
+
+                if (itemSelected + 1 < itemTotal) {
+                    var leftPic     = bFolder + dataArr[itemSelected].pic;
+                    var rightPic    = bFolder + dataArr[itemSelected + 1].pic;
+                    var str         = '<img src="'+ leftPic +'" /><img src="'+ rightPic +'" />';
+                    var maskDefault = ulThumb + " li:eq("+ itemSelected +") div.mask";            
+
+                    $(options.pic).empty().append(str);                    
+                    $(maskDefault).addClass("maskHover");
+                }else if(itemSelected + 1 == itemTotal){
+                    runFlag = "left";
+                    var leftPic     = bFolder + dataArr[itemSelected - 1].pic;
+                    var rightPic    = bFolder + dataArr[itemSelected].pic;
+                    var str         = '<img src="'+ leftPic +'" /><img src="'+ rightPic +'" />';
+                    var maskDefault = ulThumb + " li:eq("+ itemSelected +") div.mask";
+
+                    $(options.pic).css({"left" : "-920px"});
+                    $(maskDefault).addClass("maskHover");
+                    
+                }
+            });
+            $(itemTitle).text(dataArr[itemSelected].title);
+            $(itemDetail).text(dataArr[itemSelected].detail);
+        }
+
+        // ==============================================
+        // Hàm chạy slider về bên phải
+        // ==============================================
+        function runLeft(){
+            $(options.pic).animate({                
+                "left"      : "0px",
+                "duration"  : 500
+            }, function (e) {
+                // console.log("Run right 920px");
+
+                // Thiết lập lại hình kế tiếp sẽ hiển thị
+                itemSelected = itemSelected - 1;
+
+                // Loại bỏ các class maskHover của các thẻ div.mask
+                $(divMask).removeClass("maskHover");
+
+                // Thiết lập lại vị trí chứa 2 hình lớn.
+                $(options.pic).css({"left" : "-920px"});
+
+                if (itemSelected - 1 >= 0) {
+                    var leftPic     = bFolder + dataArr[itemSelected - 1].pic;
+                    var rightPic    = bFolder + dataArr[itemSelected].pic;
+                    var str         = '<img src="'+ leftPic +'" /><img src="'+ rightPic +'" />';
+                    var maskDefault = ulThumb + " li:eq("+ itemSelected +") div.mask";            
+
+                    $(options.pic).empty().append(str);                    
+                    $(maskDefault).addClass("maskHover");
+                }else if(itemSelected - 1 < 0){   
+                    runFlag = "right";
+                    var leftPic     = bFolder + dataArr[itemSelected].pic;
+                    var rightPic    = bFolder + dataArr[itemSelected + 1].pic;
+                    var str         = '<img src="'+ leftPic +'" /><img src="'+ rightPic +'" />';
+                    var maskDefault = ulThumb + " li:eq("+ itemSelected +") div.mask";
+
+                    $(options.pic).css({"left" : "0px"});                    
+                    $(maskDefault).addClass("maskHover");
+                    
+                }
+            });
+            $(itemTitle).text(dataArr[itemSelected].title);
+            $(itemDetail).text(dataArr[itemSelected].detail);
+        }
 
         // ==============================================
         // Hàm mặc định của Plugin
         // ==============================================
         function init(){
+            var dfd = $.Deferred();
             if (itemTotal > 0) {
                 setWidthUl();
 
@@ -71,27 +177,55 @@
                     },
                     "mouseleave"    : function (e) {
                         $(this).removeClass("maskHover");
+                        var maskDefault = ulThumb + " li:eq("+ itemSelected +") div.mask";
+                        $(maskDefault).addClass("maskHover");
+                    },
+                    "click"         : function (e) {
+                        $(divMask).removeClass("maskHover");
+                        itemSelected = $(divMask).index($(this));
+                        setPicturePosition();
                     }
                 });
+
+                $(leftArrow).on("click", function (e) {
+                    runFlag = "left";
+                });
+
+                $(rightArrow).on("click", function (e) {
+                    runFlag = "right";
+                }),
+
                 setPicturePosition();
+                dfd.resolve();                
+            }else{
+                dfd.reject();
             }
+
+            return dfd.promise();
         }
 
         // ==============================================
         // Thiết lập vị trí các hình lớn khi vừa chạy Plugin.
         // ==============================================
         function setPicturePosition() {
-            var leftPic     = bFolder + dataArr[itemSelected].pic;
-            var rightPic    = bFolder + dataArr[itemSelected + 1].pic;
-            var str         = '<img src="'+ leftPic +'" /><<img src="'+ rightPic +'" />';
-            var maskDefault = ulThumb + " li:eq("+ itemSelected +") div.mask";
+            if (runFlag == "right") {
+                var leftPic     = bFolder + dataArr[itemSelected].pic;
+                var rightPic    = bFolder + dataArr[itemSelected + 1].pic;
+                var str         = '<img src="'+ leftPic +'" /><img src="'+ rightPic +'" />';
+            }else{
+                var leftPic     = bFolder + dataArr[itemSelected - 1].pic;
+                var rightPic    = bFolder + dataArr[itemSelected].pic;
+                var str         = '<img src="'+ leftPic +'" /><img src="'+ rightPic +'" />';
+                $(options.pic).css({"left" : "-920px"});
+            }
 
             $(options.pic).empty().append(str);
-            $(maskDefault).addClass("maskHover").on({
-                "mouseleave"    : function (e) {
-                    $(this).addClass("maskHover");
-                }
-            });
+
+            var maskDefault = ulThumb + " li:eq("+ itemSelected +") div.mask";            
+            $(maskDefault).addClass("maskHover");
+
+            $(itemTitle).text(dataArr[itemSelected].title);
+            $(itemDetail).text(dataArr[itemSelected].detail);
 
             // console.log($(maskDefault));
         }
