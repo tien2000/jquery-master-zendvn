@@ -88,7 +88,7 @@
 
 .tSlider-thumb-bar ul{
     list-style: none inside;
-    width: 4000px;
+    width: 4000px;      /* Default width, no edit */
     position: absolute;
     left: 0px;
 }

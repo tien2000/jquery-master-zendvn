@@ -32,9 +32,12 @@
         var itemTitle       = options.title;
         var itemDetail      = options.detail;
         var widthUl         = 0;
-        var runFlag         = "left";
+        var runFlag         = "right";
         var divMask         = "";
         var timeOut;
+        var rightSize       = 0;
+        var leftSize        = 0;
+        var moveSize        = 0;
 
         // console.log(itemTotal);
 
@@ -53,10 +56,10 @@
             timeOut = setInterval(function (param) {
                 if (runFlag == "right") {
                     runRight();
-                    console.log("Chạy về bên phải");
+                    // console.log("Chạy về bên phải");
                 }else{
                     runLeft();
-                    console.log("Chạy về bên trái");
+                    // console.log("Chạy về bên trái");
                 }
             }, 2000);
         }
@@ -83,10 +86,40 @@
                 if (itemSelected + 1 < itemTotal) {
                     var leftPic     = bFolder + dataArr[itemSelected].pic;
                     var rightPic    = bFolder + dataArr[itemSelected + 1].pic;                    
-                    var str = '<img src="'+ leftPic +'" /><img src="'+ rightPic +'" />';                    
-                    $(options.pic).empty().append(str);                    
+                    var str         = '<img src="'+ leftPic +'" /><img src="'+ rightPic +'" />';                    
+
+                    $(options.pic).empty().append(str);
+
+                    var thumbElemt  = ulThumb + " li:eq("+ itemSelected +")";
+                    var elemtPos    = $(thumbElemt).position().left
+                                        - Math.abs($(ulThumb).position().left);
+                    
+                    var thumbBarWidth   = $(options.thumbs).width();
+                    var thumbBarHalf    = thumbBarWidth / 2;
+                    rightSize           = $(ulThumb).width() 
+                                            - Math.abs($(ulThumb).position().left) 
+                                            - thumbBarWidth;                   
+
+                    if (elemtPos + options.widthItem > thumbBarWidth) {
+                        if (rightSize > thumbBarHalf) {
+                            moveSize = thumbBarHalf;
+                        }else{
+                            moveSize = rightSize;
+                        }       
+                        // console.log("moveSize: " + moveSize);                 
+                        $(ulThumb).animate({"left" : "-=" + moveSize}, "slow");
+                    }
+
+                    // console.log("======== runRight ==========");
+                    // console.log(dataArr[itemSelected].pic);
+                    // console.log("elemtPos: " + elemtPos);
+                    // console.log("thumbBarWidth: " + thumbBarWidth);
+                    // console.log("thumbBarHalf: " + thumbBarHalf);
+                    // console.log("rightSize: " + rightSize);
                 }else if(itemSelected + 1 == itemTotal){
-                    // runFlag = "left";
+                    if (rightSize > 0 && moveSize != rightSize) {
+                        $(ulThumb).animate({"left" : "-=" + rightSize}, "slow");
+                    }
                     var leftPic     = bFolder + dataArr[itemSelected - 1].pic;
                     var rightPic    = bFolder + dataArr[itemSelected].pic;
                     var str = '<img src="'+ leftPic +'" /><img src="'+ rightPic +'" />';
@@ -97,7 +130,6 @@
                 $(maskDefault).addClass("maskHover");
                 $(itemTitle).text(dataArr[itemSelected].title);
                 $(itemDetail).text(dataArr[itemSelected].detail);
-                
             });
         }
 
@@ -125,6 +157,31 @@
                     var rightPic    = bFolder + dataArr[itemSelected].pic;                    
                     var str         = '<img src="'+ leftPic +'" /><img src="'+ rightPic +'" />';                    
                     $(options.pic).empty().append(str);
+
+                    var thumbElemt  = ulThumb + " li:eq("+ itemSelected +")";
+                    var elemtPos    = $(thumbElemt).position().left;
+                    
+                    var thumbBarWidth   = $(options.thumbs).width();
+                    var thumbBarHalf    = thumbBarWidth / 2;
+                    leftSize           = Math.abs($(ulThumb).position().left); 
+
+                    if (elemtPos - options.widthItem < leftSize) {
+                        if (leftSize > thumbBarHalf) {
+                            moveSize = thumbBarHalf;
+                        }else{
+                            moveSize = leftSize;
+                        }
+                        // console.log("moveSize: " + moveSize);                 
+                        $(ulThumb).animate({"left" : "+=" + moveSize}, "slow");
+                    }
+
+                    // console.log("======== runLeft ==========");
+                    // console.log(dataArr[itemSelected - 1].pic);
+                    // console.log("elemtPos: " + elemtPos);
+                    // console.log("thumbBarWidth: " + thumbBarWidth);
+                    // console.log("thumbBarHalf: " + thumbBarHalf);
+                    // console.log("leftSize: " + leftSize);
+
                 }else if(itemSelected - 1 < 0){                    
                     var leftPic     = bFolder + dataArr[itemSelected].pic;
                     var rightPic    = bFolder + dataArr[itemSelected + 1].pic;
@@ -252,7 +309,7 @@ $(document).ready(function (e) {
         "data"          : dataArr,
         "sFolder"       : "images/img114x72/",
         "bFolder"       : "images/img920x360/",
-        "defaultItem"   : 4
+        "defaultItem"   : 6
     };
 
     $("#tSlider").tSlider(obj);
