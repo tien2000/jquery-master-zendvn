@@ -1,0 +1,28 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+	margin: 10px auto;
+	width: 90%;
+}
+
+.container > div{
+	min-height: 30px;
+	margin-bottom: 20px;
+}
+
+
+.class1 {
+	background-color: #50a0be;
+	line-height: 50px;
+	height: 50px;
+	padding: 5px 10px;
+	color: #f9f7f4;
+}
+
+.class2 {
+	.class1;
+	font-weight: bold;
+}

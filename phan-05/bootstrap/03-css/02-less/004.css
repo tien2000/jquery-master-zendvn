@@ -1,0 +1,36 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+@color: #50a0be;
+
+div.container 
+{
+	margin: 10px auto;
+	width: 90%;
+	div.class1
+	{
+		
+		height: 50px;
+		line-height: 50px;
+		background-color: @color;
+		color: #f9f7f4;
+		min-height: 30px;
+		margin-bottom: 20px;
+		a{
+			color: @color;
+			&:hover
+			{
+				font-weight: bold;
+				color: yellow;
+			}
+		}
+	}
+}
+
+div.abc{
+	min-height: 50px;
+	background-color: @color;
+}
+

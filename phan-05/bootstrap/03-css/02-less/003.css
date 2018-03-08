@@ -1,0 +1,29 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+	margin: 10px auto;
+	width: 90%;
+}
+
+.container > div{
+	min-height: 30px;
+	margin-bottom: 20px;
+}
+
+.createBox(@height: 50px, @color: #f9f7f4, @bg_color: #50a0be ){
+	height: @height * 2;
+	line-height: @height;
+	background-color: @bg_color;
+	color: @color;
+}
+
+.class1{
+	.createBox(100px, red, yellow);	
+}
+
+.class2{
+	.createBox(200px);	
+}

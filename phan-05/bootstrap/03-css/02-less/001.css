@@ -1,0 +1,29 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+	margin: 10px auto;
+	width: 90%;
+}
+
+.container > div{
+	min-height: 30px;
+	margin-bottom: 20px;
+}
+
+@color: blue;
+
+.class1 {
+	background-color: @color;
+}
+
+.class2 {
+	background-color: #fff;
+	color: @color;
+}
+
+.class3 {
+	border: 5px solid @color;
+}
