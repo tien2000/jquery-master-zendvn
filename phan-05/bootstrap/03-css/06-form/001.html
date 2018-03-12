@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap 3 - Button</title>
+
+	<link type="text/css" rel="stylesheet" href="../../bootstrap3/css/bootstrap.css">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<style href="../js/jquery-1.10.0.min.js"></style>
+	<style href="../../bootstrap3/js/bootstrap.js"></style>	
+	<style href="../js/less-1.7.0.min.js"></style>
+</head>
+
+<body>
+	<!--
+		Inputs: text, password, date, number, color
+		Textarea: rows 
+		Checkboxes and radios
+		Selectbox
+	 -->
+	<div class="container">
+		<div class="row tls-row">
+			<!-- INPUT -->
+			<div class="col-md-6">
+				<h1 class="text-center">Inputs</h1>
+				<div class="form-group">
+					<label>Type Text</label>
+					<input type="text" class="form-control" placeholder="Text input">
+				</div>
+				<div class="form-group">
+					<label>Type Password</label>
+					<input type="password" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Type Date</label>
+					<input type="date" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Type Number</label>
+					<input type="number" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Type Color</label>
+					<input type="color" class="form-control">
+				</div>
+			</div>
+			<!-- TEXT AREA -->
+			<div class="col-md-6">
+				<h1 class="text-center">Textarea</h1>
+				<div class="form-group">
+					<label>Textarea</label>
+					<textarea class="form-control" rows="10"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="row tls-row">
+			<!-- CHECKBOX AND RADIO -->
+			<div class="col-md-6">
+				<h1 class="text-center">Checkboxes and radios</h1>
+				<div class="checkbox">
+					<label><input type="checkbox" value="option1">1</label>
+				</div>
+				
+				<div class="form-group">
+					<label class="checkbox-inline"> <input type="checkbox" name="option1" value="option1"> 1</label>
+					<label class="checkbox-inline"> <input type="checkbox" name="option2" value="option2"> 2</label>
+					<label class="checkbox-inline"> <input type="checkbox" name="option3" value="option3"> 3</label>
+				</div>
+				
+				<div class="radio">
+					<label> 
+						<input type="radio" name="optionsRadios" value="option1" checked> Option one
+					</label>
+				</div>
+				
+				<div class="radio">
+					<label> 
+						<input type="radio" name="optionsRadios" value="option2"> Option two 
+					</label>
+				</div>
+				
+				<div class="form-group">
+					<label class="radio-inline"><input type="radio" name="optionsRadios" value="option1" checked> Option one</label>
+					<label class="radio-inline"><input type="radio" name="optionsRadios" value="option2"> Option two</label>
+					<label class="radio-inline"><input type="radio" name="optionsRadios" value="option3"> Option three</label>
+				</div>
+			</div>
+			<!-- SELECTBOX -->
+			<div class="col-md-6">
+				<h1 class="text-center">Selectbox</h1>
+				<div class="form-group">
+					<select class="form-control">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select> 
+				</div>
+				<div class="form-group">
+					<select multiple class="form-control">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

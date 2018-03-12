@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap 3 - Button</title>
+	
+	<link type="text/css" rel="stylesheet" href="../../bootstrap3/css/bootstrap.css">
+	<link href="style.css" rel="stylesheet" type="text/css">	
+	<style href="../js/jquery-1.10.0.min.js"></style>
+	<style href="../../bootstrap3/js/bootstrap.js"></style>	
+	<style href="../js/less-1.7.0.min.js"></style>
+</head>
+
+<body>
+	<!--
+		Class: .input-lg, .input-sm
+		Custome
+		Help text help-block
+		disabled
+	 -->
+	<div class="container">
+		<div class="row tls-row">
+			<p class="col-md-5">
+			 	<input type="text" placeholder="col-md-5" class="form-control">
+			</p>
+			<p class="col-md-4">
+			 	<input type="text" placeholder="input-lg" class="form-control input-lg">
+			</p>
+			<p class="col-md-3">
+			 	<input type="text" placeholder="input-sm" class="form-control input-sm">
+			</p>
+		</div>
+		<div class="row tls-row">
+			<p>
+			 	<input type="text" placeholder="col-md-5" class="form-control">
+			 	<span class="help-block">This is description</span>
+			</p>
+		</div>
+		<div class="row tls-row">
+			<p><input type="text" placeholder="col-md-5" class="form-control" disabled></p>
+			<p>
+				<select class="form-control" disabled>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select> 
+			</p>
+			<fieldset disabled>
+				<p><input type="text" placeholder="col-md-5" class="form-control"></p>
+				<p>
+					<select class="form-control">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select> 
+				</p>
+			</fieldset>
+		</div>
+	</div>
+</body>
+</html>
