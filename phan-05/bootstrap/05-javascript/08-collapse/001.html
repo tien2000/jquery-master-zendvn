@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap 3 - Button</title>
+	
+	<link type="text/css" rel="stylesheet" href="../../bootstrap3/css/bootstrap.min.css">
+	<link href="style.css" rel="stylesheet" type="text/css">	
+	<script src="../js/jquery-1.10.0.min.js"></script>
+	<script src="../../bootstrap3/js/bootstrap.min.js"></script>
+	<script src="../js/less-1.7.0.min.js"></script>
+</head>
+
+<body>
+	<!--
+		.collapse 		ẩn nội dung của selector
+		.collapse.in 	hiển thị nội dung của selector
+	-->
+	
+	<div class="container">
+		<div class="row tls-row">
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapseOne" data-parent="#accordion"> Collapsible Group Item #1 </a>
+						</h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse">
+						<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat enim laudantium blanditiis perspiciatis libero perferendis magnam quidem maiores explicabo numquam.</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapseTwo" data-parent="#accordion"> Collapsible Group Item #2 </a>
+						</h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse">
+						<div class="panel-body">Lorem ipsum dolor sit amet.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

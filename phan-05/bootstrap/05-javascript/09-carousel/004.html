@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Twitter Bootstrap 3 Carousel</title>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap 3 - Button</title>
+	<link href="../../css/bootstrap.css" rel="stylesheet" type="text/css">
+	
+	<link type="text/css" rel="stylesheet" href="../../bootstrap3/css/bootstrap.min.css">
+	<link href="style.css" rel="stylesheet" type="text/css">	
+	<script src="../js/jquery-1.10.0.min.js"></script>
+	<script src="../../bootstrap3/js/bootstrap.min.js"></script>
+	<script src="../js/less-1.7.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#tlsCarousel").carousel({
+				interval: 2000
+			}).carousel(1);
+			
+				
+			$(".left").click(function() {
+				$("#tlsCarousel").carousel('prev');
+			});
+			$(".right").click(function() {
+				$("#tlsCarousel").carousel('next');
+			}); 
+		});
+</script>
+</head>
+<body>
+	<!--
+		Hiệu ứng slide chuyển động 		<div id="tlsCarousel" class="carousel slide"> 
+	-->
+	
+	<div class="container">
+		<div class="row tls-row">
+		    <div id="tlsCarousel" class="carousel slide">
+		    	<!-- Carousel indicators -->
+		        <ol class="carousel-indicators">
+		            <li data-target="#tlsCarousel" data-slide-to="0" class="active"></li>
+		            <li data-target="#tlsCarousel" data-slide-to="1"></li>
+		            <li data-target="#tlsCarousel" data-slide-to="2"></li>
+		        </ol>   
+		       	<!-- Carousel items -->
+		        <div class="carousel-inner">
+					<div class="item active">
+						<h1>Slide 1</h1>
+						<p class="label label-success">Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a</p>
+					</div>
+					<div class="item">
+						<h1>Slide 2</h1>
+						<p class="label label-info">Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a</p>
+					</div>
+		            <div class="item">
+						<h1>Slide 3</h1>
+						<p class="label label-danger">Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a</p>
+					</div>
+		        </div>
+		        <!-- Carousel nav -->
+		        <div class="carousel-controls">
+			        <a class="carousel-control left" href="#tlsCarousel" data-slide="prev">
+			            <span class="glyphicon glyphicon-chevron-left"></span>
+			        </a>
+			        <a class="carousel-control right" href="#tlsCarousel" data-slide="next">
+			            <span class="glyphicon glyphicon-chevron-right"></span>
+			        </a>
+		        </div>
+		    </div>
+		</div>
+	</div>
+</body>
+</html>                                		
