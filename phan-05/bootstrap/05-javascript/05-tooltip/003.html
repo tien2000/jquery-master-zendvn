@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap 3 - Button</title>
+	
+	<link type="text/css" rel="stylesheet" href="../../bootstrap3/css/bootstrap.min.css">
+	<link href="style.css" rel="stylesheet" type="text/css">	
+	<script src="../js/jquery-1.10.0.min.js"></script>
+	<script src="../../bootstrap3/js/bootstrap.min.js"></script>
+	<script src="../js/less-1.7.0.min.js"></script>
+	
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+			$('.tls-tooltip').tooltip({ 
+				html 		: true,						// Hiển thị theo dạng HTML	
+				animation 	: true,						// Hiệu ứng khi hiển thị tooltip 	
+				placement 	: 'bottom',					// top | bottom | left | right | auto
+				delay 		: { show: 500, hide: 1000 },
+				title 		: $('#tooltip-content')
+			}).on('show.bs.tooltip', function(){
+				$('#tooltip-content').css('display','block');	
+			});
+		});
+	</script>
+</head>
+
+<body >
+	<div class="container">
+		<div class="row tls-row">
+			<a class="tls-tooltip" href="#" data-toggle="tooltip" title="">Hover over me</a>
+			<section id="tooltip-content" style="display: none">
+				<button type="button" class="btn btn-success tls-button">Success</button>
+				Success
+			</section>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap 3 - Button</title>
+	
+	<link type="text/css" rel="stylesheet" href="../../bootstrap3/css/bootstrap.min.css">
+	<link href="style.css" rel="stylesheet" type="text/css">	
+	<script src="../js/jquery-1.10.0.min.js"></script>
+	<script src="../../bootstrap3/js/bootstrap.min.js"></script>
+	<script src="../js/less-1.7.0.min.js"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			$('[data-toggle=popover]').popover();
+		});
+	</script>
+</head>
+
+<body >
+	<div class="container">
+		<div class="row tls-row">
+			<button type="button" class="btn btn-default" data-container="body"
+				data-toggle="popover" data-placement="left"
+				data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+				Popover on left
+			</button>
+		</div>
+		<div class="row tls-row">
+			<button type="button" class="btn btn-default" data-container="body"
+				data-toggle="popover" data-placement="top"
+				data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+				Popover on top
+			</button>
+		</div>
+		<div class="row tls-row">
+			<button type="button" class="btn btn-default" data-container="body"
+				data-toggle="popover" data-placement="right"
+				data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+				Popover on right
+			</button>
+		</div>
+		<div class="row tls-row">
+			<button type="button" class="btn btn-default" data-container="body"
+				data-toggle="popover" data-placement="bottom"
+				data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+				Popover on bottom
+			</button>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap 3 - Button</title>
+	
+	<link type="text/css" rel="stylesheet" href="../../bootstrap3/css/bootstrap.min.css">
+	<link href="style.css" rel="stylesheet" type="text/css">	
+	<script src="../js/jquery-1.10.0.min.js"></script>
+	<script src="../../bootstrap3/js/bootstrap.min.js"></script>
+	<script src="../js/less-1.7.0.min.js"></script>
+	
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+			$('[data-toggle=popover]').popover({ 
+				html 		: true,							// Hiển thị theo dạng HTML	
+				animation 	: true,							// Hiệu ứng khi hiển thị tooltip 	
+				placement 	: 'bottom',						// top | bottom | left | right | auto
+				delay 		: { show: 500, hide: 500 },
+				// trigger 	: 'hover',						// click | hover | focus | manual
+				content 	: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus'
+			});
+		});
+	</script>
+</head>
+
+<body >
+	<div class="container">
+		<div class="row tls-row">
+			<button type="button" class="btn btn-default" data-toggle="popover" data-trigger="hover">
+				Popover on left
+			</button>
+		</div>
+	</div>
+</body>
+</html>

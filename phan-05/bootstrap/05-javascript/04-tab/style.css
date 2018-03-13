@@ -1,0 +1,22 @@
+@import "../../less/bootstrap.less";
+
+div.row > div {
+	
+}
+
+div.tls-row {
+	padding: 20px;
+	margin: 10px auto;
+	border: 2px solid #ebe9f9;
+}
+
+li.active,
+li.active:hover, 
+li.active:focus  {
+    background: #9CF;
+}
+li.active a,
+li.active:hover a, 
+li:focus a  {
+    color: #FFF;
+}
