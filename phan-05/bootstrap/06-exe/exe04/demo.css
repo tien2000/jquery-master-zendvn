@@ -1,0 +1,58 @@
+div.my-row {
+	padding: 20px;
+	margin: 10px auto;
+	border: 2px solid #ebe9f9;
+}
+
+#myCarousel .carousel-caption {
+ 	left:0;
+	right:0;
+	bottom:0;
+	text-align:left;
+	padding:10px;
+	background:rgba(0,0,0,0.6);
+	text-shadow:none;
+
+}
+
+#myCarousel .list-group {
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+#myCarousel .list-group-item {
+	border-radius:0px;
+	cursor:pointer;
+}
+
+#myCarousel .list-group .active, #myCarousel .list-group-item:hover {
+	background-color:#eee;	
+}
+
+/*
+ 	PHONE WIDE PHONE 	450px
+ 	PHONE WIDE PHONE 	450px -> 1000px
+ 	PC 					1000px ->
+ */
+@media (min-width: 1000px) { 
+	#myCarousel .carousel-controls {
+		display:none;
+	} 	
+	
+	#myCarousel {
+		padding-right:33.3333%;
+	}
+}
+@media (min-width: 450px) and (max-width: 1000px) { 
+	.carousel-caption p, #myCarousel .list-group {
+		display:none;
+	} 
+}
+
+@media (max-width: 450px) { 
+	.carousel-caption , #myCarousel .list-group{
+		display:none;
+	} 
+}
+

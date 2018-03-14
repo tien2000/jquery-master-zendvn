@@ -1,0 +1,17 @@
+@import "../../bootstrap3/less/bootstrap.less";
+
+div.row > div{
+	background-color: yellow;
+	border: 1px solid red;
+}
+
+div.tls-row{
+	margin-bottom: 20px;
+}
+
+.tls-table{
+	.table;
+	.table-striped;
+	.table-hover;
+	.table-bordered;
+}

@@ -1,0 +1,43 @@
+body {
+	background-color: #eaeaea;
+}
+
+.user-details {
+	min-height: 50px;
+	margin-top: 100px;
+	position: relative;
+	background-color: #fff;
+}
+
+.user-details .user-image {
+	z-index: 1;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: -50px;
+	left: 0;
+}
+
+.user-details .user-info-block {
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	background: rgb(255, 255, 255);
+	text-align: center;
+}
+
+.user-details .user-info-block .navigation {
+	list-style: none;
+	border: 1px solid #428BCA;
+	border-width: 1px 0px;
+}
+
+.navigation li a {
+	padding: 20px 30px;
+	float: left;
+}
+
+.navigation li.active a {
+	background: #428BCA;
+	color: #fff;
+}

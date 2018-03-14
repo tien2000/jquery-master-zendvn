@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(206, 40, 117);
+}
+
+.row{
+    margin: 100px;
+    padding: 20px 50px;
+    background-color: rgb(189, 184, 184);
+}
+
+.page-header{
+    
+}
+
+.form-control{
+    border: 1px solid rgb(189, 184, 184);
+}
