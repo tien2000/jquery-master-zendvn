@@ -13,7 +13,7 @@
     <script type="text/javascript" src="js/less-1.7.0.min.js"></script>
 </head>
 <body>
-    <section class="headerSection">
+    <section id="headerSection">
         <?php
             include_once '_/components/php/navigation.php';
         ?>

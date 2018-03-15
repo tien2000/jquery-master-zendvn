@@ -1,1 +1,29 @@
 @import "bootstrap.less";
+
+/* ================== CUSTOMIZE ================== */
+@navbar-default-link-color  : #000;
+@line-height-computed       : 0px;
+
+/* ================== NAVIGATION ================== */
+#headerSection{
+    background: url("../images/headerbg.png") repeat-x 0 0;
+}
+
+    #headerSection .container{
+        padding: 0;
+    }
+
+    #navigation{
+        margin-top: 30px;
+        background: none;
+    }
+
+    #navigation h1{
+        margin: 0;
+    }
+
+    #navigation a.navbar-brand{
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 1.3em;
+    }
