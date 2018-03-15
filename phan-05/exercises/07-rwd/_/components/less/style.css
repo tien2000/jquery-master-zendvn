@@ -1,12 +1,26 @@
 @import "bootstrap.less";
 
 /* ================== CUSTOMIZE ================== */
-@navbar-default-link-color  : #000;
-@line-height-computed       : 0px;
+@navbar-default-brand-color         : #000;
+@line-height-computed               : 0px;
+@grid-float-breakpoint              : 1000px;
+
+/* ========== NAVBAR ========= */
+@navbar-default-link-color          : #666;
+@navbar-default-link-hover-color    : #e03131;
+@navbar-default-link-active-color   : #fff;
+@nav-link-padding                   : 14px 15px;
+
+/* ========== DROPDOWN ========= */
+@dropdown-link-color                : #666;
+@dropdown-link-hover-color          : #fff;
+@dropdown-link-hover-bg             : #d33800;
+@navbar-default-toggle-icon-bar-bg  : #fff;
+
 
 /* ================== NAVIGATION ================== */
 #headerSection{
-    background: url("../images/headerbg.png") repeat-x 0 0;
+    background: url("../images/headerbg.png") repeat-x;
 }
 
     #headerSection .container{
@@ -18,12 +32,48 @@
         background: none;
     }
 
-    #navigation h1{
-        margin: 0;
-    }
+        #navigation h1{
+            margin: 0;
+        }
 
-    #navigation a.navbar-brand{
-        font-weight: bold;
-        font-size: 28px;
-        line-height: 1.3em;
-    }
+        #navigation a.navbar-brand{
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 1.3em;
+        }
+
+        #navigation ul.nav > li > a{
+            background: url("../images/tabRepeatInactive.png") repeat-x #f9f9f9;
+            margin: 2px;
+            border-radius: 4px 4px 0 0;
+        }
+
+        #navigation ul.nav > li.active > a{
+            background: url("../images/tabrepeat.png") repeat-x #d33800;
+        }
+
+        .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+            color: #666;
+        }
+
+        #navigation ul.nav > li ul.dropdown-menu{
+            border-radius: 4px;
+        }
+
+        #navigation button.navbar-toggle{
+            background: #d33800;
+        }
+
+        @media all and (max-width: 500px){
+            #navigation ul.nav > li > a{
+                padding: 10px 12px;
+            }
+
+            #navigation ul.nav > li ul.dropdown-menu{
+                margin-left: 20px;
+            }
+
+            #navigation ul.nav > li ul.dropdown-menu li a{
+                padding: 10px;
+            }                
+        }
