@@ -10,13 +10,12 @@
 @navbar-default-link-hover-color    : #e03131;
 @navbar-default-link-active-color   : #fff;
 @nav-link-padding                   : 14px 15px;
+@navbar-default-toggle-icon-bar-bg  : #fff;
 
 /* ========== DROPDOWN ========= */
 @dropdown-link-color                : #666;
 @dropdown-link-hover-color          : #fff;
-@dropdown-link-hover-bg             : #d33800;
-@navbar-default-toggle-icon-bar-bg  : #fff;
-
+@dropdown-link-hover-bg             : #FE5214;
 
 /* ================== NAVIGATION ================== */
 #headerSection{
@@ -39,17 +38,19 @@
         #navigation a.navbar-brand{
             font-weight: bold;
             font-size: 28px;
-            line-height: 1.3em;
+            line-height: 0.3em;
         }
 
         #navigation ul.nav > li > a{
             background: url("../images/tabRepeatInactive.png") repeat-x #f9f9f9;
             margin: 2px;
             border-radius: 4px 4px 0 0;
+            font-weight: bold;
         }
 
         #navigation ul.nav > li.active > a{
             background: url("../images/tabrepeat.png") repeat-x #d33800;
+            font-weight: bold;
         }
 
         .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
@@ -64,16 +65,23 @@
             background: #d33800;
         }
 
-        @media all and (max-width: 500px){
+        @media all and (max-width: @grid-float-breakpoint-max){
             #navigation ul.nav > li > a{
-                padding: 10px 12px;
+                padding: 17px 12px;
             }
 
-            #navigation ul.nav > li ul.dropdown-menu{
-                margin-left: 20px;
+            #navigation ul.nav li ul.dropdown-menu{
+                margin: 0 40px;
             }
 
-            #navigation ul.nav > li ul.dropdown-menu li a{
-                padding: 10px;
+            #navigation ul.nav li ul.dropdown-menu li a{
+                padding: 17px 12px;
+                font-weight: bold;
             }                
+
+            #navigation ul.nav li ul.dropdown-menu li a:hover{
+                border-radius: 4px;
+                color: #fff;
+                background: url("../images/tabrepeat.png") repeat-x #d33800;
+            }
         }
