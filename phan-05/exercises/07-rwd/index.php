@@ -18,5 +18,10 @@
             include_once '_/components/php/navigation.php';
         ?>
     </section>
+    <section id="slideSection">
+        <?php
+            include_once '_/components/php/slide.php';
+        ?>
+    </section>
 </body>
 </html>

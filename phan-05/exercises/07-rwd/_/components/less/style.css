@@ -17,9 +17,12 @@
 @dropdown-link-hover-color          : #fff;
 @dropdown-link-hover-bg             : #FE5214;
 
+/* ========== CAROUSEL ========= */
+@carousel-control-width             : 5%;
+
 /* ================== NAVIGATION ================== */
 #headerSection{
-    background: url("../images/headerbg.png") repeat-x;
+    background: url("../images/headerbg.png") repeat;
 }
 
     #headerSection .container{
@@ -84,4 +87,52 @@
                 color: #fff;
                 background: url("../images/tabrepeat.png") repeat-x #d33800;
             }
+
+            #slideSection .carousel-inner .carousel-caption{
+                background-color: transparent !important;
+            }
         }
+
+/* ================== CAROUSEL ================== */
+#slideSection{
+    border-top: 4px solid #d33800;
+    border-bottom: 4px solid #d33800;
+}
+
+    #slideSection .carousel-inner{
+        background-color: #000;
+    }
+
+    #slideSection .carousel-inner .item img{
+        max-height: 290px;
+        margin: 0 auto;
+    }
+
+    #slideSection .carousel-inner .carousel-caption{
+        max-width: 40%;
+        text-align: left;
+        background-color: #7d1603;
+        padding: 1%;
+        border-radius: 14px;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+    }
+
+    #slideSection .carousel-inner .carousel-caption h2{
+        position: absolute;
+        top: 2%;
+        left: 2%;
+    }
+
+    #slideSection .carousel-inner .carousel-caption p{
+        position: absolute;
+        top: 20%;
+        left: 2%;
+    }
+
+    #slideSection .carousel-inner .carousel-caption a.btn{
+        position: absolute;
+        top: 35%;
+        left: 2%;
+    }
