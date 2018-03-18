@@ -238,7 +238,34 @@ body{
     }
 
 
+/* ================== FOOTER ================== */
+#footerSection{
+    background: url("../images/footerbg.png") repeat top center;
+    color: #fff;
+    padding: 30px 0;
+    border-top: 1px solid #fe5214;
+}
 
+    #footerSection .input-group .form-control{
+        height: 34px;
+    }
+
+    #footerSection .newletter h4,
+    #footerSection .latest-news h4,
+    #footerSection .contact h4,
+    #footerSection .newletter h5,
+    #footerSection .contact h5{
+        font-weight: bold;
+        margin: 30px 0 10px 0;
+    }
+
+    #footerSection .latest-news ul.media-list li.media .media-body h5 {
+        font-weight: bold;
+    }
+    
+    #footerSection .latest-news ul.media-list li.media .media-body p {
+        font-size: 14px;
+    }
 
 
 

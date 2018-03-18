@@ -70,7 +70,10 @@
             include_once '_/components/php/banner.php';
         ?>
     </section>
-
-    <div style="min-height: 200px"></div>
+    <section id="footerSection">
+        <?php
+            include_once '_/components/php/footer.php';
+        ?>
+    </section>
 </body>
 </html>
