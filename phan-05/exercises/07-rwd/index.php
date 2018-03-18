@@ -38,6 +38,8 @@
                     return $(".popover-title").html();
                 }
             });
+
+            $("[data-toggle=tooltip]").tooltip();
         });
         
     </script>
@@ -56,6 +58,16 @@
     <section id="fieldSection">
         <?php
             include_once '_/components/php/field.php';
+        ?>
+    </section>
+    <section id="workSection">
+        <?php
+            include_once '_/components/php/work.php';
+        ?>
+    </section>
+    <section id="bannerSection">
+        <?php
+            include_once '_/components/php/banner.php';
         ?>
     </section>
 

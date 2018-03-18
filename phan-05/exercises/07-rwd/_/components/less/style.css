@@ -200,3 +200,55 @@ body{
         .popover-title{
             color: #fe5214;
         }
+
+/* ================== OUR RECENT WORK ================== */
+#workSection{
+    background: url("../images/shadowsReverse.png") no-repeat top center;
+    padding: 30px 0;
+    text-align: center;
+}
+
+    #workSection .row h3{
+        color: #fe5214;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    #workSection .thumbnail:hover{
+        box-shadow: 3px 3px 10px #888888
+    }
+
+/* ================== BANNER ================== */
+#bannerSection{
+    text-align: center;
+    padding: 10px 0;
+}
+
+    #bannerSection a{
+        margin: 0 8px;
+    }
+
+    #bannerSection a img{
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+        padding: 2px;
+        border: 1px solid #ddd;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
